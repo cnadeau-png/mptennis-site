@@ -498,9 +498,9 @@ const Foot = () => (
           Pro-level coaching, three ways in.
         </p>
         <div className="hero-ctas">
-          <CTA variant="solid" href="https://www.acetenniscoach.ca">Start with Ace · Free</CTA>
-          <CTA variant="ghost" href="https://youtube.com/@mptennis">Subscribe on YouTube</CTA>
-          <CTA variant="ghost" href="mailto:chris@mptennis.ca">Inquire about coaching</CTA>
+          <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-solid">Start with Ace · Free →</a>
+          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="cta cta-ghost">Subscribe on YouTube →</a>
+          <a href="mailto:chris@mptennis.ca" className="cta cta-ghost">Inquire about coaching →</a>
         </div>
       </div>
     </section>
