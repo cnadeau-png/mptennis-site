@@ -2,8 +2,7 @@ backend:
   name: github
   repo: cnadeau-png/mptennis-site
   branch: main
-  auth_type: pkce
-  app_id: Ov23liP4n9PO29PmQYKB
+  base_url: https://decap-proxy.cnadeau.workers.dev
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
