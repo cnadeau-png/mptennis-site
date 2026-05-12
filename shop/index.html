@@ -86,8 +86,8 @@
           pill: "Racquets, bags, footwear",
           title: "Tenniszon",
           why: "Where we send players for racquets, shoes, and bags. MPTennis pricing across the catalog.",
-          price: "tenniszon.com/mptennis · Code: MPTENNIS10",
-          approx: "",
+          price: "",
+          approx: "Code: MPTENNIS10",
           link: "https://tenniszon.com/mptennis",
           brand: "TENNISZON",
           brandStyle: "tenniszon"
@@ -96,8 +96,8 @@
           pill: "Strings",
           title: "Restring",
           why: "Premium strings shipped to your door. Co-polys, naturals, hybrids — everything we recommend in coaching.",
-          price: "shoprestring.com",
-          approx: "ref MPTENNIS",
+          price: "",
+          approx: "Code: MPTENNIS10",
           link: "https://shoprestring.com/?ref=mptennis",
           brand: "SHOP\u00B7RESTRING",
           brandStyle: "restring"
@@ -106,8 +106,8 @@
           pill: "Strings",
           title: "Toroline",
           why: "Underrated co-poly that punches above its price. We string a lot of our juniors in Toroline because the spin and tension stability are excellent for the cost.",
-          price: "toroline.com/MPTENNIS · Code: MPTENNIS",
-          approx: "",
+          price: "",
+          approx: "Code: MPTENNIS",
           link: "https://toroline.com/MPTENNIS",
           brand: "TOROLINE",
           brandStyle: "toroline"
@@ -134,9 +134,9 @@
               ${p.bullets && p.bullets.length ? `<ul class="bullets">${p.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}
               ${p.bullets && p.bullets.length
                 ? `<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener sponsored" class="bundle-cta">View the bundle →</a>`
-                : `<div class="row">
-                    <div class="price">${escapeHtml(p.price)} ${p.approx ? `<span class="approx">${escapeHtml(p.approx)}</span>` : ''}</div>
-                    <a href="${escapeAttr(p.link)}" target="_blank" rel="noopener sponsored" class="buy">Buy →</a>
+                : `<div class="buy-centered">
+                    <a href="${escapeAttr(p.link)}" target="_blank" rel="noopener sponsored" class="buy-btn">Buy →</a>
+                    ${p.approx ? `<div class="promo-code">${escapeHtml(p.approx)}</div>` : ''}
                   </div>`}
             </div>
           </article>
