@@ -1,0 +1,212 @@
+/* ============================================================
+   MPTennis · Brizy Cloud · Custom CSS
+   Paste into: Project Settings → Custom CSS
+   Companion to brizy-cheat-sheet.md
+   ============================================================ */
+
+/* ---------- 1. Brand tokens ---------- */
+:root {
+  --mp-navy:        #0A1628;
+  --mp-navy-2:      #0d1a30;
+  --mp-surface:     #1A3050;
+  --mp-surface-2:   #20395d;
+  --mp-green:       #7EC845;
+  --mp-green-soft:  rgba(126, 200, 69, 0.12);
+  --mp-green-line:  rgba(126, 200, 69, 0.35);
+  --mp-white:       #FFFFFF;
+  --mp-muted:       rgba(255, 255, 255, 0.78);
+  --mp-muted-2:     rgba(255, 255, 255, 0.58);
+  --mp-hairline:    rgba(255, 255, 255, 0.16);
+  --mp-radius-pill: 100px;
+  --mp-radius-card: 16px;
+  --mp-ease:        cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ---------- 2. Page background + base type ---------- */
+body,
+.brz-root__container {
+  background: var(--mp-navy) !important;
+  color: var(--mp-white);
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 3. Headlines (H1–H4) ---------- */
+.brz h1, .brz h2, .brz h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--mp-white);
+  text-wrap: balance;
+}
+.brz h1 {
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+.brz h2 {
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+.brz h3 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.brz h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--mp-white);
+}
+
+/* ---------- 4. Body copy ---------- */
+.brz p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--mp-muted);
+  text-wrap: pretty;
+}
+.brz p.lede,
+.brz .mp-lede {
+  font-size: 19px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 52ch;
+}
+
+/* ---------- 5. Eyebrows (small uppercase labels) ---------- */
+.brz .mp-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+/* ---------- 6. Buttons (primary + ghost) ----------
+   Brizy adds .brz-btn to every button module.
+   Add a custom class "mp-cta" or "mp-cta-ghost" via the Element Settings → Advanced → CSS Class field. */
+.brz .brz-btn.mp-cta {
+  background: var(--mp-green) !important;
+  color: var(--mp-navy) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 16px 28px !important;
+  border-radius: var(--mp-radius-pill) !important;
+  border: none !important;
+  transition: all 0.22s var(--mp-ease) !important;
+}
+.brz .brz-btn.mp-cta:hover {
+  background: #8FD653 !important;
+  transform: translateY(-1px);
+}
+.brz .brz-btn.mp-cta-ghost {
+  background: transparent !important;
+  color: var(--mp-white) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 16px 28px !important;
+  border-radius: var(--mp-radius-pill) !important;
+  border: 1px solid var(--mp-hairline) !important;
+  transition: all 0.22s var(--mp-ease) !important;
+}
+.brz .brz-btn.mp-cta-ghost:hover {
+  border-color: var(--mp-white) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ---------- 7. Credential pills ----------
+   Add class "mp-pill" to a text or button module. */
+.brz .mp-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mp-white);
+  padding: 9px 16px;
+  border: 1px solid var(--mp-hairline);
+  border-radius: var(--mp-radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  margin: 4px 6px 4px 0;
+}
+
+/* ---------- 8. Cards & surfaces ----------
+   Add class "mp-card" to any container/section. */
+.brz .mp-card {
+  background: var(--mp-surface);
+  background: linear-gradient(180deg, var(--mp-surface) 0%, var(--mp-navy-2) 100%);
+  border: 1px solid var(--mp-hairline);
+  border-radius: var(--mp-radius-card);
+  padding: 32px;
+}
+
+/* ---------- 9. Underline accent for key headline words ----------
+   Wrap the word in <span class="mp-under">word</span> via the rich-text HTML mode. */
+.brz .mp-under {
+  border-bottom: 3px solid var(--mp-green);
+  padding-bottom: 2px;
+}
+
+/* ---------- 10. Section spacing standards ----------
+   Brizy sections get a wrapper class — these set sane defaults. */
+.brz section,
+.brz .brz-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (max-width: 768px) {
+  .brz section,
+  .brz .brz-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .brz h1 { font-size: 40px; }
+  .brz h2 { font-size: 36px; }
+  .brz h3 { font-size: 28px; }
+  .brz p.lede,
+  .brz .mp-lede { font-size: 17px; }
+}
+
+/* ---------- 11. Links ---------- */
+.brz a {
+  color: var(--mp-white);
+  transition: color 0.2s var(--mp-ease);
+}
+.brz a:hover {
+  color: var(--mp-green);
+}
+
+/* ---------- 12. Form inputs (if you build a contact form) ---------- */
+.brz input[type="text"],
+.brz input[type="email"],
+.brz textarea {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--mp-hairline) !important;
+  color: var(--mp-white) !important;
+  padding: 16px 18px !important;
+  border-radius: 8px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+}
+.brz input::placeholder,
+.brz textarea::placeholder {
+  color: var(--mp-muted-2) !important;
+}

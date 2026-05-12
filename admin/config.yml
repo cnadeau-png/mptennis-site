@@ -1,0 +1,70 @@
+# Decap CMS configuration for MPTennis
+# Edit content from /admin/ — saves commit straight to GitHub.
+
+backend:
+  name: github
+  repo: cnadeau-png/mptennis-site   # ← change to your repo
+  branch: main
+  base_url: https://api.netlify.com           # OAuth proxy via Netlify (free)
+  # Alternatively, run a Cloudflare Worker as the OAuth proxy and set base_url to your worker URL.
+
+# Where uploaded images go (relative to repo root)
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Site URL for previews
+site_url: https://mptennis.ca
+display_url: https://mptennis.ca
+logo_url: https://mptennis.ca/assets/mp-letters.png
+
+# Editor workflow lets you save drafts before publishing
+publish_mode: editorial_workflow
+
+collections:
+  # ─────────── BLOG POSTS ───────────
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "blog/_posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{date | date('YYYY-MM-DD')}}"
+    fields:
+      - { label: "Title",      name: "title",      widget: "string" }
+      - { label: "Slug",       name: "slug",       widget: "string", hint: "URL slug, e.g. why-club-players-need-pro-coaching" }
+      - { label: "Date",       name: "date",       widget: "datetime" }
+      - { label: "Category",   name: "category",   widget: "select", options: ["Method","Tactics","Racquet Fit","Training","Match Play","College","Junior Development","Other"] }
+      - { label: "Excerpt",    name: "excerpt",    widget: "text", hint: "1-2 sentence summary shown on the blog index and in social previews." }
+      - { label: "Cover image",name: "cover",      widget: "image", required: false }
+      - { label: "Author",     name: "author",     widget: "string", default: "Cade Nadeau" }
+      - { label: "Read time",  name: "read_time",  widget: "string", default: "5 min read", required: false }
+      - { label: "Body",       name: "body",       widget: "markdown" }
+
+  # ─────────── SHOP ITEMS ───────────
+  - name: "shop"
+    label: "Shop Items"
+    folder: "shop/_items"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title",     name: "title",    widget: "string" }
+      - { label: "Section",   name: "section",  widget: "select", options: ["bundle","partners"], hint: "'bundle' = featured top card · 'partners' = stores below" }
+      - { label: "Pill / tag",name: "pill",     widget: "string", required: false }
+      - { label: "Why",       name: "why",      widget: "text" }
+      - { label: "Price",     name: "price",    widget: "string", hint: "What appears in the price slot — can be a $ amount or a URL like 'tenniszon.com/mptennis'" }
+      - { label: "Price note",name: "approx",   widget: "string", required: false, hint: "e.g. 'approx', '/ set', 'ref MPTENNIS'" }
+      - { label: "Affiliate URL", name: "link", widget: "string" }
+      - { label: "Brand text",   name: "brand", widget: "string", required: false, hint: "Text shown on the placeholder logo card. Leave blank if Image is set." }
+      - { label: "Brand style",  name: "brandStyle", widget: "select", required: false, options: ["bundle","tenniszon","restring","toroline","default"] }
+      - { label: "Image",     name: "img",      widget: "image", required: false, hint: "Optional. If set, replaces the brand-text logo placeholder." }
+      - { label: "Sort order",name: "order",    widget: "number", default: 100 }
+
+# ─────────── NOTES ───────────
+# Homepage hero, About bios, and system-step copy live in `app.jsx` and are
+# not editable through Decap (yet). To change them, ping Cade's design partner
+# and they'll update directly. Adding them to Decap requires migrating the
+# hardcoded copy into YAML files first — happy to do that when you want.

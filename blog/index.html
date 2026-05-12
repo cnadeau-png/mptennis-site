@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Blog · MPTennis</title>
+
+  <meta name="description" content="Tactics, racquet fit, training methods, and match-day thinking from Cade Nadeau and the MPTennis team. Pro-level coaching for club players and juniors."/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://mptennis.ca/blog/"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="MPTennis"/>
+  <meta property="og:url" content="https://mptennis.ca/blog/"/>
+  <meta property="og:title" content="MPTennis Blog · Tactics, racquet fit, training methods"/>
+  <meta property="og:description" content="Pro-level coaching for club players and juniors. Read what Cade is teaching."/>
+  <meta property="og:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
+  <meta property="og:locale" content="en_CA"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <link rel="icon" href="../assets/favicon.ico"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css?v=10"/>
+  <link rel="stylesheet" href="../pages.css?v=1"/>
+
+  <!-- Schema: Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://mptennis.ca/blog/#blog",
+    "name": "MPTennis Blog",
+    "url": "https://mptennis.ca/blog/",
+    "description": "Tactics, racquet fit, training methods, and match-day thinking from MPTennis.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "MPTennis",
+      "url": "https://mptennis.ca/"
+    }
+  }
+  </script>
+</head>
+<body class="page" data-base="../">
+
+  <div data-site-nav></div>
+
+  <main>
+    <header class="page-hero">
+      <div class="eyebrow">The MPTennis Blog</div>
+      <h1>What we're teaching, why it works.</h1>
+      <p class="lede">Tactics, gear, and match thinking — written by the team that coaches it.</p>
+    </header>
+
+    <section class="page-section tight">
+      <div class="post-grid" id="post-grid">
+        <!-- Posts populated from /blog/posts.json -->
+      </div>
+
+      <div id="empty-state" style="display:none; padding: 80px 0; text-align:center; color:rgba(255,255,255,0.55);">
+        <p style="font-size: 14px; letter-spacing: 0.04em;">No posts yet. Check back soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="../site-chrome.js?v=1"></script>
+
+  <script>
+    // Load posts from /blog/posts.json
+    (async function () {
+      var grid = document.getElementById('post-grid');
+      var empty = document.getElementById('empty-state');
+      try {
+        var res = await fetch('posts.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('no posts.json');
+        var posts = await res.json();
+        if (!Array.isArray(posts) || posts.length === 0) {
+          grid.style.display = 'none';
+          empty.style.display = 'block';
+          return;
+        }
+        // Newest first
+        posts.sort(function (a, b) {
+          return (b.date || '').localeCompare(a.date || '');
+        });
+        grid.innerHTML = posts.map(function (p) {
+          var thumb = p.cover
+            ? '<img src="' + p.cover + '" alt="' + escapeHtml(p.title || '') + '" loading="lazy">'
+            : '<div class="post-thumb-fallback">' + (p.initial || initialOf(p.title)) + '</div>';
+          var meta = [];
+          if (p.category) meta.push('<span>' + escapeHtml(p.category) + '</span>');
+          if (p.date) meta.push('<span class="dot"></span><span class="date">' + formatDate(p.date) + '</span>');
+          var href = p.external ? p.external : ((p.slug || '#') + '.html');
+          var extAttr = p.external ? ' target="_blank" rel="noopener" data-external="1"' : '';
+          var badge = p.external ? '<span class="post-archive-badge">Archive ↗</span>' : '';
+          return ''
+            + '<a class="post-card" href="' + escapeAttr(href) + '"' + extAttr + '>'
+            +   '<div class="post-thumb">' + thumb + badge + '</div>'
+            +   (meta.length ? '<div class="post-meta">' + meta.join('') + '</div>' : '')
+            +   '<h2><span>' + escapeHtml(p.title || 'Untitled') + '</span></h2>'
+            +   (p.excerpt ? '<p class="excerpt">' + escapeHtml(p.excerpt) + '</p>' : '')
+            +   '<span class="read-more">' + (p.external ? 'Read on mptennis.ca ↗' : 'Read more →') + '</span>'
+            + '</a>';
+        }).join('');
+      } catch (e) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+      }
+    })();
+
+    function initialOf(t) {
+      if (!t) return 'MP';
+      var w = String(t).trim().split(/\s+/);
+      return (w[0][0] || '') + ((w[1] && w[1][0]) || '');
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function escapeAttr(s) { return escapeHtml(s); }
+    function formatDate(iso) {
+      try {
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return iso;
+        return d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric' });
+      } catch (e) { return iso; }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Swingweight Calculator · MPTennis</title>
+  <meta name="description" content="Free swingweight calculator from MPTennis. Enter your strung specs and get an estimated swingweight, balance reading, confidence score, and ATP-style comparison."/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://mptennis.ca/tools/swingweight-calculator.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Swingweight Calculator · MPTennis"/>
+  <meta property="og:description" content="Get your racquet's estimated swingweight in 30 seconds."/>
+  <meta property="og:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
+  <meta property="og:url" content="https://mptennis.ca/tools/swingweight-calculator.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <link rel="icon" href="../assets/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css?v=10"/>
+  <link rel="stylesheet" href="../pages.css?v=1"/>
+
+  <style>
+    /* Calculator — brand-matched (navy/green, not white card) */
+    #mpt-sw-calc, #mpt-sw-calc * { box-sizing: border-box; }
+    #mpt-sw-calc {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      color: rgba(255,255,255,0.92);
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    #mpt-sw-calc .wrap {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--navy-2) 100%);
+      border: 1px solid var(--hairline);
+      padding: 32px;
+    }
+    #mpt-sw-calc .sec { margin-bottom: 24px; }
+    #mpt-sw-calc .sec + .sec {
+      padding-top: 24px;
+      border-top: 1px solid var(--hairline);
+    }
+    #mpt-sw-calc .kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    #mpt-sw-calc .kicker::before {
+      content: "";
+      width: 24px; height: 1px;
+      background: var(--green);
+    }
+    #mpt-sw-calc .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    #mpt-sw-calc .grid3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+    #mpt-sw-calc label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 6px;
+    }
+    #mpt-sw-calc input,
+    #mpt-sw-calc select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--hairline-strong);
+      background: rgba(0,0,0,0.25);
+      color: var(--white);
+      font-size: 15px;
+      line-height: 1.25;
+      font-family: inherit;
+      transition: border-color .2s var(--t), background .2s var(--t);
+    }
+    #mpt-sw-calc input::placeholder { color: rgba(255,255,255,0.35); }
+    #mpt-sw-calc select option { background: var(--navy-2); color: var(--white); }
+    #mpt-sw-calc input:focus,
+    #mpt-sw-calc select:focus {
+      outline: none;
+      border-color: var(--green);
+      background: rgba(0,0,0,0.35);
+    }
+    #mpt-sw-calc .help {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    #mpt-sw-calc .leadline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    #mpt-sw-calc .btn {
+      background: var(--green);
+      color: var(--navy);
+      border: 0;
+      padding: 16px 22px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      transition: filter .2s var(--t);
+      margin-top: 8px;
+    }
+    #mpt-sw-calc .btn:hover { filter: brightness(1.08); }
+    #mpt-sw-calc .results {
+      margin-top: 28px;
+      display: grid;
+      gap: 12px;
+    }
+    #mpt-sw-calc .result {
+      border: 1px solid var(--hairline);
+      padding: 18px 20px;
+      background: rgba(0,0,0,0.25);
+    }
+    #mpt-sw-calc .main {
+      border-color: var(--green-line);
+      background: linear-gradient(180deg, rgba(126,200,69,0.08), rgba(0,0,0,0.25));
+      border-left: 3px solid var(--green);
+    }
+    #mpt-sw-calc .rlabel {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    #mpt-sw-calc .rvalue {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    #mpt-sw-calc .rvalue.small { font-size: 22px; }
+    #mpt-sw-calc .rnote {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+    #mpt-sw-calc .warning { color: #FFB454; }
+    @media (max-width: 760px) {
+      #mpt-sw-calc .wrap { padding: 22px; }
+      #mpt-sw-calc .grid, #mpt-sw-calc .grid3 { grid-template-columns: 1fr; }
+      #mpt-sw-calc .rvalue { font-size: 28px; }
+    }
+  </style>
+</head>
+<body class="page" data-base="../">
+
+  <div data-site-nav></div>
+
+  <main>
+    <header class="page-hero">
+      <div class="eyebrow">Free Tool · Racquet Fit</div>
+      <h1>Swingweight Calculator</h1>
+      <p class="lede">Enter your measured strung specs and we'll estimate swingweight, balance, confidence, and where you sit relative to ATP-style setups. Best results when you use the actual measured numbers from your stringer.</p>
+    </header>
+
+    <section class="page-section tight">
+      <div id="mpt-sw-calc"></div>
+
+      <p style="text-align:center; margin-top:32px; font-size:13px; color:rgba(255,255,255,0.5);">
+        Want a deeper read? <a href="../blog/racquet-fit-the-stat-that-actually-matters.html" style="color: var(--green);">Read why swingweight matters →</a>
+      </p>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="../site-chrome.js?v=1"></script>
+
+  <script>
+  (function () {
+    function initMptCalc() {
+      var mount = document.getElementById('mpt-sw-calc');
+      if (!mount || mount.dataset.ready === '1') return;
+      mount.dataset.ready = '1';
+
+      mount.innerHTML = `
+        <div class="wrap">
+          <form id="mpt-sw-form" novalidate>
+            <div class="sec">
+              <div class="kicker">Swingweight Estimator</div>
+              <div class="leadline">Enter your measured strung specs for the best estimate.</div>
+              <div class="help">This tool works best when you use your actual measured racquet setup.</div>
+            </div>
+
+            <div class="sec">
+              <div class="kicker">Racquet Details</div>
+              <div class="grid">
+                <div>
+                  <label>Brand</label>
+                  <select name="brand">
+                    <option>Wilson</option><option>Head</option><option>Babolat</option>
+                    <option>Yonex</option><option>Tecnifibre</option><option>Dunlop</option>
+                    <option>Prince</option><option>Solinco</option><option>Volkl</option>
+                    <option>Diadem</option><option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Model</label>
+                  <input name="model" type="text" placeholder="Blade 98 v9 / Ezone 98 / VCORE 100 / Speed MP">
+                </div>
+                <div>
+                  <label>Frame Type</label>
+                  <select name="frameType">
+                    <option>Control</option>
+                    <option selected>Modern</option>
+                    <option>Power</option>
+                  </select>
+                  <div class="help">Control = Blade / Prestige. Modern = Ezone / Speed. Power = Aero / Drive / Extreme / VCORE 100.</div>
+                </div>
+                <div>
+                  <label>Head Size</label>
+                  <select name="headSize">
+                    <option>95</option><option>97</option><option selected>98</option>
+                    <option>99</option><option>100</option><option>101</option>
+                    <option>102</option><option>104</option><option>105</option>
+                  </select>
+                </div>
+                <div>
+                  <label>String Pattern</label>
+                  <select name="pattern">
+                    <option>16x19</option><option>16x20</option><option>18x20</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Length</label>
+                  <select name="length">
+                    <option value="27">27</option>
+                    <option value="27.25">27.25</option>
+                    <option value="27.5">27.5</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Beam Width (mm) — optional</label>
+                  <input name="beamWidth" type="number" step="0.1" min="18" max="30" placeholder="21.0 / 23.0 / 23.5 / 26.0">
+                </div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div class="kicker">Measured Specs</div>
+              <div class="grid">
+                <div>
+                  <label>Strung Weight (g)</label>
+                  <input name="weight" type="number" step="1" min="250" max="400">
+                </div>
+                <div>
+                  <label>Balance (cm from butt)</label>
+                  <input name="balance" type="number" step="0.01" min="28" max="38">
+                  <div class="help">Most modern racquets are often around 31.0 to 33.0 cm from butt.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div class="kicker">Strings</div>
+              <div class="grid3">
+                <div>
+                  <label>Type</label>
+                  <select name="stringSetup">
+                    <option>Full Poly</option>
+                    <option>Poly / Multi Hybrid</option>
+                    <option>Poly / Synthetic Gut Hybrid</option>
+                    <option>Full Multifilament</option>
+                    <option>Full Synthetic Gut</option>
+                    <option>Natural Gut Hybrid</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Mains Gauge</label>
+                  <select name="mainsGauge">
+                    <option>1.15</option><option>1.20</option><option>1.23</option>
+                    <option selected>1.25</option><option>1.28</option><option>1.30</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Cross Gauge</label>
+                  <select name="crossGauge">
+                    <option>1.15</option><option>1.20</option><option>1.23</option>
+                    <option selected>1.25</option><option>1.28</option><option>1.30</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div class="kicker">Grip & Accessories</div>
+              <div class="grid">
+                <div>
+                  <label>Grip Setup</label>
+                  <select name="gripSetup">
+                    <option>Stock Grip</option>
+                    <option>Stock Grip + Overgrip</option>
+                    <option>Leather Grip</option>
+                    <option>Leather Grip + Overgrip</option>
+                  </select>
+                  <div class="help">Leather grip usually shifts balance more head-light and can slightly lower swingweight.</div>
+                </div>
+                <div>
+                  <label>Dampener</label>
+                  <select name="dampener">
+                    <option>No</option><option>Yes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn" type="submit">Calculate My Swingweight</button>
+
+            <div class="results" id="mpt-results">
+              <div class="result main">
+                <div class="rlabel">Estimated Swingweight</div>
+                <div class="rvalue" id="mpt-sw-value">—</div>
+                <div class="rnote" id="mpt-sw-note">Your estimate will appear here.</div>
+              </div>
+              <div class="result">
+                <div class="rlabel">Likely True Range</div>
+                <div class="rvalue small" id="mpt-range-value">—</div>
+                <div class="rnote" id="mpt-range-note">Your likely range will appear here.</div>
+              </div>
+              <div class="result">
+                <div class="rlabel">Confidence</div>
+                <div class="rvalue small" id="mpt-confidence-value">—</div>
+                <div class="rnote" id="mpt-confidence-note">Confidence depends on how much exact setup info you provide.</div>
+              </div>
+              <div class="result">
+                <div class="rlabel">Head Light</div>
+                <div class="rvalue" id="mpt-hl-value">—</div>
+                <div class="rnote" id="mpt-hl-note">Based on your entered balance point.</div>
+              </div>
+              <div class="result">
+                <div class="rlabel">Pro Comparison</div>
+                <div class="rvalue small" id="mpt-pro-value">—</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      `;
+
+      function midpoint(length) {
+        length = parseFloat(length);
+        if (length === 27.25) return 34.6075;
+        if (length === 27.5) return 34.925;
+        return 34.29;
+      }
+      function round(v, d) { var p = Math.pow(10, d || 2); return Math.round((v + Number.EPSILON) * p) / p; }
+      function baseSwingweight(weight, balance) { return 72 + (weight * Math.pow(balance / 10, 2)) / 12.8; }
+      function stringTypeAdjustment(type) {
+        if (type === 'Poly / Multi Hybrid') return 1.0;
+        if (type === 'Poly / Synthetic Gut Hybrid') return 0.8;
+        if (type === 'Full Multifilament') return 1.8;
+        if (type === 'Full Synthetic Gut') return 1.5;
+        if (type === 'Natural Gut Hybrid') return 1.6;
+        return 0;
+      }
+      function gaugeAdjustment(mains, crosses) {
+        var avg = (parseFloat(mains) + parseFloat(crosses)) / 2;
+        if (avg <= 1.20) return -1.2;
+        if (avg <= 1.23) return -0.3;
+        if (avg <= 1.25) return 0.2;
+        if (avg <= 1.28) return 0.5;
+        return 0.9;
+      }
+      function patternAdjustment(p) { if (p === '18x20') return 1.0; if (p === '16x20') return 0.4; return 0; }
+      function dampenerAdjustment(d) { return d === 'Yes' ? 0.1 : 0; }
+      function gripAdjustment(g) {
+        var sw = 0, hl = 0;
+        if (g === 'Stock Grip + Overgrip') sw += 0.2;
+        if (g === 'Leather Grip') { sw -= 0.5; hl += 1.5; }
+        if (g === 'Leather Grip + Overgrip') { sw -= 0.3; hl += 1.5; }
+        return { sw: sw, hl: hl };
+      }
+      function headSizeAdjustment(hs) { hs = parseFloat(hs); if (hs >= 100) return 0.2; if (hs >= 98) return 0.05; return 0; }
+      function beamWidthAdjustment(bw) {
+        bw = parseFloat(bw); if (isNaN(bw)) return 0;
+        if (bw >= 26) return 0.6; if (bw >= 24) return 0.25; if (bw >= 22) return 0.05; return 0;
+      }
+      function frameTypeAdjustment(f) { if (f === 'Control') return -2.0; if (f === 'Power') return 0.2; return 0; }
+      function balanceZoneAdjustment(headSize, balance, frameType) {
+        var hs = parseFloat(headSize), bal = parseFloat(balance);
+        if (isNaN(hs) || isNaN(bal)) return 0;
+        if (hs >= 100 && bal >= 32.8) {
+          if (frameType === 'Control') return -2.0;
+          if (frameType === 'Modern') return -2.8;
+          if (frameType === 'Power') return -2.2;
+        }
+        if (hs === 99 && bal >= 32.6) {
+          if (frameType === 'Modern') return -1.5;
+          if (frameType === 'Power') return -1.0;
+        }
+        if (hs <= 98 && bal <= 31.8 && frameType === 'Control') return 0.5;
+        return 0;
+      }
+      function autoFrameType(brand, model, headSize, currentType) {
+        var key = (String(brand || '') + ' ' + String(model || '')).toLowerCase();
+        var hs = parseFloat(headSize);
+        if (!model || currentType !== 'Modern') return currentType;
+        if (key.indexOf('blade') > -1 || key.indexOf('prestige') > -1 || key.indexOf('percept') > -1 ||
+            key.indexOf('phantom') > -1 || key.indexOf('pro staff') > -1 || key.indexOf('cx 200') > -1 ||
+            key.indexOf('cx200') > -1 || key.indexOf('whiteout') > -1) return 'Control';
+        if (key.indexOf('pure aero') > -1 || key.indexOf('pure drive') > -1 || key.indexOf('extreme') > -1 ||
+            key.indexOf('fx 500') > -1 || key.indexOf('fx500') > -1 || key.indexOf('sx 300') > -1 ||
+            key.indexOf('sx300') > -1 || key.indexOf('blackout') > -1 || key.indexOf('vcore 100') > -1 ||
+            (key.indexOf('vcore') > -1 && hs >= 100)) return 'Power';
+        return 'Modern';
+      }
+      function familyAdjustment(brand, model, headSize) {
+        var key = (String(brand || '') + ' ' + String(model || '')).toLowerCase();
+        var hs = parseFloat(headSize);
+        if (key.indexOf('blade') > -1 && hs === 98) return 1.6;
+        if ((key.indexOf('ezone') > -1 || key.indexOf('e-zone') > -1) && hs === 98) return -0.5;
+        if (key.indexOf('vcore') > -1 && hs === 98) return -4.5;
+        if (key.indexOf('vcore') > -1 && hs >= 100) return -5.0;
+        if (key.indexOf('pure aero') > -1 && hs === 98) return 0.2;
+        if (key.indexOf('pure aero') > -1 && hs >= 100) return 0;
+        if (key.indexOf('pure drive') > -1 && hs === 98) return 0.8;
+        if (key.indexOf('pure drive') > -1 && hs >= 100) return 0;
+        if (key.indexOf('speed') > -1 && key.indexOf('mp') > -1) return 0.4;
+        if (key.indexOf('speed') > -1 && key.indexOf('pro') > -1) return 0.8;
+        if (key.indexOf('percept') > -1 && hs === 97) return 0.4;
+        if ((key.indexOf('tfight') > -1 || key.indexOf('t-fight') > -1) && (hs === 98 || hs === 100)) return 0.5;
+        if (key.indexOf('radical') > -1) return 0.1;
+        if (key.indexOf('gravity') > -1) return 0.1;
+        if (key.indexOf('prestige') > -1) return -0.2;
+        if (key.indexOf('whiteout') > -1) return -0.3;
+        if (key.indexOf('blackout') > -1) return 0.2;
+        if (key.indexOf('cx 200') > -1 || key.indexOf('cx200') > -1) return -0.2;
+        if (key.indexOf('fx 500') > -1 || key.indexOf('fx500') > -1) return 0.2;
+        if (key.indexOf('sx 300') > -1 || key.indexOf('sx300') > -1) return 0.2;
+        return 0;
+      }
+      function distributionAdjustment(brand, model, headSize, frameType) {
+        var key = (String(brand || '') + ' ' + String(model || '')).toLowerCase();
+        var hs = parseFloat(headSize);
+        if (frameType === 'Control') return -0.2;
+        if (frameType === 'Power') return 0.1;
+        if (key.indexOf('vcore') > -1 && hs >= 100) return -0.8;
+        if (key.indexOf('vcore') > -1 && hs === 98) return -1.0;
+        if (key.indexOf('blade') > -1) return -0.2;
+        if (key.indexOf('ezone') > -1 && hs === 98) return -0.1;
+        return 0;
+      }
+      function proComparison(sw) {
+        if (sw < 320) return 'Under 320 — very fast range. Similar idea to Alex de Minaur-style speed.';
+        if (sw < 326) return '320–325 — quick modern range. Similar idea to Carlos Alcaraz-style speed.';
+        if (sw < 332) return '326–331 — balanced modern performance range. Similar idea to Taylor Fritz-style balance.';
+        if (sw < 338) return '332–337 — common ATP-style spec range. Similar idea to Jannik Sinner / Andrey Rublev-style setups.';
+        return '338+ — heavier stability range used by many high-level players.';
+      }
+      function calculateConfidence(d) {
+        var score = 45;
+        if (d.model && d.model.length >= 3) score += 15; else score -= 10;
+        if (!isNaN(parseFloat(d.beamWidth))) score += 12;
+        if (d.stringType && d.mains && d.crosses) score += 10;
+        if (d.gripSetup) score += 5;
+        if (d.frameType) score += 8;
+        if (d.balance > 34.5 || d.balance < 30) score -= 12;
+        if (d.length > 27) score -= 4;
+        if (score >= 80) return { label: 'High', band: 2 };
+        if (score >= 60) return { label: 'Medium', band: 4 };
+        return { label: 'Low', band: 6 };
+      }
+      function buildWarningMessage(brand, model, headSize, balance, weight, length, sw, frameType) {
+        var key = (String(brand || '') + ' ' + String(model || '')).toLowerCase();
+        var hs = parseFloat(headSize), bal = parseFloat(balance), wt = parseFloat(weight), len = parseFloat(length), swVal = parseFloat(sw);
+        if (bal > 34.5) return 'This balance looks very head heavy. Please double-check that you entered a strung balance, not unstrung.';
+        if (key.indexOf('vcore') > -1 && hs >= 98 && swVal > 329) return 'VCORE frames can vary more than average. If this looks high, double-check balance and beam width.';
+        if (key.indexOf('speed') > -1 && key.indexOf('mp') > -1 && swVal > 334) return 'Speed MP setups can vary a lot if balance is entered high. Double-check your specs.';
+        if (frameType === 'Power' && hs >= 100 && swVal > 332) return 'This power frame setup may be reading a little high. Double-check balance and beam width.';
+        if (wt > 340 && hs <= 100) return 'This strung weight is on the heavy side for a modern player frame. Make sure accessories and customization were entered the way you intended.';
+        if (len > 27) return 'Extended length frames usually swing heavier. Make sure length is correct.';
+        return '';
+      }
+
+      var form = mount.querySelector('#mpt-sw-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        try {
+          var f = new FormData(form);
+          var brand = String(f.get('brand') || '');
+          var model = String(f.get('model') || '');
+          var frameType = String(f.get('frameType') || 'Modern');
+          var headSize = f.get('headSize');
+          var beamWidth = f.get('beamWidth');
+          var pattern = String(f.get('pattern') || '16x19');
+          var weight = parseFloat(f.get('weight'));
+          var balance = parseFloat(f.get('balance'));
+          var length = parseFloat(f.get('length'));
+          var stringType = String(f.get('stringSetup') || 'Full Poly');
+          var mains = f.get('mainsGauge');
+          var crosses = f.get('crossGauge');
+          var gripSetup = String(f.get('gripSetup') || 'Stock Grip');
+          var dampener = String(f.get('dampener') || 'No');
+
+          if (isNaN(weight) || isNaN(balance)) {
+            mount.querySelector('#mpt-sw-note').textContent = 'Please enter weight and balance.';
+            return;
+          }
+
+          frameType = autoFrameType(brand, model, headSize, frameType);
+          var sw = baseSwingweight(weight, balance);
+          var extra = 0;
+          var gripAdj = gripAdjustment(gripSetup);
+          extra += frameTypeAdjustment(frameType);
+          extra += balanceZoneAdjustment(headSize, balance, frameType);
+          extra += stringTypeAdjustment(stringType) * 0.04;
+          extra += gaugeAdjustment(mains, crosses) * 0.08;
+          extra += patternAdjustment(pattern) * 0.08;
+          extra += headSizeAdjustment(headSize);
+          extra += beamWidthAdjustment(beamWidth);
+          extra += dampenerAdjustment(dampener);
+          extra += gripAdj.sw * 0.2;
+          extra += familyAdjustment(brand, model, headSize);
+          extra += distributionAdjustment(brand, model, headSize, frameType);
+          sw += extra;
+          sw -= 10.5;
+
+          var hl = (midpoint(length) - balance) / 0.3175;
+          hl += gripAdj.hl;
+          var confidence = calculateConfidence({
+            model: model, beamWidth: beamWidth, stringType: stringType,
+            mains: mains, crosses: crosses, balance: balance,
+            length: length, gripSetup: gripSetup, frameType: frameType
+          });
+          var low = round(sw - confidence.band, 1).toFixed(1);
+          var high = round(sw + confidence.band, 1).toFixed(1);
+
+          mount.querySelector('#mpt-sw-value').textContent = round(sw, 2).toFixed(2);
+          var warningMessage = buildWarningMessage(brand, model, headSize, balance, weight, length, sw, frameType);
+          if (warningMessage) {
+            mount.querySelector('#mpt-sw-note').textContent = warningMessage;
+            mount.querySelector('#mpt-sw-note').classList.add('warning');
+          } else {
+            mount.querySelector('#mpt-sw-note').textContent = 'Estimate based on your measured specs, frame type, and typical racquet family behavior.';
+            mount.querySelector('#mpt-sw-note').classList.remove('warning');
+          }
+          mount.querySelector('#mpt-range-value').textContent = low + ' – ' + high;
+          mount.querySelector('#mpt-range-note').textContent = 'Likely real range based on the information you provided.';
+          mount.querySelector('#mpt-confidence-value').textContent = confidence.label;
+          mount.querySelector('#mpt-confidence-note').textContent =
+            confidence.label === 'High' ? 'You entered enough exact setup info for a tighter estimate.' :
+            confidence.label === 'Medium' ? 'Your estimate is solid, but a few more exact details would tighten the range.' :
+            'Add more exact details like beam width, exact model, and frame type to tighten the estimate.';
+          mount.querySelector('#mpt-hl-value').textContent =
+            hl > 0 ? round(hl, 2).toFixed(2) + ' HL' : Math.abs(round(hl, 2)).toFixed(2) + ' HH';
+          mount.querySelector('#mpt-hl-note').textContent =
+            gripAdj.hl > 0 ? 'Includes a more head-light estimate from your grip setup.' : 'Based on your entered balance point.';
+          mount.querySelector('#mpt-pro-value').textContent = proComparison(sw);
+        } catch (err) {
+          mount.querySelector('#mpt-sw-note').textContent = 'Something went wrong. Please check your entries and try again.';
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMptCalc);
+    } else {
+      initMptCalc();
+    }
+  })();
+  </script>
+</body>
+</html>

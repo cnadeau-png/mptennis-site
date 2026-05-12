@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MPTennis · Pro-level coaching for club players and juniors</title>
+
+  <!-- Primary SEO meta -->
+  <meta name="description" content="Pro-level tennis coaching for club players and juniors. Cade Nadeau — 11.20 UTR, NCAA captain, top-40 Canada — coaches the players most coaches ignore. Train via Ace app, YouTube, or in person."/>
+  <meta name="keywords" content="tennis coaching, junior tennis, club tennis, UTR coaching, Ace tennis coach, racquet fit, swingweight, MPTennis, Cade Nadeau, tennis Canada, college tennis prep, pro tennis pathway"/>
+  <meta name="author" content="MPTennis"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://mptennis.ca/"/>
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="MPTennis"/>
+  <meta property="og:url" content="https://mptennis.ca/"/>
+  <meta property="og:title" content="MPTennis · Pro-level coaching for club players and juniors"/>
+  <meta property="og:description" content="Cade Nadeau — 11.20 UTR, NCAA captain, top-40 Canada — coaches club players and juniors who want to actually get better. Train via Ace app, YouTube, or in person."/>
+  <meta property="og:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
+  <meta property="og:locale" content="en_CA"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="MPTennis · Pro-level coaching for club players and juniors"/>
+  <meta name="twitter:description" content="Train with Cade Nadeau — 11.20 UTR, NCAA captain. Three ways: Ace app, YouTube, or in person."/>
+  <meta name="twitter:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
+
+  <!-- Favicons (point at your final assets) -->
+  <link rel="icon" href="assets/favicon.ico"/>
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css?v=11"/>
+
+  <!-- Schema.org JSON-LD: Organization + WebSite + sitelinks search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mptennis.ca/#org",
+        "name": "MPTennis",
+        "alternateName": "MPTennis NB",
+        "url": "https://mptennis.ca/",
+        "logo": "https://mptennis.ca/assets/mptennis-mark.png",
+        "description": "Pro-level tennis coaching for club players and juniors — the same system we used to get Cade to college and pro tennis. Delivered via the Ace Tennis Coach app, the MPTennis YouTube channel, and in-person training.",
+        "founder": [
+          {
+            "@type": "Person",
+            "@id": "https://mptennis.ca/#cade",
+            "name": "Cade Nadeau",
+            "jobTitle": "Founder & Head Coach",
+            "description": "11.20 UTR competing player, former NCAA captain, top-40 ranked Canadian in doubles, Tennis Canada Club Pro 1.",
+            "knowsAbout": ["Tennis coaching", "Match strategy", "Racquet fit", "Junior development", "College tennis prep"]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://mptennis.ca/#chris",
+            "name": "Chris Nadeau",
+            "jobTitle": "Co-founder & Coach",
+            "description": "Head coach at UNB Reds, Tennis Director at Rothesay Tennis Club, Tennis Canada Club Pro 1."
+          }
+        ],
+        "areaServed": [
+          { "@type": "Country", "name": "Canada" },
+          { "@type": "AdministrativeArea", "name": "New Brunswick" }
+        ],
+        "sameAs": [
+          "https://youtube.com/@mptennis",
+          "https://www.instagram.com/mptennisnb/",
+          "https://www.facebook.com/mptennisnb",
+          "https://www.acetenniscoach.ca/"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "chris@mptennis.ca",
+          "contactType": "Coaching inquiries",
+          "availableLanguage": ["English"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mptennis.ca/#site",
+        "url": "https://mptennis.ca/",
+        "name": "MPTennis",
+        "publisher": { "@id": "https://mptennis.ca/#org" },
+        "inLanguage": "en-CA",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://mptennis.ca/blog/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "SportsActivityLocation",
+        "name": "MPTennis · In-person coaching",
+        "url": "https://mptennis.ca/#access",
+        "parentOrganization": { "@id": "https://mptennis.ca/#org" },
+        "sport": "Tennis",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rothesay",
+          "addressRegion": "NB",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Ace Tennis Coach",
+        "url": "https://www.acetenniscoach.ca/",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Web",
+        "creator": { "@id": "https://mptennis.ca/#org" },
+        "description": "AI-powered tennis coaching app: tactical match prep, targeted drills, racquet fit advice. Built on the MPTennis system.",
+        "offers": [
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Pro", "price": "9", "priceCurrency": "USD" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
