@@ -376,11 +376,11 @@ const Quote = () => (
 /* ───────────────────── YouTube ───────────────────── */
 
 const ytVideos = [
-  { tag: "Featured", time: "", title: "Why everyone's switching to the Yonex EZONE 98", views: "", id: "tAbzn-1JjZQ", featured: true },
-  { tag: "Match", time: "", title: "How to read your opponent early in matches", views: "", id: "Q_OsDJT2rK8" },
-  { tag: "Tactics", time: "", title: "How to beat a pusher (complete tactics guide)", views: "", id: "xpinp1WtmhY" },
-  { tag: "Gear", time: "", title: "Head Radical MP 2025 — what changed (and what didn't)", views: "", id: "4I5bnl3f988" },
-  { tag: "Customisation", time: "", title: "How to customise your racquet with lead tape", views: "", id: "-hPJRxFafiA" }
+  { tag: "Featured", time: "", title: "I'm Back. This Is The Racquet I'm Trusting in My Next Tournament", views: "", id: "tAbzn-1JjZQ", featured: true },
+  { tag: "Match", time: "", title: "I Lowered My Tension to 44 lbs — You Should Too", views: "", id: "Q_OsDJT2rK8" },
+  { tag: "Tactics", time: "", title: "8 Strength Training Exercises YOU NEED TO START DOING", views: "", id: "xpinp1WtmhY" },
+  { tag: "Gear", time: "", title: "I Didn't Expect This From the Pro Staff 97 Classic", views: "", id: "4I5bnl3f988" },
+  { tag: "Customisation", time: "", title: "I Trained 19 Days to Hit a 130 MPH Serve", views: "", id: "-hPJRxFafiA" }
 ].map(v => ({ ...v, img: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`, href: `https://youtu.be/${v.id}` }));
 
 const YouTube = () => (
