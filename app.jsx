@@ -347,10 +347,10 @@ const Ace = () => (
     </div>
 
     <div className="ace-out">
-      <CTA variant="solid" size="lg" onClick={() => window.open('https://app.acetenniscoach.com', '_blank', 'noopener')}>
+      <CTA variant="solid" size="lg" onClick={() => window.open('https://www.acetenniscoach.ca', '_blank', 'noopener')}>
         Try Ace free
       </CTA>
-      <span className="ace-out-note">No credit card required · 5 free sessions · acetenniscoach.com</span>
+      <span className="ace-out-note">No credit card required · 5 free sessions · acetenniscoach.ca</span>
     </div>
   </section>
 );
