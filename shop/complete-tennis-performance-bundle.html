@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="../styles.css?v=10"/>
   <link rel="stylesheet" href="../pages.css?v=1"/>
   <style>
-    .bundle-hero { background: var(--navy); padding: 80px 24px 64px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .bundle-hero { padding: 120px 24px 64px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
+    .bundle-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.18; z-index: 0; }
+    .bundle-hero-inner { position: relative; z-index: 1; }
     .bundle-hero .eyebrow { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px; }
     .bundle-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
     .bundle-hero .subhead { font-size: 18px; color: var(--green); font-weight: 700; font-style: italic; margin-bottom: 32px; }
@@ -33,12 +35,15 @@
     .what-you-get ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
     .what-you-get ul li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; color: rgba(255,255,255,0.85); }
     .what-you-get ul li::before { content: "✓"; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+    .mid-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin: 40px 0; }
     .testimonial-block { background: rgba(255,255,255,0.04); border-left: 3px solid var(--green); padding: 28px 32px; border-radius: 0 8px 8px 0; margin: 40px 0; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.85); font-style: italic; }
     .testimonial-block cite { display: block; margin-top: 16px; font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
     .guarantee { text-align: center; padding: 48px 24px; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); margin: 40px 0; }
     .guarantee h3 { font-size: 24px; font-weight: 800; margin-bottom: 16px; }
     .guarantee p { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.7; }
-    .cta-section { text-align: center; padding: 64px 24px; }
+    .cta-section { text-align: center; padding: 64px 24px; position: relative; overflow: hidden; }
+    .cta-section-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1; z-index: 0; }
+    .cta-section-inner { position: relative; z-index: 1; }
     .cta-section h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
     .divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 0; }
   </style>
@@ -47,12 +52,15 @@
   <div data-site-nav></div>
   <main>
     <section class="bundle-hero">
-      <div class="eyebrow">The Complete System</div>
-      <h1>The Complete Tennis Performance Bundle</h1>
-      <p class="subhead">Stop Losing to Players You Should Beat in 90 Days</p>
-      <p class="price-strike">Get Access For $257</p>
-      <p class="price-current">$57</p>
-      <a href="https://chrismptennis.gumroad.com/l/complete-tennis-performance-bundle" target="_blank" rel="noopener" class="bundle-cta-btn">Access Now For $57 →</a>
+      <img src="../assets/cade-win-more.webp" alt="Win More Matches" class="bundle-hero-img"/>
+      <div class="bundle-hero-inner">
+        <div class="eyebrow">The Complete System</div>
+        <h1>The Complete Tennis Performance Bundle</h1>
+        <p class="subhead">Stop Losing to Players You Should Beat in 90 Days</p>
+        <p class="price-strike">Get Access For $257</p>
+        <p class="price-current">$27</p>
+        <a href="https://chrismptennis.gumroad.com/l/complete-tennis-performance-bundle" target="_blank" rel="noopener" class="bundle-cta-btn">Access Now For $27 →</a>
+      </div>
     </section>
     <hr class="divider"/>
     <section class="bundle-section">
@@ -65,12 +73,13 @@
         <div class="pillar"><div class="pillar-icon">🧠</div><h3>Mindset &amp; Recovery</h3><p>Develop the mental toughness, stress management skills, and recovery protocols to perform at your peak, every time.</p></div>
       </div>
       <div style="text-align:center; margin-top: 40px;">
-        <a href="https://chrismptennis.gumroad.com/l/complete-tennis-performance-bundle" target="_blank" rel="noopener" class="bundle-cta-btn">Access Now For $57 →</a>
+        <a href="https://chrismptennis.gumroad.com/l/complete-tennis-performance-bundle" target="_blank" rel="noopener" class="bundle-cta-btn">Access Now For $27 →</a>
       </div>
     </section>
     <hr class="divider"/>
     <section class="bundle-section">
       <h2>Work Smarter, Not Harder</h2>
+      <img src="../assets/cade-coaching-group.jpg" alt="MPTennis coaching group" class="mid-image"/>
       <div class="what-you-get">
         <ul>
           <li>Learn at your own pace, on your own schedule</li>
@@ -104,15 +113,18 @@
     <section class="bundle-section">
       <div class="guarantee">
         <h3>Try The Complete Tennis Performance Bundle Risk-Free for 30 Days</h3>
-        <p>If you're not 100% satisfied with the quality, clarity, or actionable nature of our training content, simply contact us for a full refund — no hassles, no questions asked. Plus, if you actively work through our program for 30 days and feel you're not making meaningful progress, you can request a FREE one-on-one gear consultation session. You have absolutely nothing to lose — and a whole new level of tennis to gain.</p>
+        <p>If you're not 100% satisfied with the quality, clarity, or actionable nature of our training content, simply contact us for a full refund — no hassles, no questions asked. Plus, if you actively work through our program for 30 days and feel you're not making meaningful progress, you can request a FREE one-on-one gear consultation. You have absolutely nothing to lose — and a whole new level of tennis to gain.</p>
       </div>
     </section>
     <hr class="divider"/>
     <section class="cta-section">
-      <h2>Try The Complete Tennis Performance Bundle Risk-Free for 30 Days</h2>
-      <p class="price-strike">Get Access For $257</p>
-      <p class="price-current">$57</p>
-      <a href="https://chrismptennis.gumroad.com/l/complete-tennis-performance-bundle" target="_blank" rel="noopener" class="bundle-cta-btn">Access Now For $57 →</a>
+      <img src="../assets/court-ball.webp" alt="Tennis court" class="cta-section-img"/>
+      <div class="cta-section-inner">
+        <h2>Try It Risk-Free for 30 Days</h2>
+        <p class="price-strike">Get Access For $257</p>
+        <p class="price-current">$27</p>
+        <a href="https://chrismptennis.gumroad.com/l/complete-tennis-performance-bundle" target="_blank" rel="noopener" class="bundle-cta-btn">Access Now For $27 →</a>
+      </div>
     </section>
   </main>
   <div data-site-footer></div>
