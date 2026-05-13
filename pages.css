@@ -4,7 +4,7 @@
 :root {
   --pad: 40px;
   --maxw: 1240px;
-  --maxw-prose: 720px;
+  --maxw-prose: 900px;
   --t: cubic-bezier(.2,.65,.2,1);
   --hairline: rgba(255,255,255,0.08);
   --hairline-strong: rgba(255,255,255,0.14);
