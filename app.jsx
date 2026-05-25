@@ -75,11 +75,12 @@ const Nav = ({ scrolled }) => {
         <li><a href="tools/swingweight-estimator.html">Tools</a></li>
         <li><a href="shop/">Shop</a></li>
         <li><a href="#about">About</a></li>
+        <li className="nav-mobile-only"><a href="#youtube">Watch free</a></li>
+        <li className="nav-mobile-only"><a href="#ace">Try Ace free</a></li>
       </ul>
-      <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Menu"><span></span><span></span><span></span></button><div className="nav-cta">
+      <div className="nav-cta">
         <a href="#youtube" className="nav-link-quiet">Watch free</a>
-        <CTA variant="solid" arrow={false} onClick={() => document.getElementById('ace')?.scrollIntoView({behavior:'smooth'})}>Try Ace free</CTA>
-      </div>
+        undefined
     </div>
   </nav>
 );

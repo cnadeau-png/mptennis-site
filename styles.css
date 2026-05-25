@@ -199,8 +199,11 @@ ul { list-style: none; }
   .nav-link-quiet { display: none; }
   .nav-hamburger { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 100; }
   .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
-  .nav-open .nav-links { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy); padding: 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .nav-open .nav-links { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy); padding: 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 99; }
+  .nav-open .nav-cta { position: absolute; top: auto; flex-direction: column; width: 100%; left: 0; background: var(--navy); padding: 0 24px 24px; z-index: 99; }
   .nav-open .nav-link-quiet { display: flex; }
+  .nav-open .nav-cta { display: flex; flex-direction: column; position: absolute; top: 280px; left: 0; right: 0; background: var(--navy); padding: 0 24px 24px; gap: 12px; z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .nav-cta .nav-link-quiet { display: none; }
 }
 
 /* ─────────── Logo ─────────── */
