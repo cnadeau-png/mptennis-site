@@ -79,7 +79,7 @@ const Nav = ({ scrolled }) => {
       <div className="nav-cta">
         <a href="#youtube" className="nav-link-quiet">Watch free</a>
         <CTA variant="solid" arrow={false}>Try Ace free</CTA>
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 );
@@ -125,7 +125,7 @@ const Hero = () => (
       <div className="hero-ctas">
         <CTA variant="solid" onClick={() => document.getElementById('access')?.scrollIntoView({behavior:'smooth'})}>Start here</CTA>
         <CTA variant="ghost" onClick={() => document.getElementById('youtube')?.scrollIntoView({behavior:'smooth'})}>Watch free on YouTube</CTA>
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div className="hero-cine-credits">
       <span>13K+ subs</span>
@@ -158,7 +158,7 @@ const Marquee = () => {
             <span className="marquee-dot"/>{t}
           </span>
         ))}
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   );
 };
@@ -217,7 +217,7 @@ const AccessPoints = () => {
           Club players, juniors, junior parents — wherever you are, whatever you can afford,
           there's a way to train with us.
         </p>
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
       <div className="access-grid">
         {accessPoints.map(p => (
           <article
@@ -228,7 +228,7 @@ const AccessPoints = () => {
             <div className="access-img">
               <img src={p.img} alt=""/>
               <div className="access-img-grad"/>
-            </div>
+            </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
             <div className="access-body">
               <span className="access-tag">{p.tag}</span>
               <h3 className="access-name">{p.name}</h3>
@@ -242,11 +242,11 @@ const AccessPoints = () => {
                   </svg>
                 </a>
                 <span className="access-note">{p.note}</span>
-              </div>
-            </div>
+              </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
+            </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
           </article>
         ))}
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </section>
   );
 };
@@ -343,7 +343,7 @@ const Ace = () => (
           <div className="ace-mode-head">
             <span className="ace-mode-num">{m.n}</span>
             <h3 className="ace-mode-title">{m.t}</h3>
-          </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
           <p className="ace-mode-desc">{m.d}</p>
         </article>
       ))}
@@ -394,12 +394,12 @@ const YouTube = () => (
         <h2 className="display display-md">
           Watch. Steal. <Under>Win</Under>.
         </h2>
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
       <div className="yt-stats">
         <div><span className="yt-num">13K+</span><span className="yt-lbl">Subscribers</span></div>
         <div><span className="yt-num">4M+</span><span className="yt-lbl">Views</span></div>
         <div><span className="yt-num">Weekly</span><span className="yt-lbl">New videos</span></div>
-      </div>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
 
     <div className="yt-grid">
@@ -410,11 +410,11 @@ const YouTube = () => (
             <span className="play-btn" aria-hidden="true">
               <svg viewBox="0 0 40 40" width="20" height="20"><path d="M14 10 L30 20 L14 30 Z" fill="currentColor"/></svg>
             </span>
-          </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
           <div className="yt-meta">
             <span className="yt-tag">{v.tag}</span>
             <h3 className="yt-title">{v.title}</h3>
-          </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
         </a>
       ))}
     </div>
@@ -445,8 +445,8 @@ const About = () => (
           <div className="coach-tag">
             <span>Cade Nadeau</span>
             <span className="muted">Founder · Head coach · The face of MPTennis</span>
-          </div>
-        </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
         <div className="coach-copy">
           <ul className="coach-creds" aria-label="Credentials">
             <li>11.20 UTR</li>
@@ -458,7 +458,7 @@ const About = () => (
             Active competitor. Hosts the YouTube channel. Founded Ace because club
             players deserve the same coaching juniors get.
           </p>
-        </div>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
       </article>
       <article className="coach">
         <div className="coach-portrait">
@@ -466,8 +466,8 @@ const About = () => (
           <div className="coach-tag">
             <span>Chris Nadeau</span>
             <span className="muted">Co-founder · Coach · Behind the scenes</span>
-          </div>
-        </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
         <div className="coach-copy">
           <ul className="coach-creds" aria-label="Credentials">
             <li>UNB Reds · Head Coach</li>
@@ -479,7 +479,7 @@ const About = () => (
             Cade's father and business partner. Head Coach at UNB. Built MPTennis with
             Cade to scale what works — pro-level coaching, accessible everywhere.
           </p>
-        </div>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
       </article>
     </div>
   </section>
@@ -504,8 +504,8 @@ const Foot = () => (
           <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-solid">Start with Ace · Free →</a>
           <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="cta cta-ghost">Subscribe on YouTube →</a>
           <a href="mailto:chris@mptennis.ca" className="cta cta-ghost">Inquire about coaching →</a>
-        </div>
-      </div>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </section>
     <footer className="footer">
       <div className="footer-inner">
@@ -518,32 +518,32 @@ const Foot = () => (
           <a href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener" className="footer-news-cta">
             Get the 7 drills →
           </a>
-        </div>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
         <div className="footer-cols">
           <div>
             <span className="footer-h">Ace</span>
             <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Try free</a>
             <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Pricing</a>
             <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">FAQ</a>
-          </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
           <div>
             <span className="footer-h">Watch &amp; Read</span>
             <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a>
             <a href="https://www.instagram.com/mptennisnb/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.facebook.com/mptennisnb" target="_blank" rel="noopener">Facebook</a>
             <a href="blog/">Blog</a>
-          </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
           <div>
             <span className="footer-h">In person</span>
             <a href="https://rothesaytennis.com" target="_blank" rel="noopener">Rothesay TC</a>
             <a href="mailto:chris@mptennis.ca">help@mptennis.ca</a>
-          </div>
-        </div>
+          </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
         <div className="footer-fine">
           <span>© 2026 MPTennis</span>
           <span>One system. Three ways in.</span>
-        </div>
-      </div>
+        </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
+      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
     </footer>
   </>
 );
