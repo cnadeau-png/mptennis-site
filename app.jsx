@@ -75,8 +75,6 @@ const Nav = ({ scrolled }) => {
         <li><a href="tools/swingweight-estimator.html">Tools</a></li>
         <li><a href="shop/">Shop</a></li>
         <li><a href="#about">About</a></li>
-        <li className="nav-mobile-only"><a href="#youtube">Watch free</a></li>
-        <li className="nav-mobile-only"><a href="#ace">Try Ace free</a></li>
       </ul>
       <div className="nav-cta">
         <a href="#youtube" className="nav-link-quiet">Watch free</a>
