@@ -27,7 +27,7 @@
           <li><a href="${base}shop/">Shop</a></li>
           <li><a href="${base}index.html#about">About</a></li>
         </ul>
-        <div class="nav-cta">
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-cta">
           <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" class="nav-link-quiet">Watch free</a>
           <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener" class="cta cta-solid">
             <span>Try Ace free</span>
@@ -78,6 +78,14 @@
     </footer>`;
 
   // Inject into placeholders
+  document.addEventListener('click', function(e) {
+    const btn = document.getElementById('nav-hamburger');
+    const nav = document.getElementById('site-nav');
+    if (btn && btn.contains(e.target)) {
+      nav.classList.toggle('nav-open');
+      nav.classList.remove('nav-open');
+    }
+  });
   document.querySelectorAll("[data-site-nav]").forEach((el) => {
     el.outerHTML = navHTML;
   });
