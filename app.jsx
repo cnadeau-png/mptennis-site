@@ -61,8 +61,10 @@ const Eyebrow = ({ children }) => (
 
 /* ───────────────────── Nav ───────────────────── */
 
-const Nav = ({ scrolled }) => (
-  <nav className={`nav${scrolled ? " nav-scrolled" : ""}`}>
+const Nav = ({ scrolled }) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+  <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
     <div className="nav-inner">
       <a href="#top" aria-label="MPTennis"><Logo size={140} /></a>
       <ul className="nav-links">
@@ -74,13 +76,14 @@ const Nav = ({ scrolled }) => (
         <li><a href="shop/">Shop</a></li>
         <li><a href="#about">About</a></li>
       </ul>
-      <div className="nav-cta">
+      <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Menu"><span></span><span></span><span></span></button><div className="nav-cta">
         <a href="#youtube" className="nav-link-quiet">Watch free</a>
         <CTA variant="solid" arrow={false} onClick={() => document.getElementById('ace')?.scrollIntoView({behavior:'smooth'})}>Try Ace free</CTA>
       </div>
     </div>
   </nav>
 );
+};
 
 /* ───────────────────── Hero ───────────────────── */
 
