@@ -80,7 +80,7 @@ const Nav = ({ scrolled }) => {
       </ul>
       <div className="nav-cta">
         <a href="#youtube" className="nav-link-quiet">Watch free</a>
-        undefined
+        <CTA variant="solid" arrow={false}>Try Ace free</CTA>
     </div>
   </nav>
 );
