@@ -168,6 +168,7 @@ ul { list-style: none; }
   gap: 32px;
 }
 .nav-inner > a { flex-shrink: 0; }
+@media (max-width: 880px) { .logo-img { height: 32px !important; } }
 .nav-links {
   display: flex;
   gap: 22px;
@@ -184,6 +185,7 @@ ul { list-style: none; }
 .nav-links a:hover { color: var(--white); }
 .nav-cta { display: flex; align-items: center; gap: 24px; }
 .nav-hamburger { display: none; }
+@media (max-width: 880px) { .nav-cta { display: none; } .nav-hamburger { display: flex; } }
 .nav-link-quiet {
   font-size: 12px;
   font-weight: 600;
