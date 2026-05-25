@@ -183,7 +183,7 @@ const accessPoints = [
     desc: "Tactics before matches, racquet fit, drill modes — built around how club players actually play.",
     cta: "Try free",
     note: "5 sessions/mo free · $9/mo for unlimited",
-    img: "assets/ace-match-log.png",
+    img: "assets/ace-app-dashboard.png",
     href: "https://www.acetenniscoach.ca/",
     external: true
   },
