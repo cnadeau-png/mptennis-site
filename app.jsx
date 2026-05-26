@@ -62,27 +62,44 @@ const Eyebrow = ({ children }) => (
 /* ───────────────────── Nav ───────────────────── */
 
 const Nav = ({ scrolled }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+
+  const closeMenu = () => setOpen(false);
+
   return (
-  <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
-    <div className="nav-inner">
-      <a href="#top" aria-label="MPTennis"><Logo size={140} /></a>
-      <ul className="nav-links">
-        <li><a href="#system">The system</a></li>
-        <li><a href="#access">Three ways</a></li>
-        <li><a href="#youtube">YouTube</a></li>
-        <li><a href="blog/">Blog</a></li>
-        <li><a href="tools/swingweight-estimator.html">Tools</a></li>
-        <li><a href="shop/">Shop</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-      <div className="nav-cta">
-        <a href="#youtube" className="nav-link-quiet">Watch free</a>
-        <CTA variant="solid" arrow={false}>Try Ace free</CTA>
-      </div><button className="nav-hamburger" onClick={() => setOpen(prev => !prev)} aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-);
+    <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
+      <div className="nav-inner">
+        <a href="#top" aria-label="MPTennis" onClick={closeMenu}>
+          <img src="assets/mptennis-logo.png" alt="MPTennis" className="logo-img nav-logo" style={{width:"auto",display:"block"}}/>
+        </a>
+        <ul className="nav-links">
+          <li><a href="#system" onClick={closeMenu}>The system</a></li>
+          <li><a href="#access" onClick={closeMenu}>Three ways</a></li>
+          <li><a href="#youtube" onClick={closeMenu}>YouTube</a></li>
+          <li><a href="blog/" onClick={closeMenu}>Blog</a></li>
+          <li><a href="tools/swingweight-estimator.html" onClick={closeMenu}>Tools</a></li>
+          <li><a href="shop/" onClick={closeMenu}>Shop</a></li>
+          <li><a href="#about" onClick={closeMenu}>About</a></li>
+          <li className="nav-mobile-cta"><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" onClick={closeMenu}>Watch free</a></li>
+          <li className="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" onClick={closeMenu} className="nav-mobile-cta-solid">Try Ace free</a></li>
+        </ul>
+        <div className="nav-cta">
+          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="nav-link-quiet">Watch free</a>
+          <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca', '_blank', 'noopener')}>Try Ace free</CTA>
+        </div>
+        <button
+          className="nav-hamburger"
+          onClick={() => setOpen(prev => !prev)}
+          aria-label="Menu"
+          aria-expanded={open}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  );
 };
 
 /* ───────────────────── Hero ───────────────────── */
