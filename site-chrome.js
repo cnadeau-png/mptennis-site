@@ -56,7 +56,7 @@
           </div>
           <div>
             <span class="footer-h">In person</span>
-            <a href="https://rothesaytennis.com" target="_blank" rel="noopener">Rothesay TC</a>
+            <a href="https://rothesaytennisclub.com" target="_blank" rel="noopener">Rothesay TC</a>
             <a href="mailto:chris@mptennis.ca">help@mptennis.ca</a>
           </div>
         </div>
