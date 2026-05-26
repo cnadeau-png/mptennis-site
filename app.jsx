@@ -78,7 +78,7 @@ const Nav = () => {
     <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:500,background:"rgba(10,22,40,0.97)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}>
       <div style={{maxWidth:"1320px",margin:"0 auto",padding:"14px clamp(20px,4vw,56px)",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <a href="#top" aria-label="MPTennis" style={{flexShrink:0}}>
-          <img src="assets/mptennis-logo.png" alt="MPTennis" style={{height: mobile ? "40px" : "36px",width:"auto",display:"block"}}/>
+          <img src="assets/mptennis-logo.png" alt="MPTennis" style={{height: mobile ? "40px" : "56px",width:"auto",display:"block"}}/>
         </a>
 
         {!mobile && (
