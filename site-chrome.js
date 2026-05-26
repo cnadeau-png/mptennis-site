@@ -1,9 +1,5 @@
 (function () {
-  const base = (function () {
-    const s = document.querySelector("[data-base]");
-    return s ? s.dataset.base : "";
-  })();
-
+  const base = document.body.dataset.base || "";
   const LOGO_NAV = 36;
   const LOGO_FOOT = 96;
 
@@ -15,13 +11,13 @@
       <div class="nav-inner">
         <a href="${base}index.html" aria-label="MPTennis">${logo(LOGO_NAV)}</a>
         <ul class="nav-links" id="site-nav-links">
-          <li><a href="${base}#system">The system</a></li>
-          <li><a href="${base}#access">Three ways</a></li>
+          <li><a href="${base}index.html#system">The system</a></li>
+          <li><a href="${base}index.html#access">Three ways</a></li>
           <li><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="${base}blog/">Blog</a></li>
           <li><a href="${base}tools/swingweight-estimator.html">Tools</a></li>
           <li><a href="${base}shop/">Shop</a></li>
-          <li><a href="${base}#about">About</a></li>
+          <li><a href="${base}index.html#about">About</a></li>
           <li class="nav-mobile-cta"><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">Watch free</a></li>
           <li class="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" class="nav-mobile-cta-solid">Try Ace free</a></li>
         </ul>
@@ -30,9 +26,7 @@
           <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" class="cta cta-solid" style="text-decoration:none;">Try Ace free</a>
         </div>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>`;
@@ -73,16 +67,16 @@
       </div>
     </footer>`;
 
+  // Inject nav and footer FIRST
   document.querySelectorAll("[data-site-nav]").forEach((el) => {
     el.outerHTML = navHTML;
   });
-
   document.querySelectorAll("[data-site-footer]").forEach((el) => {
     el.outerHTML = footHTML;
   });
 
-  // Hamburger toggle
-  document.addEventListener("DOMContentLoaded", function () {
+  // THEN attach hamburger event AFTER injection
+  function attachHamburger() {
     const btn = document.getElementById("nav-hamburger");
     const nav = document.getElementById("site-nav");
     if (btn && nav) {
@@ -95,27 +89,10 @@
           nav.classList.remove("nav-open");
         }
       });
+    } else {
+      setTimeout(attachHamburger, 50);
     }
-  });
-
-  // Also run immediately in case DOMContentLoaded already fired
-  (function attachHamburger() {
-    const btn = document.getElementById("nav-hamburger");
-    const nav = document.getElementById("site-nav");
-    if (btn && nav && !btn._attached) {
-      btn._attached = true;
-      btn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        nav.classList.toggle("nav-open");
-      });
-      document.addEventListener("click", function (e) {
-        if (nav.classList.contains("nav-open") && !nav.contains(e.target)) {
-          nav.classList.remove("nav-open");
-        }
-      });
-    } else if (!btn) {
-      setTimeout(attachHamburger, 100);
-    }
-  })();
+  }
+  attachHamburger();
 
 })();
