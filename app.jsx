@@ -67,7 +67,7 @@ const Nav = ({ scrolled }) => {
   const closeMenu = () => setOpen(false);
 
   return (
-    <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
+    <nav className={`nav nav-scrolled${open ? " nav-open" : ""}`}>
       <div className="nav-inner">
         <a href="#top" aria-label="MPTennis" onClick={closeMenu}>
           <Logo size={140} />
