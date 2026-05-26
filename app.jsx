@@ -70,7 +70,7 @@ const Nav = ({ scrolled }) => {
     <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
       <div className="nav-inner">
         <a href="#top" aria-label="MPTennis" onClick={closeMenu}>
-          <img src="assets/mptennis-logo.png" alt="MPTennis" className="logo-img nav-logo" style={{width:"auto",display:"block"}}/>
+          <Logo size={140} />
         </a>
         <ul className="nav-links">
           <li><a href="#system" onClick={closeMenu}>The system</a></li>
