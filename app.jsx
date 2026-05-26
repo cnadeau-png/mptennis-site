@@ -63,31 +63,67 @@ const Eyebrow = ({ children }) => (
 
 const Nav = () => {
   const [open, setOpen] = React.useState(false);
+  const [mobile, setMobile] = React.useState(window.innerWidth <= 880);
+
+  React.useEffect(() => {
+    const check = () => setMobile(window.innerWidth <= 880);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const linkStyle = {fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap",textDecoration:"none"};
+  const mobileLinkStyle = {fontSize:"15px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.9)",textDecoration:"none",display:"block",padding:"4px 0"};
+
   return (
-    <nav id="main-nav" style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"rgba(10,22,40,0.95)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}>
-      <div style={{maxWidth:"1320px",margin:"0 auto",padding:"14px clamp(20px,4vw,56px)",display:"flex",alignItems:"center",justifyContent:"space-between",gap:"32px"}}>
+    <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:500,background:"rgba(10,22,40,0.97)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}>
+      <div style={{maxWidth:"1320px",margin:"0 auto",padding:"14px clamp(20px,4vw,56px)",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <a href="#top" aria-label="MPTennis" style={{flexShrink:0}}>
-          <img src="assets/mptennis-logo.png" alt="MPTennis" style={{height:"56px",width:"auto",display:"block"}}/>
+          <img src="assets/mptennis-logo.png" alt="MPTennis" style={{height: mobile ? "40px" : "36px",width:"auto",display:"block"}}/>
         </a>
-        <ul style={{display:"flex",gap:"22px",listStyle:"none",margin:0,padding:0}} className="nav-links">
-          <li><a href="#system" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>The system</a></li>
-          <li><a href="#access" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Three ways</a></li>
-          <li><a href="#youtube" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>YouTube</a></li>
-          <li><a href="blog/" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Blog</a></li>
-          <li><a href="tools/swingweight-estimator.html" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Tools</a></li>
-          <li><a href="shop/" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Shop</a></li>
-          <li><a href="#about" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>About</a></li>
-          {open && <li><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{color:"rgba(255,255,255,0.78)"}}>Watch free</a></li>}
-          {open && <li><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" style={{color:"#7EC845",fontWeight:700}}>Try Ace free</a></li>}
-        </ul>
-        <div className="nav-cta" style={{display:"flex",alignItems:"center",gap:"24px",flexShrink:0}}>
-          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="nav-link-quiet">Watch free</a>
-          <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca','_blank','noopener')}>Try Ace free</CTA>
-        </div>
-        <button onClick={() => setOpen(o => !o)} aria-label="Menu" className="nav-hamburger">
-          <span></span><span></span><span></span>
-        </button>
+
+        {!mobile && (
+          <ul style={{display:"flex",gap:"22px",listStyle:"none",margin:0,padding:0,flex:1,justifyContent:"center"}}>
+            <li><a href="#system" style={linkStyle}>The system</a></li>
+            <li><a href="#access" style={linkStyle}>Three ways</a></li>
+            <li><a href="#youtube" style={linkStyle}>YouTube</a></li>
+            <li><a href="blog/" style={linkStyle}>Blog</a></li>
+            <li><a href="tools/swingweight-estimator.html" style={linkStyle}>Tools</a></li>
+            <li><a href="shop/" style={linkStyle}>Shop</a></li>
+            <li><a href="#about" style={linkStyle}>About</a></li>
+          </ul>
+        )}
+
+        {!mobile && (
+          <div style={{display:"flex",alignItems:"center",gap:"24px",flexShrink:0}}>
+            <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{fontSize:"12px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.12em",color:"#7EC845",whiteSpace:"nowrap",textDecoration:"none"}}>Watch free</a>
+            <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca','_blank','noopener')}>Try Ace free</CTA>
+          </div>
+        )}
+
+        {mobile && (
+          <button onClick={() => setOpen(o => !o)} aria-label="Menu" style={{display:"flex",flexDirection:"column",gap:"5px",background:"none",border:"none",cursor:"pointer",padding:"8px",flexShrink:0}}>
+            <span style={{display:"block",width:"24px",height:"2px",background:"white",borderRadius:"2px"}}></span>
+            <span style={{display:"block",width:"24px",height:"2px",background:"white",borderRadius:"2px"}}></span>
+            <span style={{display:"block",width:"24px",height:"2px",background:"white",borderRadius:"2px"}}></span>
+          </button>
+        )}
       </div>
+
+      {mobile && open && (
+        <div style={{background:"rgba(10,22,40,0.98)",padding:"20px clamp(20px,4vw,56px) 28px",borderTop:"1px solid rgba(255,255,255,0.08)",display:"flex",flexDirection:"column",gap:"20px"}}>
+          <a href="#system" onClick={() => setOpen(false)} style={mobileLinkStyle}>The system</a>
+          <a href="#access" onClick={() => setOpen(false)} style={mobileLinkStyle}>Three ways</a>
+          <a href="#youtube" onClick={() => setOpen(false)} style={mobileLinkStyle}>YouTube</a>
+          <a href="blog/" onClick={() => setOpen(false)} style={mobileLinkStyle}>Blog</a>
+          <a href="tools/swingweight-estimator.html" onClick={() => setOpen(false)} style={mobileLinkStyle}>Tools</a>
+          <a href="shop/" onClick={() => setOpen(false)} style={mobileLinkStyle}>Shop</a>
+          <a href="#about" onClick={() => setOpen(false)} style={mobileLinkStyle}>About</a>
+          <div style={{borderTop:"1px solid rgba(255,255,255,0.1)",paddingTop:"16px",display:"flex",flexDirection:"column",gap:"12px"}}>
+            <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{...mobileLinkStyle,color:"#7EC845"}}>Watch free</a>
+            <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" onClick={() => setOpen(false)} style={{display:"inline-block",background:"#7EC845",color:"#0A1628",fontWeight:700,fontSize:"13px",letterSpacing:"0.1em",textTransform:"uppercase",padding:"12px 24px",borderRadius:"4px",textDecoration:"none",textAlign:"center"}}>Try Ace free</a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
