@@ -88,6 +88,7 @@ const Nav = ({ scrolled }) => {
           onClick={() => setOpen(prev => !prev)}
           aria-label="Menu"
           aria-expanded={open}
+          style={{marginLeft: 'auto'}}
         >
           <span></span>
           <span></span>
