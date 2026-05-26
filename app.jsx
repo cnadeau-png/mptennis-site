@@ -67,7 +67,7 @@ const Nav = ({ scrolled }) => {
   const closeMenu = () => setOpen(false);
 
   return (
-    <nav className={`nav nav-scrolled${open ? " nav-open" : ""}`}>
+    <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
       <div className="nav-inner">
         <a href="#top" aria-label="MPTennis" onClick={closeMenu}>
           <Logo size={140} />
@@ -83,10 +83,6 @@ const Nav = ({ scrolled }) => {
           <li className="nav-mobile-cta"><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" onClick={closeMenu}>Watch free</a></li>
           <li className="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" onClick={closeMenu} className="nav-mobile-cta-solid">Try Ace free</a></li>
         </ul>
-        <div className="nav-cta">
-          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="nav-link-quiet">Watch free</a>
-          <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca', '_blank', 'noopener')}>Try Ace free</CTA>
-        </div>
         <button
           className="nav-hamburger"
           onClick={() => setOpen(prev => !prev)}
@@ -97,6 +93,10 @@ const Nav = ({ scrolled }) => {
           <span></span>
           <span></span>
         </button>
+        <div className="nav-cta">
+          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="nav-link-quiet">Watch free</a>
+          <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca', '_blank', 'noopener')}>Try Ace free</CTA>
+        </div>
       </div>
     </nav>
   );
