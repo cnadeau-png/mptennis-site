@@ -198,7 +198,7 @@ ul { list-style: none; }
 
 /* Mobile nav */
 @media (max-width: 880px) {
-  .logo-img { height: 32px !important; }
+  .logo-img { height: 48px !important; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-link-quiet { display: none; }
@@ -212,6 +212,7 @@ ul { list-style: none; }
     padding: 8px;
     z-index: 200;
     flex-shrink: 0;
+    margin-left: auto;
   }
   .nav-hamburger span {
     display: block;
@@ -221,6 +222,7 @@ ul { list-style: none; }
     border-radius: 2px;
     transition: all 0.3s;
   }
+  .nav { position: fixed !important; }
   .nav-open .nav-links {
     display: flex;
     flex-direction: column;
