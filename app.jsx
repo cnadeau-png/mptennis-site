@@ -61,43 +61,32 @@ const Eyebrow = ({ children }) => (
 
 /* ───────────────────── Nav ───────────────────── */
 
-const Nav = ({ scrolled }) => {
-  const [open, setOpen] = useState(false);
-
-  const closeMenu = () => setOpen(false);
-
+const Nav = () => {
+  const [open, setOpen] = React.useState(false);
   return (
-    <nav className={`nav${scrolled ? " nav-scrolled" : ""}${open ? " nav-open" : ""}`}>
-      <div className="nav-inner">
-        <a href="#top" aria-label="MPTennis" onClick={closeMenu}>
-          <Logo size={140} />
+    <nav id="main-nav" style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"rgba(10,22,40,0.95)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}>
+      <div style={{maxWidth:"1320px",margin:"0 auto",padding:"14px clamp(20px,4vw,56px)",display:"flex",alignItems:"center",justifyContent:"space-between",gap:"32px"}}>
+        <a href="#top" aria-label="MPTennis" style={{flexShrink:0}}>
+          <img src="assets/mptennis-logo.png" alt="MPTennis" style={{height:"56px",width:"auto",display:"block"}}/>
         </a>
-        <ul className="nav-links">
-          <li><a href="#system" onClick={closeMenu}>The system</a></li>
-          <li><a href="#access" onClick={closeMenu}>Three ways</a></li>
-          <li><a href="#youtube" onClick={closeMenu}>YouTube</a></li>
-          <li><a href="blog/" onClick={closeMenu}>Blog</a></li>
-          <li><a href="tools/swingweight-estimator.html" onClick={closeMenu}>Tools</a></li>
-          <li><a href="shop/" onClick={closeMenu}>Shop</a></li>
-          <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li className="nav-mobile-cta"><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" onClick={closeMenu}>Watch free</a></li>
-          <li className="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" onClick={closeMenu} className="nav-mobile-cta-solid">Try Ace free</a></li>
+        <ul style={{display:"flex",gap:"22px",listStyle:"none",margin:0,padding:0}} className="nav-links">
+          <li><a href="#system" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>The system</a></li>
+          <li><a href="#access" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Three ways</a></li>
+          <li><a href="#youtube" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>YouTube</a></li>
+          <li><a href="blog/" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Blog</a></li>
+          <li><a href="tools/swingweight-estimator.html" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Tools</a></li>
+          <li><a href="shop/" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>Shop</a></li>
+          <li><a href="#about" style={{fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap"}}>About</a></li>
+          {open && <li><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{color:"rgba(255,255,255,0.78)"}}>Watch free</a></li>}
+          {open && <li><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" style={{color:"#7EC845",fontWeight:700}}>Try Ace free</a></li>}
         </ul>
-        <button
-          className="nav-hamburger"
-          onClick={() => setOpen(prev => !prev)}
-          aria-label="Menu"
-          aria-expanded={open}
-          style={{marginLeft: 'auto'}}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div className="nav-cta">
+        <div className="nav-cta" style={{display:"flex",alignItems:"center",gap:"24px",flexShrink:0}}>
           <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="nav-link-quiet">Watch free</a>
-          <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca', '_blank', 'noopener')}>Try Ace free</CTA>
+          <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca','_blank','noopener')}>Try Ace free</CTA>
         </div>
+        <button onClick={() => setOpen(o => !o)} aria-label="Menu" className="nav-hamburger">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   );
@@ -617,7 +606,7 @@ const App = () => {
 
   return (
     <>
-      <Nav scrolled={scrolled}/>
+      <Nav/>
       <Hero/>
       <Marquee/>
       <AccessPoints/>
