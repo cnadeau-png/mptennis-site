@@ -97,7 +97,7 @@
 
 /* ─────────── Page hero ─────────── */
 .page-hero {
-  padding: 120px var(--pad) 80px;
+  padding: 160px var(--pad) 80px;
   max-width: var(--maxw);
   margin: 0 auto;
   position: relative;
