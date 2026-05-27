@@ -279,7 +279,7 @@
 .post-header {
   max-width: var(--maxw-prose);
   margin: 0 auto;
-  padding: 80px var(--pad) 40px;
+  padding: 120px var(--pad) 40px;
 }
 .post-header h1 {
   font-family: 'Montserrat', sans-serif;
