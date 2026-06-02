@@ -306,7 +306,7 @@
 }
 .post-header .post-byline strong { color: var(--white); font-weight: 700; }
 .post-cover {
-  max-width: var(--maxw);
+  max-width: var(--maxw-prose);
   margin: 0 auto 40px;
   padding: 0 var(--pad);
 }
