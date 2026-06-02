@@ -8,11 +8,31 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Blog -->
+  <!-- Blog index -->
   <url>
     <loc>https://mptennis.ca/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Blog posts — newest first -->
+  <url>
+    <loc>https://mptennis.ca/blog/how-to-customize-your-tennis-racquet-with-lead-tape.html</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/yonex-ezone-98-2025-review.html</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/the-complete-guide-to-finding-the-best-tennis-forehand-grip-for-you.html</loc>
+    <lastmod>2023-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mptennis.ca/blog/why-club-players-need-pro-level-coaching.html</loc>
@@ -26,6 +46,12 @@
   </url>
   <url>
     <loc>https://mptennis.ca/blog/match-prep-the-mptennis-way.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/10-favourite-tennis-courts-in-atlantic-canada.html</loc>
+    <lastmod>2020-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
