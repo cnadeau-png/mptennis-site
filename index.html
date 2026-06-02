@@ -36,35 +36,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css?v=11"/>
 
-  <!-- Schema.org JSON-LD: Organization + WebSite + sitelinks search -->
+ <!-- Schema.org JSON-LD: Organization + WebSite + SportsLocation + SoftwareApp + Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://mptennis.ca/#org",
+        "@id": "https://mptennis.ca/#organization",
         "name": "MPTennis",
         "alternateName": "MPTennis NB",
         "url": "https://mptennis.ca/",
         "logo": "https://mptennis.ca/assets/mptennis-mark.png",
-        "description": "Pro-level tennis coaching for club players and juniors — the same system we used to get Cade to college and pro tennis. Delivered via the Ace Tennis Coach app, the MPTennis YouTube channel, and in-person training.",
+        "description": "Pro-level tennis coaching for club players and juniors — the same system used to get Cade to college and pro tennis. Delivered via the Ace Tennis Coach app, the MPTennis YouTube channel, and in-person training.",
         "founder": [
-          {
-            "@type": "Person",
-            "@id": "https://mptennis.ca/#cade",
-            "name": "Cade Nadeau",
-            "jobTitle": "Founder & Head Coach",
-            "description": "11.20 UTR competing player, former NCAA captain, top-40 ranked Canadian in doubles, Tennis Canada Club Pro 1.",
-            "knowsAbout": ["Tennis coaching", "Match strategy", "Racquet fit", "Junior development", "College tennis prep"]
-          },
-          {
-            "@type": "Person",
-            "@id": "https://mptennis.ca/#chris",
-            "name": "Chris Nadeau",
-            "jobTitle": "Co-founder & Coach",
-            "description": "Head coach at UNB Reds, Tennis Director at Rothesay Tennis Club, Tennis Canada Club Pro 1."
-          }
+          { "@id": "https://mptennis.ca/#cade" },
+          { "@id": "https://mptennis.ca/#chris" }
         ],
         "areaServed": [
           { "@type": "Country", "name": "Canada" },
@@ -84,11 +71,35 @@
         }
       },
       {
+        "@type": "Person",
+        "@id": "https://mptennis.ca/#cade",
+        "name": "Cade Nadeau",
+        "jobTitle": "Head Coach",
+        "worksFor": { "@id": "https://mptennis.ca/#organization" },
+        "description": "11.20 UTR competing player actively competing in pro and Pro UTR events. Former NCAA Division I team captain (No. 1 singles and No. 1 doubles). Top-40 ranked in Canada in doubles as an open player. Tennis Canada Club Pro 1.",
+        "knowsAbout": [
+          "Tennis coaching",
+          "Match strategy",
+          "Racquet fit and customization",
+          "Junior tennis development",
+          "College tennis preparation",
+          "Pro tennis pathway"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://mptennis.ca/#chris",
+        "name": "Chris Nadeau",
+        "jobTitle": "Co-founder",
+        "worksFor": { "@id": "https://mptennis.ca/#organization" },
+        "description": "Head coach at UNB Reds, Tennis Director at Rothesay Tennis Club, Tennis Canada Club Pro 1."
+      },
+      {
         "@type": "WebSite",
-        "@id": "https://mptennis.ca/#site",
+        "@id": "https://mptennis.ca/#website",
         "url": "https://mptennis.ca/",
         "name": "MPTennis",
-        "publisher": { "@id": "https://mptennis.ca/#org" },
+        "publisher": { "@id": "https://mptennis.ca/#organization" },
         "inLanguage": "en-CA",
         "potentialAction": {
           "@type": "SearchAction",
@@ -100,7 +111,7 @@
         "@type": "SportsActivityLocation",
         "name": "MPTennis · In-person coaching",
         "url": "https://mptennis.ca/#access",
-        "parentOrganization": { "@id": "https://mptennis.ca/#org" },
+        "parentOrganization": { "@id": "https://mptennis.ca/#organization" },
         "sport": "Tennis",
         "address": {
           "@type": "PostalAddress",
@@ -115,7 +126,7 @@
         "url": "https://www.acetenniscoach.ca/",
         "applicationCategory": "SportsApplication",
         "operatingSystem": "Web",
-        "creator": { "@id": "https://mptennis.ca/#org" },
+        "creator": { "@id": "https://mptennis.ca/#organization" },
         "description": "AI-powered tennis coaching app: tactical match prep, targeted drills, racquet fit advice. Built on the MPTennis system.",
         "offers": [
           { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
