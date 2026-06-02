@@ -71,7 +71,7 @@ const Nav = () => {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  const linkStyle = {fontSize:"11.5px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap",textDecoration:"none"};
+  const linkStyle = {fontSize:"11px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.08em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap",textDecoration:"none"};
   const mobileLinkStyle = {fontSize:"15px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.9)",textDecoration:"none",display:"block",padding:"4px 0"};
 
   return (
@@ -82,7 +82,7 @@ const Nav = () => {
         </a>
 
         {!mobile && (
-          <ul style={{display:"flex",gap:"22px",listStyle:"none",margin:0,padding:0,flex:1,justifyContent:"center"}}>
+          <ul style={{display:"flex",gap:"clamp(10px,1.4vw,22px)",listStyle:"none",margin:0,padding:0,flex:1,justifyContent:"center"}}>
             <li><a href="#system" style={linkStyle}>The system</a></li>
             <li><a href="#access" style={linkStyle}>Three ways</a></li>
             <li><a href="#youtube" style={linkStyle}>YouTube</a></li>
@@ -94,7 +94,7 @@ const Nav = () => {
         )}
 
         {!mobile && (
-          <div style={{display:"flex",alignItems:"center",gap:"24px",flexShrink:0}}>
+          <div style={{display:"flex",alignItems:"center",gap:"16px",flexShrink:0}}>
             <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{fontSize:"12px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.12em",color:"#7EC845",whiteSpace:"nowrap",textDecoration:"none"}}>Watch free</a>
             <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca','_blank','noopener')}>Try Ace free</CTA>
           </div>
