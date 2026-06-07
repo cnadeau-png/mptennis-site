@@ -59,75 +59,6 @@ const Eyebrow = ({ children }) => (
   </div>
 );
 
-/* ───────────────────── Nav ───────────────────── */
-
-const Nav = () => {
-  const [open, setOpen] = React.useState(false);
-  const [mobile, setMobile] = React.useState(window.innerWidth <= 880);
-
-  React.useEffect(() => {
-    const check = () => setMobile(window.innerWidth <= 880);
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
-
-  const linkStyle = {fontSize:"11px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.08em",color:"rgba(255,255,255,0.78)",whiteSpace:"nowrap",textDecoration:"none"};
-  const mobileLinkStyle = {fontSize:"15px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.1em",color:"rgba(255,255,255,0.9)",textDecoration:"none",display:"block",padding:"4px 0"};
-
-  return (
-    <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:500,background:"rgba(10,22,40,0.97)",backdropFilter:"blur(14px)",borderBottom:"1px solid rgba(255,255,255,0.08)"}}>
-      <div style={{maxWidth:"1320px",margin:"0 auto",padding:"10px clamp(20px,4vw,56px)",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-        <a href="#top" aria-label="MPTennis" style={{flexShrink:0}}>
-          <img src="assets/mptennis-logo.png" alt="MPTennis" style={{height: mobile ? "36px" : "44px",width:"auto",display:"block"}}/>
-        </a>
-
-        {!mobile && (
-          <ul style={{display:"flex",gap:"clamp(10px,1.4vw,22px)",listStyle:"none",margin:0,padding:0,flex:1,justifyContent:"center"}}>
-            <li><a href="#system" style={linkStyle}>The system</a></li>
-            <li><a href="#access" style={linkStyle}>Three ways</a></li>
-            <li><a href="#youtube" style={linkStyle}>YouTube</a></li>
-            <li><a href="blog/" style={linkStyle}>Blog</a></li>
-            <li><a href="tools/swingweight-estimator.html" style={linkStyle}>Tools</a></li>
-            <li><a href="shop/" style={linkStyle}>Shop</a></li>
-            <li><a href="#about" style={linkStyle}>About</a></li>
-          </ul>
-        )}
-
-        {!mobile && (
-          <div style={{display:"flex",alignItems:"center",gap:"16px",flexShrink:0}}>
-            <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{fontSize:"12px",fontWeight:600,textTransform:"uppercase",letterSpacing:"0.12em",color:"#7EC845",whiteSpace:"nowrap",textDecoration:"none"}}>Watch free</a>
-            <CTA variant="solid" arrow={false} onClick={() => window.open('https://www.acetenniscoach.ca','_blank','noopener')}>Try Ace free</CTA>
-          </div>
-        )}
-
-        {mobile && (
-          <button onClick={() => setOpen(o => !o)} aria-label="Menu" style={{display:"flex",flexDirection:"column",gap:"5px",background:"none",border:"none",cursor:"pointer",padding:"8px",flexShrink:0}}>
-            <span style={{display:"block",width:"24px",height:"2px",background:"white",borderRadius:"2px"}}></span>
-            <span style={{display:"block",width:"24px",height:"2px",background:"white",borderRadius:"2px"}}></span>
-            <span style={{display:"block",width:"24px",height:"2px",background:"white",borderRadius:"2px"}}></span>
-          </button>
-        )}
-      </div>
-
-      {mobile && open && (
-        <div style={{background:"rgba(10,22,40,0.98)",padding:"20px clamp(20px,4vw,56px) 28px",borderTop:"1px solid rgba(255,255,255,0.08)",display:"flex",flexDirection:"column",gap:"20px"}}>
-          <a href="#system" onClick={() => setOpen(false)} style={mobileLinkStyle}>The system</a>
-          <a href="#access" onClick={() => setOpen(false)} style={mobileLinkStyle}>Three ways</a>
-          <a href="#youtube" onClick={() => setOpen(false)} style={mobileLinkStyle}>YouTube</a>
-          <a href="blog/" onClick={() => setOpen(false)} style={mobileLinkStyle}>Blog</a>
-          <a href="tools/swingweight-estimator.html" onClick={() => setOpen(false)} style={mobileLinkStyle}>Tools</a>
-          <a href="shop/" onClick={() => setOpen(false)} style={mobileLinkStyle}>Shop</a>
-          <a href="#about" onClick={() => setOpen(false)} style={mobileLinkStyle}>About</a>
-          <div style={{borderTop:"1px solid rgba(255,255,255,0.1)",paddingTop:"16px",display:"flex",flexDirection:"column",gap:"12px"}}>
-            <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" style={{...mobileLinkStyle,color:"#7EC845"}}>Watch free</a>
-            <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" onClick={() => setOpen(false)} style={{display:"inline-block",background:"#7EC845",color:"#0A1628",fontWeight:700,fontSize:"13px",letterSpacing:"0.1em",textTransform:"uppercase",padding:"12px 24px",borderRadius:"4px",textDecoration:"none",textAlign:"center"}}>Try Ace free</a>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
-};
-
 /* ───────────────────── Hero ───────────────────── */
 
 const audiencePills = ["Club Players", "Juniors"];
@@ -528,67 +459,27 @@ const About = () => (
   </section>
 );
 
-/* ───────────────────── Final CTA + Footer ───────────────────── */
+/* ───────────────────── Final CTA ───────────────────── */
 
-const Foot = () => (
-  <>
-    <section className="section section-cta">
-      <CourtLines opacity={0.05}/>
-      <div className="cta-inner">
-        <h2 className="display display-lg">
-          Train with the <Under>system</Under>.<br/>
-          Pick your access point.
-        </h2>
-        <p className="cta-sub">
-          Start free on Ace. Watch on YouTube. Or come train with us in person.
-          Pro-level coaching, three ways in.
-        </p>
-        <div className="hero-ctas">
-          <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-solid">Start with Ace · Free →</a>
-          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="cta cta-ghost">Subscribe on YouTube →</a>
-          <a href="mailto:chris@mptennis.ca" className="cta cta-ghost">Inquire about coaching →</a>
-        </div>
+const FootCTA = () => (
+  <section className="section section-cta">
+    <CourtLines opacity={0.05}/>
+    <div className="cta-inner">
+      <h2 className="display display-lg">
+        Train with the <Under>system</Under>.<br/>
+        Pick your access point.
+      </h2>
+      <p className="cta-sub">
+        Start free on Ace. Watch on YouTube. Or come train with us in person.
+        Pro-level coaching, three ways in.
+      </p>
+      <div className="hero-ctas">
+        <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-solid">Start with Ace · Free →</a>
+        <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="cta cta-ghost">Subscribe on YouTube →</a>
+        <a href="mailto:chris@mptennis.ca" className="cta cta-ghost">Inquire about coaching →</a>
       </div>
-    </section>
-    <footer className="footer">
-      <div className="footer-inner">
-        <Logo size={112} />
-        <div className="footer-newsletter">
-          <span className="footer-h">Newsletter</span>
-          <p className="footer-news-sub">
-            Get our 7 favourite drills — free. New tactics + gear notes most weeks.
-          </p>
-          <a href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener" className="footer-news-cta">
-            Get the 7 drills →
-          </a>
-        </div>
-        <div className="footer-cols">
-          <div>
-            <span className="footer-h">Ace</span>
-            <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Try free</a>
-            <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Pricing</a>
-            <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">FAQ</a>
-          </div>
-          <div>
-            <span className="footer-h">Watch &amp; Read</span>
-            <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://www.instagram.com/mptennisnb/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.facebook.com/mptennisnb" target="_blank" rel="noopener">Facebook</a>
-            <a href="blog/">Blog</a>
-          </div>
-          <div>
-            <span className="footer-h">In person</span>
-            <a href="https://rothesaytennisclub.com" target="_blank" rel="noopener">Rothesay TC</a>
-            <a href="mailto:chris@mptennis.ca">help@mptennis.ca</a>
-          </div>
-        </div>
-        <div className="footer-fine">
-          <span>© 2026 MPTennis</span>
-          <span>One system. Three ways in.</span>
-        </div>
-      </div>
-    </footer>
-  </>
+    </div>
+  </section>
 );
 
 /* ───────────────────── Tweaks ───────────────────── */
@@ -642,7 +533,6 @@ const App = () => {
 
   return (
     <>
-      <Nav/>
       <Hero/>
       <Marquee/>
       <AccessPoints/>
@@ -651,7 +541,7 @@ const App = () => {
       <Quote/>
       <YouTube/>
       <About/>
-      <Foot/>
+      <FootCTA/>
       <Tweaks tweaks={tweaks} setTweak={setTweak}/>
     </>
   );
