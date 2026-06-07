@@ -1,6 +1,6 @@
 (function () {
   const base = document.body.dataset.base || "";
-  const LOGO_NAV = 44;
+  const LOGO_NAV = 64;
   const LOGO_FOOT = 96;
 
   const logo = (size) =>
