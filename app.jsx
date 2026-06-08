@@ -71,7 +71,7 @@ const credentialPills = [
 const Hero = () => (
   <section id="top" className="hero hero-cinematic">
     <div className="hero-bg">
-      <img src="assets/cade-hero.png" alt="" style={{objectPosition: "center 25%"}} />
+      <img src="assets/cade-hero.jpg" alt="" style={{objectPosition: "center 25%"}} />
       <div className="hero-cine-grad"/>
       <CourtLines opacity={0.05}/>
     </div>
