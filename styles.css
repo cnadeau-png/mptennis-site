@@ -270,7 +270,7 @@ ul { list-style: none; }
 /* ─────────── Hero shared ─────────── */
 .hero {
   position: relative;
-  padding: 90px var(--pad) 100px;
+  padding: 80px var(--pad) 80px;
   overflow: hidden;
   min-height: 92vh;
   display: flex;
