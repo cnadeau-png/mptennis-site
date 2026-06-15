@@ -199,7 +199,7 @@ ul { list-style: none; }
 
 /* Mobile nav */
 @media (max-width: 880px) {
-  .logo-img { height: 56px !important; }
+  .logo-img { height: 76px !important; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-link-quiet { display: none; }
