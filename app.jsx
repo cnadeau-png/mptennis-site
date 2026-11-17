@@ -373,6 +373,19 @@ const App = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The page is drawn after load, so jump to #gear, #matches etc. once it exists.
+  useEffect(() => {
+    const go = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    };
+    go();
+    window.addEventListener("hashchange", go);
+    return () => window.removeEventListener("hashchange", go);
+  }, []);
+
   useEffect(() => {
     document.documentElement.classList.toggle("no-court-lines", !tweaks.courtLines);
     document.documentElement.dataset.accent = tweaks.accentIntensity || "balanced";
