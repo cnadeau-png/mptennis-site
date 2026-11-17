@@ -11,19 +11,18 @@
       <div class="nav-inner">
         <a href="${base}index.html" aria-label="MPTennis">${logo(LOGO_NAV)}</a>
         <ul class="nav-links" id="site-nav-links">
-          <li><a href="${base}index.html#system">The system</a></li>
-          <li><a href="${base}index.html#access">Three ways</a></li>
-          <li><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="${base}index.html#gear">Gear tests</a></li>
+          <li><a href="${base}index.html#matches">Match lessons</a></li>
           <li><a href="${base}blog/">Blog</a></li>
           <li><a href="${base}tools/swingweight-estimator.html">Tools</a></li>
           <li><a href="${base}shop/">Shop</a></li>
           <li><a href="${base}index.html#about">About</a></li>
-          <li class="nav-mobile-cta"><a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">Watch free</a></li>
-          <li class="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" class="nav-mobile-cta-solid">Try Ace free</a></li>
+          <li class="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener">Try Ace free</a></li>
+          <li class="nav-mobile-cta"><a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="nav-mobile-cta-solid">Subscribe</a></li>
         </ul>
         <div class="nav-cta">
-          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" class="nav-link-quiet">Watch free</a>
-          <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" class="cta cta-solid" style="text-decoration:none;">Try Ace free</a>
+          <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" class="nav-link-quiet">Try Ace free</a>
+          <a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="cta cta-solid" style="text-decoration:none;">Subscribe</a>
         </div>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
