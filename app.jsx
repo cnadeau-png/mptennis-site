@@ -61,13 +61,6 @@ const Eyebrow = ({ children }) => (
 
 /* ───────────────────── Hero ───────────────────── */
 
-const audiencePills = ["Club Players", "Juniors"];
-const credentialPills = [
-  "Cade Nadeau · 11.20 UTR",
-  "NCAA Captain",
-  "Top-40 Canada"
-];
-
 const Hero = () => (
   <section id="top" className="hero hero-cinematic">
     <div className="hero-bg">
@@ -76,308 +69,106 @@ const Hero = () => (
       <CourtLines opacity={0.05}/>
     </div>
     <div className="hero-cine-content">
-      <Eyebrow>Club Players &amp; Juniors</Eyebrow>
+      <Eyebrow>MPTennis · For club players</Eyebrow>
       <h1 className="display display-xl">
-        For players who<br/>
-        want to <Under>actually</Under><br/>
-        get better.
+        Gear that fits.<br/>
+        Matches you <Under>win</Under>.
       </h1>
       <p className="lede lede-cine">
-        Most club players train without a system. We fix that. One methodology,
-        built for players who actually compete.
+        Honest racquet and string tests, real match breakdowns, and the club player
+        version of what works at the high level.
       </p>
-      <ul className="hero-pills" aria-label="Audience">
-        {audiencePills.map(p => (
-          <li key={p} className="hero-pill hero-pill-audience">{p}</li>
-        ))}
-      </ul>
-      <ul className="hero-pills" aria-label="Credentials">
-        {credentialPills.map(p => (
-          <li key={p} className="hero-pill">{p}</li>
-        ))}
-      </ul>
       <div className="hero-ctas">
-        <CTA variant="solid" onClick={() => document.getElementById('access')?.scrollIntoView({behavior:'smooth'})}>Start here</CTA>
-        <CTA variant="ghost" onClick={() => document.getElementById('youtube')?.scrollIntoView({behavior:'smooth'})}>Watch free on YouTube</CTA>
+        <CTA variant="solid" onClick={() => window.open('https://youtube.com/@mptennis?sub_confirmation=1', '_blank', 'noopener')}>Subscribe on YouTube</CTA>
+        <CTA variant="ghost" onClick={() => window.open('https://go.mptennis.ca/7drills', '_blank', 'noopener')}>Get the 7 free drills</CTA>
       </div>
     </div>
     <div className="hero-cine-credits">
-      <span>13K+ subs</span>
+      <span>14K+ subs</span>
       <span>·</span>
-      <span>4M+ views</span>
+      <span>5M+ views</span>
       <span>·</span>
-      <span>NCAA Captain · Top 40 Canada</span>
-    </div>
-    <div className="scroll-hint">
-      <span>Scroll</span>
-      <span className="scroll-line"/>
+      <span>Cade Nadeau · 11.20 UTR · NCAA Captain</span>
     </div>
   </section>
 );
 
-/* ───────────────────── Marquee ───────────────────── */
+/* ───────────────────── Featured video ───────────────────── */
 
-const Marquee = () => {
-  const items = [
-    "Tactical before technical", "Coached by competitors", "Match-pattern training",
-    "11.20 UTR · still competing", "NCAA Captain · #1 S&D", "Top-40 Canada Doubles",
-    "13,000+ YouTube subs", "4M+ video views", "Tennis Canada Club Pro 1"
-  ];
-  const row = [...items, ...items];
-  return (
-    <div className="marquee">
-      <div className="marquee-track">
-        {row.map((t, i) => (
-          <span key={i} className="marquee-item">
-            <span className="marquee-dot"/>{t}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-/* ───────────────────── Three Access Points ───────────────────── */
-
-const accessPoints = [
-  {
-    id: "youtube",
-    tag: "01 · Watch free",
-    name: "MPTennis on YouTube",
-    sub: "Start here.",
-    desc: "Match breakdowns, tactics, and gear — the way we actually think about the game.",
-    cta: "Watch now",
-    note: "13K+ subs · 4M+ views · new video most weeks",
-    img: "assets/cade-serve.jpg",
-    href: "https://youtube.com/@mptennis",
-    external: true
-  },
-  {
-    id: "ace",
-    tag: "02 · Try Ace free",
-    name: "Ace Tennis Coach",
-    sub: "AI coaching in your pocket.",
-    desc: "Tactics before matches, racquet fit, drill modes — built around how club players actually play.",
-    cta: "Try free",
-    note: "5 sessions/mo free · $9/mo for unlimited",
-    img: "assets/ace-app-dashboard.png",
-    href: "https://www.acetenniscoach.ca/",
-    external: true
-  },
-  {
-    id: "inperson",
-    tag: "03 · In person",
-    name: "Train with us",
-    sub: "Direct coaching from someone who still competes.",
-    desc: "Limited spots. The same system we used to get Cade to college and pro tennis — applied to your game, in person.",
-    cta: "Inquire",
-    note: "Limited spots · juniors + competitive adults",
-    img: "assets/cade-coaching-group.jpg",
-    href: "mailto:chris@mptennis.ca"
-  }
-];
-
-const AccessPoints = () => {
-  const [open, setOpen] = useState("youtube");
-  return (
-    <section id="access" className="section section-access">
-      <div className="section-head">
-        <Eyebrow>Three ways to access the system</Eyebrow>
-        <h2 className="display display-md">
-          One <Under>methodology</Under>.<br/>
-          Three ways in.
-        </h2>
-        <p className="section-sub">
-          Club players, juniors, junior parents — wherever you are, whatever you can afford,
-          there's a way to train with us.
-        </p>
-      </div>
-      <div className="access-grid">
-        {accessPoints.map(p => (
-          <article
-            key={p.id}
-            className={`access-card${open === p.id ? " is-open" : ""}`}
-            onMouseEnter={() => setOpen(p.id)}
-          >
-            <div className="access-img">
-              <img src={p.img} alt=""/>
-              <div className="access-img-grad"/>
-            </div>
-            <div className="access-body">
-              <span className="access-tag">{p.tag}</span>
-              <h3 className="access-name">{p.name}</h3>
-              <p className="access-sub">{p.sub}</p>
-              <p className="access-desc">{p.desc}</p>
-              <div className="access-foot">
-                <a href={p.href} className="access-cta" {...(p.external ? {target: "_blank", rel: "noopener"} : {})}>
-                  {p.cta}
-                  <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden>
-                    <path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" fill="none"/>
-                  </svg>
-                </a>
-                <span className="access-note">{p.note}</span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-/* ───────────────────── The System / Method ───────────────────── */
-
-const pillars = [
-  {
-    n: "01",
-    t: "Tactical before technical",
-    d: "Most lessons fix your grip. We fix your decisions. Technique follows tactics — not the other way around."
-  },
-  {
-    n: "02",
-    t: "Play · Practice · Play",
-    d: "Drills that connect to points. Every practice session has a beginning, a middle, and a game situation at the end."
-  },
-  {
-    n: "03",
-    t: "Live ball, not feeding",
-    d: "Basket feeding builds muscle memory. Live ball builds tennis players. We train the way the game is actually played."
-  },
-  {
-    n: "04",
-    t: "Coached by competitors",
-    d: "Cade still competes. Chris still competes. We don't teach theory — we teach what we tested last weekend."
-  }
-];
-
-const System = () => (
-  <section id="system" className="section section-method">
+const Featured = () => (
+  <section id="featured" className="section">
     <div className="section-head">
-      <Eyebrow>The MPTennis system</Eyebrow>
+      <Eyebrow>Latest video</Eyebrow>
       <h2 className="display display-md">
-        What actually <Under>works</Under>.<br/>
-        And why most lessons don't.
+        The test a racquet has to <Under>pass</Under>.
       </h2>
       <p className="section-sub">
-        Four principles. Twenty-plus years of competitive coaching behind them.
-        It's not proprietary — it's just done honestly, every session, by coaches who still play.
+        Before Cade switches, a racquet has to hold up in real points. Here's the test the
+        Head Boom Pro 98 went through, and how to run it on your own shots.
       </p>
     </div>
-    <div className="method-grid">
-      {pillars.map(s => (
-        <article key={s.n} className="method-card">
-          <div className="method-num">{s.n}</div>
-          <h3 className="method-title">{s.t}</h3>
-          <p className="method-desc">{s.d}</p>
-          <div className="method-line"/>
-        </article>
-      ))}
-    </div>
-  </section>
-);
-
-/* ───────────────────── Ace deep-dive ───────────────────── */
-
-const aceModes = [
-  { n: "01", t: "Ask Ace", d: "Any tennis question, anytime. Tactics, technique, footwork, mental game." },
-  { n: "02", t: "Match Mode", d: "Tell Ace about your opponent. Get a tactical plan tailored to both of your games." },
-  { n: "03", t: "Drill Mode", d: "Targeted drills with progressions. Practice with purpose, not by rote." },
-  { n: "04", t: "Racquet Fit", d: "Frame, string, tension, lead tape — dial in a setup that matches how you actually play." }
-];
-
-const Ace = () => (
-  <section id="ace" className="section section-ace">
-    <CourtLines opacity={0.04}/>
-    <div className="ace-head">
-      <Eyebrow>A tool we built · Ace Tennis Coach</Eyebrow>
-      <h2 className="display display-lg">
-        The coaching <Under>system</Under>.<br/>
-        In your pocket.
-      </h2>
-      <p className="ace-lede">
-        Match prep, drills, and racquet fit — the same system we used to get Cade to
-        college and pro tennis, in your pocket. Try it free, no credit card required.
-      </p>
-    </div>
-
-    <div className="ace-supademo">
+    <div style={{position: "relative", width: "100%", aspectRatio: "16 / 9", border: "1px solid var(--hairline)", overflow: "hidden"}}>
       <iframe
-        src="https://app.supademo.com/embed/cmo0aunrt0004x20ja37bt1xi?embed_v=2&utm_source=embed"
+        src="https://www.youtube.com/embed/_ifBM0PsE-w?rel=0&modestbranding=1"
+        title="The Test a Racquet Has to Pass Before I Switch (Head Boom Pro 98)"
+        style={{position: "absolute", inset: 0, width: "100%", height: "100%", border: 0}}
         loading="lazy"
-        title="Ace Tennis Coach · interactive walkthrough"
-        allow="clipboard-write"
-        frameBorder="0"
         allowFullScreen
       />
     </div>
-
-    <div className="ace-modes">
-      {aceModes.map(m => (
-        <article key={m.n} className="ace-mode">
-          <div className="ace-mode-head">
-            <span className="ace-mode-num">{m.n}</span>
-            <h3 className="ace-mode-title">{m.t}</h3>
-          </div>
-          <p className="ace-mode-desc">{m.d}</p>
-        </article>
-      ))}
-    </div>
-
-    <div className="ace-out">
-      <CTA variant="solid" size="lg" onClick={() => window.open('https://www.acetenniscoach.ca', '_blank', 'noopener')}>
-        Try Ace free
-      </CTA>
-      <span className="ace-out-note">No credit card required · 5 free sessions · acetenniscoach.ca</span>
+    <div className="yt-foot" style={{justifyContent: "flex-start"}}>
+      <a href="blog/how-to-test-a-tennis-racquet-head-boom-pro-98.html" className="access-cta">
+        Read the write up
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden>
+          <path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" fill="none"/>
+        </svg>
+      </a>
     </div>
   </section>
 );
 
-/* ───────────────────── Quote ───────────────────── */
+/* ───────────────────── Video rows ───────────────────── */
 
-const Quote = () => (
-  <section className="section section-quote">
-    <div className="quote-inner">
-      <div className="quote-mark">"</div>
-      <blockquote className="quote-text">
-        I was up 4-1 and uncomfortable. At the changeover I opened Ace, told it what was happening,
-        got a <Under>game plan</Under> in 30 seconds. I finished 2nd in the tournament.
-      </blockquote>
-      <footer className="quote-by">
-        <span className="quote-name">Bobby M.</span>
-        <span className="quote-meta">Club player · Saint John, NB</span>
-      </footer>
+const yt = (id, title) => ({ id, title, img: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, href: `https://youtu.be/${id}` });
+
+const rows = [
+  {
+    id: "gear",
+    eyebrow: "Gear tests",
+    title: <>Find your <Under>fit</Under>. Then stop shopping.</>,
+    sub: "Honest racquet and string reviews from a player who still competes. Who it fits, who should skip it, and the one flaw.",
+    videos: [
+      yt("xj4s3ucKj84", "Head Boom Pro 98: I Hated It... Now It's in My Bag"),
+      yt("h8bIR9YbhWc", "I Like the Wilson Defyer 100 More Than the 98… Except For One Thing"),
+      yt("FQ8n7oocRcA", "Best Tennis Strings for Club Players? I Tested 3 Hybrids"),
+      yt("vFL523aGfnE", "Head Extreme Pro 98 Review: The Weight Caught Me Off Guard"),
+      yt("Q_OsDJT2rK8", "I Lowered My Tension to 44 lbs")
+    ]
+  },
+  {
+    id: "matches",
+    eyebrow: "On court with Cade",
+    title: <>Play smarter, <Under>not more</Under>.</>,
+    sub: "Cade playing, coaching and learning on court. What works at the high level, and how club players can use it.",
+    videos: [
+      yt("MVuKYsBQXoA", "He Switched to the Defyer 98. Then He Beat Me 6-2, 6-3"),
+      yt("Wn646SLw858", "I Assessed My 55 Year Old Dad's Tennis Game: Here's What's Holding Him Back"),
+      yt("EkfYiAzv1wQ", "I Had 5 Days to Prepare for a Pro Tennis Match"),
+      yt("ELzO0vXt4QU", "I Won the First Set 6-0 vs a D1 Player. Then I Collapsed"),
+      yt("-s9oyz-S8Xg", "What 15 Years of Tennis Has Taught Me About Getting Better")
+    ]
+  }
+];
+
+const VideoRow = ({ row }) => (
+  <section id={row.id} className="section section-library">
+    <div className="section-head">
+      <Eyebrow>{row.eyebrow}</Eyebrow>
+      <h2 className="display display-md">{row.title}</h2>
+      <p className="section-sub">{row.sub}</p>
     </div>
-  </section>
-);
-
-/* ───────────────────── YouTube ───────────────────── */
-
-const ytVideos = [
-  { tag: "Featured", time: "", title: "I'm Back. This Is The Racquet I'm Trusting in My Next Tournament", views: "", id: "tAbzn-1JjZQ", featured: true },
-  { tag: "Match", time: "", title: "I Lowered My Tension to 44 lbs — You Should Too", views: "", id: "Q_OsDJT2rK8" },
-  { tag: "Tactics", time: "", title: "8 Strength Training Exercises YOU NEED TO START DOING", views: "", id: "xpinp1WtmhY" },
-  { tag: "Gear", time: "", title: "I Didn't Expect This From the Pro Staff 97 Classic", views: "", id: "4I5bnl3f988" },
-  { tag: "Customisation", time: "", title: "I Trained 19 Days to Hit a 130 MPH Serve", views: "", id: "-hPJRxFafiA" }
-].map(v => ({ ...v, img: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`, href: `https://youtu.be/${v.id}` }));
-
-const YouTube = () => (
-  <section id="youtube" className="section section-library">
-    <div className="section-head section-head-row">
-      <div>
-        <Eyebrow>The system on YouTube · Free</Eyebrow>
-        <h2 className="display display-md">
-          Watch. Steal. <Under>Win</Under>.
-        </h2>
-      </div>
-      <div className="yt-stats">
-        <div><span className="yt-num">13K+</span><span className="yt-lbl">Subscribers</span></div>
-        <div><span className="yt-num">4M+</span><span className="yt-lbl">Views</span></div>
-        <div><span className="yt-num">Weekly</span><span className="yt-lbl">New videos</span></div>
-      </div>
-    </div>
-
     <div className="yt-grid">
-      {ytVideos.map(v => (
+      {row.videos.map(v => (
         <a key={v.id} href={v.href} target="_blank" rel="noopener" className="yt-card">
           <div className="yt-thumb">
             <img src={v.img} alt={v.title} loading="lazy"/>
@@ -386,17 +177,117 @@ const YouTube = () => (
             </span>
           </div>
           <div className="yt-meta">
-            <span className="yt-tag">{v.tag}</span>
             <h3 className="yt-title">{v.title}</h3>
           </div>
         </a>
       ))}
     </div>
+  </section>
+);
 
-    <div className="yt-foot">
-      <CTA variant="ghost" onClick={() => window.open('https://youtube.com/@mptennis', '_blank', 'noopener')}>
-        Subscribe on YouTube
-      </CTA>
+/* ───────────────────── Ace (styled like acetenniscoach.ca) ───────────────────── */
+
+const acePlan = [
+  { where: "On court", focus: "Closing out sets", task: "Serve plus one pattern", detail: "Pick your best serve and first ball. Play it out 20 times at match pace.", min: 15 },
+  { where: "At home", focus: "Match routine", task: "Shadow your closing pattern", detail: "Shadow it at match speed, with your routine between points.", min: 10 },
+  { where: "Off court", focus: "Your choice", task: "Strength", detail: "Lower body and core, sized to the time you have.", min: 30 }
+];
+
+const AceSection = () => (
+  <section id="ace" className="section ace-brand">
+    <div className="ace-brand-panel">
+      <div className="ace-brand-copy">
+        <div className="ace-brand-logo"><span className="ace-ball"/>Ace</div>
+        <p className="ace-brand-eyebrow">Your daily tennis coach</p>
+        <h2 className="ace-brand-h">Stop guessing what to practice. Know exactly what to work on today.</h2>
+        <p className="ace-brand-sub">
+          Ace builds three focused tasks every day around your game. On court or at home,
+          sized to the time you have. Built by MPTennis.
+        </p>
+        <ul className="ace-brand-chips">
+          <li>3 focused daily tasks</li>
+          <li>Fits your schedule</li>
+          <li>No court required</li>
+        </ul>
+        <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener" className="ace-brand-btn">Build My Free Plan →</a>
+      </div>
+      <div className="ace-brand-card" aria-label="Example daily plan">
+        <div className="ace-brand-card-head">
+          <span>Today's Plan</span>
+          <span className="ace-mono">Example</span>
+        </div>
+        {acePlan.map(t => (
+          <div key={t.task} className="ace-brand-task">
+            <div className="ace-brand-task-top">
+              <span className="ace-mono ace-where">{t.where}</span>
+              <span className="ace-focus">Focus: <b>{t.focus}</b></span>
+            </div>
+            <div className="ace-brand-task-name">{t.task} <span>({t.min} min)</span></div>
+            <p>{t.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ───────────────────── Where to go next ───────────────────── */
+
+const links = [
+  {
+    id: "youtube",
+    name: "MPTennis on YouTube",
+    desc: "New gear tests and match lessons every week.",
+    cta: "Subscribe",
+    img: "assets/cade-serve.jpg",
+    href: "https://youtube.com/@mptennis?sub_confirmation=1",
+    external: true
+  },
+  {
+    id: "reviews",
+    name: "Reviews and tools",
+    desc: "Written reviews, the racquet test, and the free swingweight estimator.",
+    cta: "Browse",
+    img: "assets/cade-backhand.jpg",
+    href: "blog/"
+  },
+  {
+    id: "coaching",
+    name: "Coaching in person",
+    desc: "Limited spots in New Brunswick for competitive adults and juniors.",
+    cta: "Inquire",
+    img: "assets/cade-coaching-group.jpg",
+    href: "mailto:chris@mptennis.ca"
+  }
+];
+
+const Links = () => (
+  <section id="access" className="section section-access">
+    <div className="section-head">
+      <Eyebrow>Where to go next</Eyebrow>
+      <h2 className="display display-md">Watch. Read. <Under>Play</Under>.</h2>
+    </div>
+    <div className="access-grid" style={{gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))"}}>
+      {links.map(p => (
+        <a key={p.id} href={p.href} className="access-card" style={{textDecoration: "none", color: "inherit"}} {...(p.external ? {target: "_blank", rel: "noopener"} : {})}>
+          <div className="access-img">
+            <img src={p.img} alt=""/>
+            <div className="access-img-grad"/>
+          </div>
+          <div className="access-body">
+            <h3 className="access-name">{p.name}</h3>
+            <p className="access-desc">{p.desc}</p>
+            <div className="access-foot">
+              <span className="access-cta">
+                {p.cta}
+                <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden>
+                  <path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" fill="none"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
     </div>
   </section>
 );
@@ -404,79 +295,35 @@ const YouTube = () => (
 /* ───────────────────── About ───────────────────── */
 
 const About = () => (
-  <section id="about" className="section section-about">
-    <div className="about-head">
-      <Eyebrow>The team behind MPTennis</Eyebrow>
-      <h2 className="display display-md">
-        A competitor who <Under>coaches</Under>.<br/>
-        A father who <Under>built it with him</Under>.
-      </h2>
-    </div>
-    <div className="coaches">
-      <article className="coach">
-        <div className="coach-portrait">
-          <img src="assets/cade-snhu-court.jpg" alt="Cade Nadeau"/>
-          <div className="coach-tag">
-            <span>Cade Nadeau</span>
-            <span className="muted">Founder · Head coach · The face of MPTennis</span>
-          </div>
-        </div>
-        <div className="coach-copy">
-          <ul className="coach-creds" aria-label="Credentials">
-            <li>11.20 UTR</li>
-            <li>NCAA Captain</li>
-            <li>Top 40 Canada · Doubles</li>
-            <li>Tennis Canada Club Pro 1</li>
-          </ul>
-          <p>
-            Active competitor. Hosts the YouTube channel. Founded Ace because club
-            players deserve the same coaching juniors get.
-          </p>
-        </div>
-      </article>
-      <article className="coach">
-        <div className="coach-portrait">
-          <img src="assets/chris-cade-unb-gala.jpg" alt="Chris Nadeau (left) with Cade Nadeau"/>
-          <div className="coach-tag">
-            <span>Chris Nadeau</span>
-            <span className="muted">Co-founder · Coach · Behind the scenes</span>
-          </div>
-        </div>
-        <div className="coach-copy">
-          <ul className="coach-creds" aria-label="Credentials">
-            <li>UNB Reds · Head Coach</li>
-            <li>Rothesay TC · Tennis Director</li>
-            <li>Tennis Canada Club Pro 1</li>
-            <li>25 yrs digital marketing</li>
-          </ul>
-          <p>
-            Cade's father and business partner. Head Coach at UNB. Built MPTennis with
-            Cade to scale what works — pro-level coaching, accessible everywhere.
-          </p>
-        </div>
-      </article>
+  <section id="about" className="section">
+    <div className="section-head" style={{marginBottom: 0}}>
+      <Eyebrow>About MPTennis</Eyebrow>
+      <h2 className="display display-md">High level to <Under>club level</Under>.</h2>
+      <p className="section-sub">
+        Honestly? Most of us don't need a new racquet. We need the right one, and a smarter way to play.
+        Cade Nadeau played NCAA tennis, still competes, and coaches high performance juniors every day.
+        His dad Chris coaches club players and the UNB teams. Together we take what works at the high level
+        and bring it to club players who love to compete.
+      </p>
     </div>
   </section>
 );
 
-/* ───────────────────── Final CTA ───────────────────── */
+/* ───────────────────── Signup ───────────────────── */
 
-const FootCTA = () => (
+const Signup = () => (
   <section className="section section-cta">
     <CourtLines opacity={0.05}/>
     <div className="cta-inner">
       <h2 className="display display-lg">
-        Train with the <Under>system</Under>.<br/>
-        Pick your access point.
+        Get the 7 drills we use<br/>
+        to win more <Under>matches</Under>.
       </h2>
       <p className="cta-sub">
-        Start free on Ace. Watch on YouTube. Or come train with us in person.
-        Pro-level coaching, three ways in.
+        Free. Plus our weekly deep dive on gear and match play.
       </p>
       <div className="hero-ctas">
-        <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-solid">Start with Ace · Free →</a>
-        <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="cta cta-ghost">Subscribe on YouTube →</a>
-        <a href="mailto:chris@mptennis.ca" className="cta cta-ghost">Inquire about coaching →</a>
+        <a href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener" className="cta cta-solid">Get the free drills →</a>
       </div>
     </div>
   </section>
@@ -534,14 +381,12 @@ const App = () => {
   return (
     <>
       <Hero/>
-      <Marquee/>
-      <AccessPoints/>
-      <System/>
-      <Ace/>
-      <Quote/>
-      <YouTube/>
+      <Featured/>
+      {rows.map(r => <VideoRow key={r.id} row={r}/>)}
+      <AceSection/>
+      <Links/>
       <About/>
-      <FootCTA/>
+      <Signup/>
       <Tweaks tweaks={tweaks} setTweak={setTweak}/>
     </>
   );
