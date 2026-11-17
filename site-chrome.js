@@ -12,7 +12,7 @@
         <a href="${base}index.html" aria-label="MPTennis">${logo(LOGO_NAV)}</a>
         <ul class="nav-links" id="site-nav-links">
           <li><a href="${base}index.html#gear">Gear tests</a></li>
-          <li><a href="${base}index.html#matches">Match lessons</a></li>
+          <li><a href="${base}index.html#matches">On court</a></li>
           <li><a href="${base}blog/">Blog</a></li>
           <li><a href="${base}tools/swingweight-estimator.html">Tools</a></li>
           <li><a href="${base}shop/">Shop</a></li>
