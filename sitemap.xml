@@ -88,6 +88,37 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mptennis.ca/blog/lower-string-tension-benefits.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/head-speed-pro-vs-speed-mp.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/head-gravity-tour-review.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/most-used-strings-in-college-tennis.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/best-hybrid-tennis-strings-for-club-players.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Shop -->
   <url>
     <loc>https://mptennis.ca/shop/</loc>
