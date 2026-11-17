@@ -225,7 +225,7 @@ const fitCards = [
   {
     n: "01",
     t: "Honest reviews",
-    d: "Every racquet and string tested in real points, not just rallies. Who it fits, who should skip it, and the one flaw.",
+    d: "Racquets and strings tested on court by a player who still competes. Who it fits, who should skip it, and the one flaw.",
     cta: "Read the reviews",
     href: "blog/"
   },
