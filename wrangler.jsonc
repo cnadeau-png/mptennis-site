@@ -1,0 +1,9 @@
+{
+  // MPTennis static site. Lets Cloudflare build both the live site (main)
+  // and preview versions of every branch from this repo.
+  "name": "mptennis",
+  "compatibility_date": "2026-11-17",
+  "assets": {
+    "directory": "./"
+  }
+}
