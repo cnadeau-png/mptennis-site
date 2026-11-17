@@ -68,6 +68,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mptennis.ca/blog/how-to-test-a-tennis-racquet-head-boom-pro-98.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Shop -->
   <url>
     <loc>https://mptennis.ca/shop/</loc>
