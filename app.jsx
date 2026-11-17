@@ -84,9 +84,9 @@ const Hero = () => (
       </div>
     </div>
     <div className="hero-cine-credits">
-      <span>13K+ subs</span>
+      <span>14K+ subs</span>
       <span>·</span>
-      <span>4M+ views</span>
+      <span>5M+ views</span>
       <span>·</span>
       <span>Cade Nadeau · 11.20 UTR · NCAA Captain</span>
     </div>
@@ -147,9 +147,9 @@ const rows = [
   },
   {
     id: "matches",
-    eyebrow: "Match lessons",
+    eyebrow: "On court with Cade",
     title: <>Play smarter, <Under>not more</Under>.</>,
-    sub: "Real matches broken down point by point. Then the club player version you can use this week.",
+    sub: "Cade playing, coaching and learning on court. What works at the high level, and how club players can use it.",
     videos: [
       yt("MVuKYsBQXoA", "He Switched to the Defyer 98. Then He Beat Me 6-2, 6-3"),
       yt("Wn646SLw858", "I Assessed My 55 Year Old Dad's Tennis Game: Here's What's Holding Him Back"),
@@ -185,6 +185,52 @@ const VideoRow = ({ row }) => (
   </section>
 );
 
+/* ───────────────────── Ace (styled like acetenniscoach.ca) ───────────────────── */
+
+const acePlan = [
+  { where: "On court", focus: "Closing out sets", task: "Serve plus one pattern", detail: "Pick your best serve and first ball. Play it out 20 times at match pace.", min: 15 },
+  { where: "At home", focus: "Match routine", task: "Shadow your closing pattern", detail: "Shadow it at match speed, with your routine between points.", min: 10 },
+  { where: "Off court", focus: "Your choice", task: "Strength", detail: "Lower body and core, sized to the time you have.", min: 30 }
+];
+
+const AceSection = () => (
+  <section id="ace" className="section ace-brand">
+    <div className="ace-brand-panel">
+      <div className="ace-brand-copy">
+        <div className="ace-brand-logo"><span className="ace-ball"/>Ace</div>
+        <p className="ace-brand-eyebrow">Your daily tennis coach</p>
+        <h2 className="ace-brand-h">Stop guessing what to practice. Know exactly what to work on today.</h2>
+        <p className="ace-brand-sub">
+          Ace builds three focused tasks every day around your game. On court or at home,
+          sized to the time you have. Built by MPTennis.
+        </p>
+        <ul className="ace-brand-chips">
+          <li>3 focused daily tasks</li>
+          <li>Fits your schedule</li>
+          <li>No court required</li>
+        </ul>
+        <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener" className="ace-brand-btn">Build My Free Plan →</a>
+      </div>
+      <div className="ace-brand-card" aria-label="Example daily plan">
+        <div className="ace-brand-card-head">
+          <span>Today's Plan</span>
+          <span className="ace-mono">Example</span>
+        </div>
+        {acePlan.map(t => (
+          <div key={t.task} className="ace-brand-task">
+            <div className="ace-brand-task-top">
+              <span className="ace-mono ace-where">{t.where}</span>
+              <span className="ace-focus">Focus: <b>{t.focus}</b></span>
+            </div>
+            <div className="ace-brand-task-name">{t.task} <span>({t.min} min)</span></div>
+            <p>{t.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 /* ───────────────────── Where to go next ───────────────────── */
 
 const links = [
@@ -195,15 +241,6 @@ const links = [
     cta: "Subscribe",
     img: "assets/cade-serve.jpg",
     href: "https://youtube.com/@mptennis?sub_confirmation=1",
-    external: true
-  },
-  {
-    id: "ace",
-    name: "Ace Tennis Coach",
-    desc: "Turn your last match into a plan for the next one. Plus Racquet Fit for your setup.",
-    cta: "Try Ace free",
-    img: "assets/ace-app-dashboard.png",
-    href: "https://www.acetenniscoach.ca/",
     external: true
   },
   {
@@ -346,6 +383,7 @@ const App = () => {
       <Hero/>
       <Featured/>
       {rows.map(r => <VideoRow key={r.id} row={r}/>)}
+      <AceSection/>
       <Links/>
       <About/>
       <Signup/>
