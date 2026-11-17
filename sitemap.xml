@@ -75,6 +75,19 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mptennis.ca/blog/tennis-match-breakdown-stop-doing-what-works.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mptennis.ca/blog/wilson-defyer-100-review.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Shop -->
   <url>
     <loc>https://mptennis.ca/shop/</loc>

@@ -61,7 +61,6 @@ const Eyebrow = ({ children }) => (
 
 /* ───────────────────── Hero ───────────────────── */
 
-const audiencePills = ["Club Players", "Juniors"];
 const credentialPills = [
   "Cade Nadeau · 11.20 UTR",
   "NCAA Captain",
@@ -76,28 +75,23 @@ const Hero = () => (
       <CourtLines opacity={0.05}/>
     </div>
     <div className="hero-cine-content">
-      <Eyebrow>Club Players &amp; Juniors</Eyebrow>
+      <Eyebrow>For club players</Eyebrow>
       <h1 className="display display-xl">
-        For players who<br/>
-        want to <Under>actually</Under><br/>
-        get better.
+        Gear that fits.<br/>
+        Matches you <Under>win</Under>.
       </h1>
       <p className="lede lede-cine">
-        Most club players train without a system. We fix that. One methodology,
-        built for players who actually compete.
+        Honestly? Most of us don't need a new racquet. We need the right one, and a
+        smarter way to play. Honest gear tests and match smarts from Cade, who coaches
+        high performance juniors every day.
       </p>
-      <ul className="hero-pills" aria-label="Audience">
-        {audiencePills.map(p => (
-          <li key={p} className="hero-pill hero-pill-audience">{p}</li>
-        ))}
-      </ul>
       <ul className="hero-pills" aria-label="Credentials">
         {credentialPills.map(p => (
           <li key={p} className="hero-pill">{p}</li>
         ))}
       </ul>
       <div className="hero-ctas">
-        <CTA variant="solid" onClick={() => document.getElementById('access')?.scrollIntoView({behavior:'smooth'})}>Start here</CTA>
+        <CTA variant="solid" onClick={() => window.open('https://go.mptennis.ca/7drills', '_blank', 'noopener')}>Get the 7 free drills</CTA>
         <CTA variant="ghost" onClick={() => document.getElementById('youtube')?.scrollIntoView({behavior:'smooth'})}>Watch free on YouTube</CTA>
       </div>
     </div>
@@ -119,7 +113,7 @@ const Hero = () => (
 
 const Marquee = () => {
   const items = [
-    "Tactical before technical", "Coached by competitors", "Match-pattern training",
+    "Gear that fits", "Play smarter, not more", "Tactical before technical", "Coached by competitors",
     "11.20 UTR · still competing", "NCAA Captain · #1 S&D", "Top-40 Canada Doubles",
     "13,000+ YouTube subs", "4M+ video views", "Tennis Canada Club Pro 1"
   ];
@@ -225,6 +219,72 @@ const AccessPoints = () => {
   );
 };
 
+/* ───────────────────── Find your fit ───────────────────── */
+
+const fitCards = [
+  {
+    n: "01",
+    t: "Honest reviews",
+    d: "Every racquet and string tested in real points, not just rallies. Who it fits, who should skip it, and the one flaw.",
+    cta: "Read the reviews",
+    href: "blog/"
+  },
+  {
+    n: "02",
+    t: "How to test a racquet",
+    d: "Hitting, then points, then a practice set. The test a racquet has to pass before Cade switches, and how to run it on your shots.",
+    cta: "See the test",
+    href: "blog/how-to-test-a-tennis-racquet-head-boom-pro-98.html"
+  },
+  {
+    n: "03",
+    t: "Swingweight Estimator",
+    d: "The one number that predicts whether a frame helps or hurts your game. Free, in 30 seconds.",
+    cta: "Try the tool",
+    href: "tools/swingweight-estimator.html"
+  },
+  {
+    n: "04",
+    t: "Racquet Fit in Ace",
+    d: "Frame, string, tension and lead tape, dialled in for how you actually play.",
+    cta: "Try Ace free",
+    href: "https://www.acetenniscoach.ca/",
+    external: true
+  }
+];
+
+const FindYourFit = () => (
+  <section id="fit" className="section section-method">
+    <div className="section-head">
+      <Eyebrow>Gear that fits</Eyebrow>
+      <h2 className="display display-md">
+        Find your <Under>fit</Under>.<br/>
+        Then stop shopping.
+      </h2>
+      <p className="section-sub">
+        A new racquet won't fix your game. The right one, set up for how you play, will help it.
+        For most club players, it's not the racquet. It's the plan.
+      </p>
+    </div>
+    <div className="method-grid">
+      {fitCards.map(c => (
+        <article key={c.n} className="method-card">
+          <div className="method-num">{c.n}</div>
+          <h3 className="method-title">{c.t}</h3>
+          <p className="method-desc">{c.d}</p>
+          <a href={c.href} className="access-cta" style={{marginTop: "16px"}} {...(c.external ? {target: "_blank", rel: "noopener"} : {})}>
+            {c.cta}
+            <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden>
+              <path d="M2 7h9M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" fill="none"/>
+            </svg>
+          </a>
+          <div className="method-line"/>
+        </article>
+      ))}
+    </div>
+  </section>
+);
+
 /* ───────────────────── The System / Method ───────────────────── */
 
 const pillars = [
@@ -255,8 +315,8 @@ const System = () => (
     <div className="section-head">
       <Eyebrow>The MPTennis system</Eyebrow>
       <h2 className="display display-md">
-        What actually <Under>works</Under>.<br/>
-        And why most lessons don't.
+        Play smarter, <Under>not more</Under>.<br/>
+        Why most lessons don't work.
       </h2>
       <p className="section-sub">
         Four principles. Twenty-plus years of competitive coaching behind them.
@@ -353,11 +413,11 @@ const Quote = () => (
 /* ───────────────────── YouTube ───────────────────── */
 
 const ytVideos = [
-  { tag: "Featured", time: "", title: "I'm Back. This Is The Racquet I'm Trusting in My Next Tournament", views: "", id: "tAbzn-1JjZQ", featured: true },
-  { tag: "Match", time: "", title: "I Lowered My Tension to 44 lbs — You Should Too", views: "", id: "Q_OsDJT2rK8" },
-  { tag: "Tactics", time: "", title: "8 Strength Training Exercises YOU NEED TO START DOING", views: "", id: "xpinp1WtmhY" },
-  { tag: "Gear", time: "", title: "I Didn't Expect This From the Pro Staff 97 Classic", views: "", id: "4I5bnl3f988" },
-  { tag: "Customisation", time: "", title: "I Trained 19 Days to Hit a 130 MPH Serve", views: "", id: "-hPJRxFafiA" }
+  { tag: "Featured", time: "", title: "The Test a Racquet Has to Pass Before I Switch (Head Boom Pro 98)", views: "", id: "_ifBM0PsE-w", featured: true },
+  { tag: "Match", time: "", title: "He Switched to the Defyer 98. Then He Beat Me 6-2, 6-3", views: "", id: "MVuKYsBQXoA" },
+  { tag: "Gear", time: "", title: "I Like the Wilson Defyer 100 More Than the 98… Except For One Thing", views: "", id: "h8bIR9YbhWc" },
+  { tag: "Strings", time: "", title: "I Lowered My Tension to 44 lbs", views: "", id: "Q_OsDJT2rK8" },
+  { tag: "Gear", time: "", title: "I Didn't Expect This From the Pro Staff 97 Classic", views: "", id: "4I5bnl3f988" }
 ].map(v => ({ ...v, img: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`, href: `https://youtu.be/${v.id}` }));
 
 const YouTube = () => (
@@ -409,7 +469,7 @@ const About = () => (
       <Eyebrow>The team behind MPTennis</Eyebrow>
       <h2 className="display display-md">
         A competitor who <Under>coaches</Under>.<br/>
-        A father who <Under>built it with him</Under>.
+        High level to <Under>club level</Under>.
       </h2>
     </div>
     <div className="coaches">
@@ -429,8 +489,8 @@ const About = () => (
             <li>Tennis Canada Club Pro 1</li>
           </ul>
           <p>
-            Active competitor. Hosts the YouTube channel. Founded Ace because club
-            players deserve the same coaching juniors get.
+            Active competitor. Coaches high performance juniors every day and hosts the
+            YouTube channel. Founded Ace because club players deserve the same coaching juniors get.
           </p>
         </div>
       </article>
@@ -466,15 +526,16 @@ const FootCTA = () => (
     <CourtLines opacity={0.05}/>
     <div className="cta-inner">
       <h2 className="display display-lg">
-        Train with the <Under>system</Under>.<br/>
-        Pick your access point.
+        Play smarter, <Under>not more</Under>.<br/>
+        Start with the free drills.
       </h2>
       <p className="cta-sub">
-        Start free on Ace. Watch on YouTube. Or come train with us in person.
-        Pro-level coaching, three ways in.
+        Get the 7 drills we use to win more matches, plus our weekly deep dive on gear and match play.
+        Then try Ace, watch on YouTube, or train with us in person.
       </p>
       <div className="hero-ctas">
-        <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-solid">Start with Ace · Free →</a>
+        <a href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener" className="cta cta-solid">Get the free drills →</a>
+        <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" className="cta cta-ghost">Try Ace free →</a>
         <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener" className="cta cta-ghost">Subscribe on YouTube →</a>
         <a href="mailto:chris@mptennis.ca" className="cta cta-ghost">Inquire about coaching →</a>
       </div>
@@ -535,11 +596,12 @@ const App = () => {
     <>
       <Hero/>
       <Marquee/>
-      <AccessPoints/>
-      <System/>
-      <Ace/>
       <Quote/>
+      <FindYourFit/>
       <YouTube/>
+      <System/>
+      <AccessPoints/>
+      <Ace/>
       <About/>
       <FootCTA/>
       <Tweaks tweaks={tweaks} setTweak={setTweak}/>
