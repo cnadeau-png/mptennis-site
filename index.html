@@ -204,13 +204,20 @@
     .hero .lede{margin:18px 0 28px;font-size:clamp(18px,1.4vw,20px);color:#2b3442;max-width:540px;line-height:1.45}
     .hero .ctas{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
     .hero .credit{margin-top:22px}
-    .portrait{position:relative;height:min(64vh,580px);display:flex;justify-content:center;align-items:flex-end}
-    .portrait .arch{position:absolute;bottom:0;left:50%;width:88%;height:84%;transform:translateX(-50%);border-radius:999px 999px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.15));box-shadow:inset 0 0 0 1px rgba(255,255,255,.8)}
-    .portrait img{position:relative;height:100%;width:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 99%);mask-image:linear-gradient(180deg,#000 72%,transparent 99%);will-change:transform}
+    .collage{position:relative;height:min(58vh,500px);width:100%;max-width:600px;margin-left:auto}
+    .collage figure{position:absolute;margin:0;border-radius:20px;overflow:hidden;border:5px solid #fff;box-shadow:0 24px 50px rgba(10,22,40,.18);background:#cfd6d0;will-change:transform}
+    .collage img{width:100%;height:100%;object-fit:cover}
+    .collage figcaption{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:8px;background:rgba(255,255,255,.88);font-size:13px;font-weight:600;color:var(--ink)}
+    .collage .c1{left:0;top:6%;width:54%;aspect-ratio:1/1.15}
+    .collage .c1 img{object-position:55% 30%}
+    .collage .c2{right:0;top:0;width:50%;aspect-ratio:4/3}
+    .collage .c2 img{object-position:55% 35%}
+    .collage .c3{right:6%;top:44%;width:56%;aspect-ratio:3/2;z-index:2}
+    .collage .c3 img{object-position:60% 35%}
     @media (max-width:860px){
       .hero{padding-top:96px}
       .hero .grid{grid-template-columns:1fr}
-      .portrait{height:46vh;max-height:400px;order:-1;margin-bottom:-8px}
+      .collage{height:auto;aspect-ratio:1/.9;width:100%;max-width:520px;margin:8px auto 0}
     }
 
     /* Panels */
@@ -359,7 +366,7 @@
     @media (prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       [data-rise]{opacity:1;transform:none;transition:none}
-      .blob,.portrait img,.strip{transform:none!important}
+      .blob,.collage figure,.strip{transform:none!important}
       .btn,.vcard,.row{transition:none}
     }
   </style>
@@ -407,9 +414,10 @@
           </div>
           <div class="credit mono">Cade Nadeau · 11.20 UTR · NCAA Captain</div>
         </div>
-        <div class="portrait">
-          <div class="arch"></div>
-          <img id="portrait" src="assets/home/cade-portrait.webp" alt="Cade Nadeau on court with his racquet" width="793" height="1000" fetchpriority="high"/>
+        <div class="collage" id="collage">
+          <figure class="c1" data-d=".06"><img src="assets/home/h-flags.webp" alt="Cade Nadeau on court at a Canadian event" fetchpriority="high"/><figcaption>Cade Nadeau</figcaption></figure>
+          <figure class="c2" data-d=".14"><img src="assets/home/g-serve.webp" alt="Cade serving under the lights" loading="eager"/></figure>
+          <figure class="c3" data-d=".22"><img src="assets/home/g-forehand.webp" alt="Cade hitting a forehand in a match" loading="eager"/><figcaption>Testing gear in real points</figcaption></figure>
         </div>
       </div>
     </section>
@@ -681,7 +689,7 @@
     function peakProg(){ var r = peak.getBoundingClientRect(), d = r.height - innerHeight; return d > 0 ? Math.min(1, Math.max(0, -r.top / d)) : 0; }
 
     var bBall = document.getElementById("bBall"), bCourt = document.getElementById("bCourt"), bNight = document.getElementById("bNight");
-    var portrait = document.getElementById("portrait"), strip = document.getElementById("strip"), gal = document.getElementById("matches");
+    var shots = document.querySelectorAll("#collage figure"), strip = document.getElementById("strip"), gal = document.getElementById("matches");
     var mx = 0, my = 0, sx = 0, sy = 0, sp = 0, gp = 0;
     window.addEventListener("pointermove", function(e){ mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
     function frame(){
@@ -694,7 +702,7 @@
         bBall.style.transform = "translate3d(" + (bx + sx * 6) + "vw," + (by + sy * 4) + "vh,0)";
         bCourt.style.transform = "translate3d(" + (sp * 30) + "vw," + (-sp * 20) + "vh,0)";
         bNight.style.transform = "translate3d(" + (-sp * 40) + "vw," + (-sp * 30) + "vh,0)";
-        if(y < innerHeight * 1.2) portrait.style.transform = "translate3d(0," + (y * .12) + "px,0)";
+        if(y < innerHeight * 1.2 && innerWidth > 860) shots.forEach(function(f){ f.style.transform = "translate3d(0," + (-y * parseFloat(f.dataset.d)) + "px,0)"; });
         var r = gal.getBoundingClientRect(), t = (innerHeight - r.top) / (innerHeight + r.height); t = Math.min(1, Math.max(0, t));
         gp += (t - gp) * .1;
         var max = Math.max(0, strip.scrollWidth - innerWidth);
