@@ -1,97 +1,71 @@
+/* Shared menu, footer and glass background for every page except the home page.
+   The home page (index.html) has its own copy of this look built in. */
 (function () {
-  const base = document.body.dataset.base || "";
-  const LOGO_NAV = 120;
-  const LOGO_FOOT = 96;
+  const base = document.body.getAttribute("data-base") || "";
+  const logo = (h) =>
+    `<img src="${base}assets/home/logo-light.png" alt="MPTennis" width="900" height="76" style="height:${h}px;width:auto;display:block;">`;
 
-  const logo = (size) =>
-    `<img src="${base}assets/mptennis-logo.png" alt="MPTennis" class="logo-img" style="height:${size}px;width:auto;display:block;">`;
+  const bgHTML = `
+    <div class="glass-bg" aria-hidden="true">
+      <div class="blob court"></div><div class="blob ball"></div><div class="blob night"></div>
+      <div class="ribs"></div><div class="grain"></div>
+    </div>`;
 
   const navHTML = `
-    <nav class="nav nav-scrolled" id="site-nav">
-      <div class="nav-inner">
-        <a href="${base}index.html" aria-label="MPTennis">${logo(LOGO_NAV)}</a>
-        <ul class="nav-links" id="site-nav-links">
+    <header class="lnav" id="site-nav">
+      <div class="lnav-inner">
+        <a href="${base}index.html" aria-label="MPTennis home" class="lnav-logo">${logo(26)}</a>
+        <ul class="lnav-links" id="lnav-links">
           <li><a href="${base}index.html#gear">Gear tests</a></li>
           <li><a href="${base}index.html#matches">On court</a></li>
           <li><a href="${base}blog/">Blog</a></li>
           <li><a href="${base}tools/swingweight-estimator.html">Tools</a></li>
           <li><a href="${base}shop/">Shop</a></li>
           <li><a href="${base}index.html#about">About</a></li>
-          <li class="nav-mobile-cta"><a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener">Try Ace free</a></li>
-          <li class="nav-mobile-cta"><a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="nav-mobile-cta-solid">Subscribe</a></li>
         </ul>
-        <div class="nav-cta">
-          <a href="https://www.acetenniscoach.ca" target="_blank" rel="noopener" class="nav-link-quiet">Try Ace free</a>
-          <a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="cta cta-solid" style="text-decoration:none;">Subscribe</a>
-        </div>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="lnav-sub">Subscribe</a>
+        <button class="lnav-menu" id="nav-hamburger" aria-expanded="false" aria-controls="lnav-links">Menu</button>
       </div>
-    </nav>`;
+    </header>`;
 
   const footHTML = `
-    <footer class="footer">
-      <div class="footer-inner">
-        ${logo(LOGO_FOOT)}
-        <div class="footer-newsletter">
-          <span class="footer-h">Newsletter</span>
-          <p class="footer-news-sub">Get our 7 favourite drills — free. New tactics + gear notes most weeks.</p>
-          <a href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener" class="footer-news-cta">Get the 7 drills →</a>
-        </div>
-        <div class="footer-cols">
-          <div>
-            <span class="footer-h">Ace</span>
-            <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Try free</a>
-            <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Pricing</a>
-            <a href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">FAQ</a>
-          </div>
-          <div>
-            <span class="footer-h">Watch &amp; Read</span>
-            <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://www.instagram.com/mptennisnb/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.facebook.com/mptennisnb" target="_blank" rel="noopener">Facebook</a>
-            <a href="${base}blog/">Blog</a>
-          </div>
-          <div>
-            <span class="footer-h">In person</span>
-            <a href="https://rothesaytennisclub.com" target="_blank" rel="noopener">Rothesay TC</a>
-            <a href="mailto:chris@mptennis.ca">help@mptennis.ca</a>
-          </div>
-        </div>
-        <div class="footer-fine">
-          <span>© 2026 MPTennis</span>
-          <span>One system. Three ways in.</span>
-        </div>
+    <footer class="lfoot">
+      <div class="lfoot-inner">
+        <a href="${base}index.html" aria-label="MPTennis home">${logo(18)}</a>
+        <nav>
+          <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/mptennisnb/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/mptennisnb" target="_blank" rel="noopener">Facebook</a>
+          <a href="${base}blog/">Blog</a>
+          <a href="${base}shop/">Shop</a>
+          <a href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener">7 free drills</a>
+          <a href="mailto:chris@mptennis.ca">chris@mptennis.ca</a>
+        </nav>
+        <small>© 2026 MPTennis</small>
       </div>
     </footer>`;
 
-  // Inject nav and footer FIRST
-  document.querySelectorAll("[data-site-nav]").forEach((el) => {
-    el.outerHTML = navHTML;
-  });
-  document.querySelectorAll("[data-site-footer]").forEach((el) => {
-    el.outerHTML = footHTML;
-  });
+  document.body.insertAdjacentHTML("afterbegin", bgHTML);
+  document.querySelectorAll("[data-site-nav]").forEach((el) => { el.outerHTML = navHTML; });
+  document.querySelectorAll("[data-site-footer]").forEach((el) => { el.outerHTML = footHTML; });
 
-  // THEN attach hamburger event AFTER injection
-  function attachHamburger() {
-    const btn = document.getElementById("nav-hamburger");
-    const nav = document.getElementById("site-nav");
-    if (btn && nav) {
-      btn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        nav.classList.toggle("nav-open");
-      });
-      document.addEventListener("click", function (e) {
-        if (nav.classList.contains("nav-open") && !nav.contains(e.target)) {
-          nav.classList.remove("nav-open");
-        }
-      });
-    } else {
-      setTimeout(attachHamburger, 50);
-    }
+  const nav = document.getElementById("site-nav");
+  const btn = document.getElementById("nav-hamburger");
+  const links = document.getElementById("lnav-links");
+  if (btn && links) {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = links.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open);
+    });
+    document.addEventListener("click", (e) => {
+      if (links.classList.contains("open") && !nav.contains(e.target)) {
+        links.classList.remove("open");
+        btn.setAttribute("aria-expanded", false);
+      }
+    });
   }
-  attachHamburger();
-
+  const onScroll = () => nav && nav.classList.toggle("solid", window.scrollY > 20);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 })();
