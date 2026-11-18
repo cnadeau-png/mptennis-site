@@ -17,14 +17,14 @@
   <meta property="og:site_name" content="MPTennis"/>
   <meta property="og:url" content="https://mptennis.ca/"/>
   <meta property="og:title" content="MPTennis · Gear that fits. Matches you win."/>
-  <meta property="og:description" content="Cade Nadeau — 11.20 UTR, NCAA captain, top-40 Canada — coaches club players and juniors who want to actually get better. Train via Ace app, YouTube, or in person."/>
+  <meta property="og:description" content="Honest racquet and string tests from Cade Nadeau, 11.20 UTR and former NCAA team captain. Then the match smarts to win with them."/>
   <meta property="og:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
   <meta property="og:locale" content="en_CA"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="MPTennis · Gear that fits. Matches you win."/>
-  <meta name="twitter:description" content="Train with Cade Nadeau — 11.20 UTR, NCAA captain. Three ways: Ace app, YouTube, or in person."/>
+  <meta name="twitter:description" content="Honest racquet and string tests from Cade Nadeau, 11.20 UTR and former NCAA team captain."/>
   <meta name="twitter:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
 
   <!-- Favicons -->
@@ -33,33 +33,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css?v=12"/>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
-    section[id] { scroll-margin-top: 110px; }
-    .ace-brand-panel { background: #F2F5F8; color: #081020; border-radius: 20px; padding: 48px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; font-family: Archivo, system-ui, sans-serif; }
-    .ace-brand-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; margin-bottom: 28px; }
-    .ace-ball { width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d6f27a, #8ccf3c 55%, #5ea52a); display: inline-block; }
-    .ace-brand-eyebrow { font-family: "Geist Mono", Menlo, monospace; color: #3F6F14; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 10px; }
-    .ace-brand-h { font-weight: 800; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 16px; color: #081020; text-transform: none; }
-    .ace-brand-sub { font-size: 17px; line-height: 1.55; color: #3a4556; margin: 0 0 22px; }
-    .ace-brand-chips { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .ace-brand-chips li { background: #fff; border: 1px solid #dde3ea; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 700; }
-    .ace-brand-btn { display: inline-block; background: #081020; color: #fff; text-decoration: none; font-weight: 700; padding: 15px 24px; border-radius: 12px; }
-    .ace-brand-btn:hover { background: #3F8A1C; }
-    .ace-brand-card { background: #fff; border: 1px solid #e3e8ee; border-radius: 16px; padding: 22px; box-shadow: 0 10px 30px rgba(8,16,32,.08); }
-    .ace-brand-card-head { display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; font-size: 24px; margin-bottom: 14px; }
-    .ace-mono { font-family: "Geist Mono", Menlo, monospace; font-size: 12px; font-weight: 400; color: #3F6F14; }
-    .ace-brand-task { border: 1px solid #e3e8ee; border-radius: 12px; padding: 14px 16px; margin-top: 10px; }
-    .ace-brand-task-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
-    .ace-where { text-transform: uppercase; font-weight: 700; color: #081020; }
-    .ace-focus { font-size: 13px; color: #5a6575; } .ace-focus b { color: #3F8A1C; }
-    .ace-brand-task-name { font-weight: 700; font-size: 16px; } .ace-brand-task-name span { font-weight: 500; color: #5a6575; }
-    .ace-brand-task p { margin: 4px 0 0; font-size: 14px; color: #3a4556; line-height: 1.45; }
-    @media (max-width: 860px) { .ace-brand-panel { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; } }
-  </style>
-
 
   <!-- Schema.org JSON-LD: Organization + WebSite + SportsLocation + SoftwareApp + Person -->
   <script type="application/ld+json">
@@ -161,22 +134,473 @@
     ]
   }
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --canvas:#F4F2EC; --surface:#FFFFFF; --night:#07111F; --night-2:#0E1D33;
+      --ink:#0A1628; --ink-soft:#4A5568; --line:rgba(10,22,40,.12);
+      --accent:#C8F04B; --accent-ink:#3F6F14; --on-night:#F4F2EC; --on-night-soft:rgba(244,242,236,.72);
+      --display:"Archivo",system-ui,sans-serif; --text:"Archivo",system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
+      --pad:clamp(16px,5vw,72px); --ease:cubic-bezier(.2,.7,.2,1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--canvas);color:var(--ink);font-family:var(--text);font-stretch:100%;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    section[id]{scroll-margin-top:72px}
+    .wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+    .disp{font-family:var(--display);font-stretch:125%;font-weight:850;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+    .mono{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    .btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;background:var(--accent);color:var(--night);font-weight:800;font-stretch:110%;text-decoration:none;border-radius:999px;font-size:16px;transition:transform .25s var(--ease),background-color .25s var(--ease)}
+    .btn:hover{transform:translateY(-2px);background:#d6f86a}
+    .btn svg{width:18px;height:18px}
+    .txtlink{font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+
+    /* Nav */
+    .nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px var(--pad);color:var(--on-night);transition:background-color .3s var(--ease),color .3s var(--ease)}
+    .nav.solid{background:rgba(244,242,236,.94);color:var(--ink);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+    .nav .logo{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:22px;text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+    .nav .logo i{width:16px;height:16px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:inset -3px -2px 0 rgba(0,0,0,.18)}
+    .nav ul{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:600}
+    .nav ul a{text-decoration:none;opacity:.85}
+    .nav ul a:hover{opacity:1}
+    .nav .btn{min-height:44px;padding:0 18px;font-size:14px}
+    .menu-btn{display:none;background:none;border:0;color:inherit;width:44px;height:44px;font:700 14px var(--text)}
+    @media (max-width:900px){
+      .nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--canvas);color:var(--ink);padding:8px var(--pad) 18px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+      .nav ul.open{display:flex}
+      .nav ul a{display:block;padding:12px 0;min-height:44px}
+      .menu-btn{display:block}
+      .nav .btn{display:none}
+    }
+
+    /* 1 Hero: layered */
+    .hero{position:relative;height:100svh;min-height:640px;overflow:hidden;background:var(--night);color:var(--on-night);isolation:isolate}
+    .hero .layer{position:absolute;inset:0;will-change:transform}
+    .hero .bg{background:url(assets/home/hero-bg.webp) center 30%/cover no-repeat;transform:scale(1.12)}
+    .hero .glow{background:radial-gradient(60% 50% at 62% 40%,rgba(200,240,75,.16),transparent 70%)}
+    .hero h1{font-weight:inherit}
+    .hero .back{position:absolute;z-index:2;left:var(--pad);right:var(--pad);top:14vh;font-size:clamp(56px,8vw,150px);color:var(--on-night);will-change:transform}
+    .hero .back span{display:block}
+    .hero .subject{position:absolute;z-index:3;right:-1vw;bottom:0;height:84%;width:auto;max-width:none;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));will-change:transform}
+    .hero .front{position:absolute;z-index:4;left:var(--pad);bottom:calc(6vh + 200px);font-size:clamp(34px,5.2vw,84px);color:var(--accent);will-change:transform}
+    .hero .scrim{position:absolute;z-index:4;left:0;bottom:0;width:min(760px,100%);height:58%;background:radial-gradient(90% 80% at 0% 100%,rgba(7,17,31,.82),transparent 70%)}
+    .hero .copy{position:absolute;z-index:5;left:var(--pad);bottom:6vh;max-width:500px}
+    .hero .copy p{color:var(--on-night-soft);margin-bottom:22px;font-size:18px}
+    .hero .copy p strong{color:var(--on-night)}
+    .hero .creds{margin-top:18px;color:var(--on-night-soft)}
+    .hero .ball{position:absolute;z-index:6;width:clamp(26px,3vw,46px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#efff9a,var(--accent) 45%,#93b82a);box-shadow:0 8px 24px rgba(200,240,75,.35);right:38vw;top:52vh;will-change:transform}
+    .hero .baseline{position:absolute;z-index:6;left:0;right:0;bottom:-2px;height:10px;background:var(--on-night);opacity:.9;will-change:transform}
+    @media (max-width:760px){
+      .hero{height:auto;min-height:100svh;padding:96px var(--pad) 40px;display:flex;flex-direction:column}
+      .hero h1{display:contents}
+      .hero .back{order:1}.hero .subject{order:2;flex-shrink:0}.hero .front{order:3}.hero .copy{order:4}
+      .hero .back{position:relative;left:auto;right:auto;top:auto;font-size:clamp(54px,17vw,96px)}
+      .hero .subject{position:relative;right:auto;height:auto;width:100%;margin:-4px 0 0;max-width:none}
+      .hero .front{position:relative;left:auto;bottom:auto;margin-top:-30px;font-size:clamp(34px,10vw,52px)}
+      .hero .scrim{height:62%}
+      .hero .copy{position:relative;left:auto;bottom:auto;margin-top:18px}
+      .hero .ball{right:12vw;top:40vh}
+    }
+
+    /* 2 Tension: static, quiet */
+    .tension{padding:clamp(96px,16vh,180px) 0}
+    .tension .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
+    .tension h2{font-size:clamp(40px,6vw,92px)}
+    .tension p{font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:520px}
+    .tension p + p{margin-top:16px}
+    .tension p strong{color:var(--ink)}
+    @media (max-width:760px){.tension .grid{grid-template-columns:1fr}}
+
+    /* 3 Turn: pan */
+    .pan{position:relative;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .pan .sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4vh,48px)}
+    .pan .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+    .pan h2{font-size:clamp(38px,5vw,78px);max-width:12ch}
+    .pan .head p{max-width:420px;color:var(--ink-soft)}
+    .track{display:flex;gap:24px;padding:0 var(--pad);will-change:transform}
+    .vcard{flex:0 0 clamp(280px,30vw,440px);text-decoration:none;color:inherit}
+    .thumb{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--night-2)}
+    .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+    .vcard:hover .thumb img{transform:scale(1.04)}
+    .thumb .play{position:absolute;left:14px;bottom:14px;width:46px;height:46px;border-radius:50%;background:var(--accent);display:grid;place-items:center}
+    .thumb .play::after{content:"";border-left:13px solid var(--night);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+    .vcard h3{font-size:19px;line-height:1.25;margin-top:14px;font-weight:750;font-stretch:105%}
+    .vcard .tag{margin-top:6px;color:var(--accent-ink)}
+    .pan .more{padding:0 var(--pad)}
+    @media (max-width:760px){
+      .pan{height:auto!important}
+      .pan .sticky{position:relative;height:auto;padding:80px 0}
+      .track{overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important;padding-bottom:12px}
+      .vcard{flex-basis:82vw;scroll-snap-align:start}
+    }
+
+    /* Pause */
+    .pause{padding:clamp(110px,22vh,220px) var(--pad);text-align:center}
+    .pause p{font-size:clamp(30px,4.2vw,64px);font-weight:300;font-stretch:90%;line-height:1.1;max-width:18ch;margin:0 auto;letter-spacing:-.01em}
+    .pause p em{font-style:normal;font-weight:850;font-stretch:125%}
+
+    /* 4 Peak: pinned scoreboard */
+    .peak{position:relative;height:520vh;background:var(--night);color:var(--on-night)}
+    .peak .sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(24px,5vw,80px);padding:80px var(--pad) 40px}
+    .peak .intro .mono{color:var(--accent)}
+    .peak .intro h2{font-size:clamp(34px,4.4vw,68px);margin:14px 0 18px}
+    .peak .intro p.who{color:var(--on-night-soft);max-width:460px;font-size:17px}
+    .board{background:#030912;border:1px solid rgba(244,242,236,.14);border-radius:16px;padding:18px 20px 22px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
+    .board table{width:100%;border-collapse:collapse;font-family:var(--mono)}
+    .board th{font-size:11px;letter-spacing:.12em;color:var(--on-night-soft);font-weight:400;text-align:center;padding:4px 0 10px}
+    .board th:first-child{text-align:left}
+    .board td{padding:10px 0;border-top:1px solid rgba(244,242,236,.1);font-size:clamp(24px,3vw,44px);text-align:center;font-weight:600;width:22%}
+    .board td:first-child{text-align:left;font-size:clamp(14px,1.3vw,18px);letter-spacing:.1em;width:auto}
+    .board td.live{color:var(--accent)}
+    .board .srv{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle;opacity:0}
+    .court{margin-top:18px;position:relative}
+    .court svg{width:100%;height:auto;display:block}
+    .caption{margin-top:18px;min-height:3.4em;font-size:clamp(19px,1.8vw,26px);font-weight:700;line-height:1.25}
+    .caption small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:400;margin-bottom:6px;text-transform:uppercase}
+    .peak .end{margin-top:18px;opacity:0;transform:translateY(12px);transition:opacity .4s var(--ease),transform .4s var(--ease);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .peak .end.on{opacity:1;transform:none}
+    .peak .end a.txtlink{color:var(--on-night)}
+    .steps{display:flex;gap:6px;margin-top:14px}
+    .steps i{flex:1;height:3px;background:rgba(244,242,236,.18);border-radius:2px;overflow:hidden;position:relative}
+    .steps i b{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+    @media (max-width:860px){
+      .peak{height:560vh}
+      .peak .sticky{grid-template-columns:1fr;align-content:center;gap:18px;padding:72px var(--pad) 24px}
+      .peak .intro p.who{display:none}
+      .peak .intro h2{margin:8px 0 0;font-size:clamp(30px,8vw,44px)}
+      .caption{min-height:4.2em}
+    }
+
+    /* 5 Proof: reveal */
+    .proof{padding:clamp(90px,14vh,160px) 0}
+    .proof .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+    .reveal{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--night-2)}
+    .reveal img{width:100%;height:100%;object-fit:cover;object-position:64% 40%;will-change:clip-path,transform}
+    .proof h2{font-size:clamp(40px,5.4vw,84px)}
+    .proof .lede{margin:20px 0 34px;color:var(--ink-soft);font-size:clamp(18px,1.5vw,21px);max-width:520px}
+    .stats{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+    .stats div{padding:18px 0 20px;border-bottom:1px solid var(--line)}
+    .stats div:nth-child(odd){padding-right:16px;border-right:1px solid var(--line)}
+    .stats div:nth-child(even){padding-left:20px}
+    .stats b{display:block;font-family:var(--display);font-stretch:125%;font-weight:850;font-size:clamp(34px,3.6vw,56px);line-height:1}
+    .stats span{color:var(--ink-soft);font-size:15px}
+    @media (max-width:760px){.proof .grid{grid-template-columns:1fr}.reveal{aspect-ratio:4/4.4}}
+
+    /* 6 Options: pointer */
+    .options{background:var(--night);color:var(--on-night);padding:clamp(90px,14vh,150px) 0}
+    .options .head{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:end;margin-bottom:44px}
+    .options h2{font-size:clamp(38px,5vw,78px)}
+    .options .head p{color:var(--on-night-soft);max-width:440px;justify-self:end}
+    .court-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;perspective:1100px}
+    .court-grid .vcard{grid-column:span 2;transform-style:preserve-3d;transition:transform .35s var(--ease)}
+    .court-grid .vcard:nth-child(1){grid-column:span 4;grid-row:span 2}
+    .court-grid .vcard:nth-child(1) h3{font-size:clamp(22px,2vw,30px)}
+    .court-grid .vcard .tag{color:var(--accent)}
+    .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:70px}
+    .path{display:block;text-decoration:none;border:1px solid rgba(244,242,236,.16);border-radius:16px;padding:26px;min-height:190px;transition:transform .3s var(--ease),border-color .3s var(--ease),background-color .3s var(--ease)}
+    .path:hover{transform:translateY(-4px);border-color:var(--accent);background:rgba(200,240,75,.05)}
+    .path h3{font-size:24px;font-stretch:115%;font-weight:850;margin:10px 0 8px}
+    .path p{color:var(--on-night-soft);font-size:16px}
+    .path .mono{color:var(--accent)}
+    @media (max-width:860px){
+      .options .head{grid-template-columns:1fr}.options .head p{justify-self:start}
+      .court-grid{grid-template-columns:1fr}
+      .court-grid .vcard,.court-grid .vcard:nth-child(1){grid-column:auto;grid-row:auto}
+      .paths{grid-template-columns:1fr}
+    }
+
+    /* 7 Close */
+    .close{padding:clamp(110px,20vh,220px) 0 clamp(80px,12vh,140px)}
+    .close .grid{display:grid;grid-template-columns:1fr minmax(300px,380px);gap:clamp(24px,5vw,80px);align-items:end}
+    .close h2{font-size:clamp(56px,10vw,170px)}
+    .close h2 span{color:var(--accent-ink)}
+    .close .act p{color:var(--ink-soft);margin-bottom:22px;max-width:380px}
+    .close .act .alt{margin-top:18px;font-size:16px;color:var(--ink-soft)}
+    @media (max-width:860px){.close .grid{grid-template-columns:1fr}}
+
+    footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:15px;color:var(--ink-soft)}
+    footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
+    footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+    footer a{text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .hero .layer,.hero .back,.hero .subject,.hero .front,.hero .ball,.hero .baseline,.track,.reveal img{transform:none!important}
+      .btn,.path,.vcard,.thumb img,.peak .end{transition:none}
+    }
+  </style>
 </head>
-<body data-base="">
+<body>
 
-  <div data-site-nav></div>
+  <header class="nav" id="nav">
+    <a class="logo" href="index.html" aria-label="MPTennis home">MP<i></i>Tennis</a>
+    <ul id="menu">
+      <li><a href="#gear">Gear tests</a></li>
+      <li><a href="#matches">On court</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="tools/swingweight-estimator.html">Tools</a></li>
+      <li><a href="shop/">Shop</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
 
-  <div id="root"></div>
+  <main>
+    <!-- 1 Recognition -->
+    <section class="hero" id="top">
+      <div class="layer bg" data-depth=".18"></div>
+      <div class="layer glow" data-depth=".1"></div>
+      <h1>
+        <span class="back disp" data-depth=".32"><span>Gear</span><span>that fits.</span></span>
+        <span class="front disp" data-depth=".05">Matches you win.</span>
+      </h1>
+      <img class="subject" src="assets/home/cade-cut.webp" alt="Cade Nadeau hitting a two handed backhand" data-depth=".08" fetchpriority="high"/>
+      <div class="scrim"></div>
+      <div class="copy">
+        <p><strong>Cade Nadeau tests racquets and strings in real points.</strong> Then he shows club players what actually wins.</p>
+        <a class="btn" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg>Subscribe on YouTube</a>
+        <div class="creds mono">14K+ subs · 5M+ views · 11.20 UTR</div>
+      </div>
+      <div class="ball" data-depth="-.6" aria-hidden="true"></div>
+      <div class="baseline" data-depth="-.2" aria-hidden="true"></div>
+    </section>
 
-  <div data-site-footer></div>
+    <!-- 2 Tension -->
+    <section class="tension">
+      <div class="wrap grid">
+        <h2 class="disp">New racquet.<br/>Same score.</h2>
+        <div>
+          <p>You demo the frame everyone raves about. You change strings. You drop the tension. You still lose to the same guy on Thursday night.</p>
+          <p><strong>More gear is not the fix. The right fit is.</strong> Then a smarter plan for the points that matter.</p>
+        </div>
+      </div>
+    </section>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <!-- 3 Turn: gear tests -->
+    <section class="pan" id="gear">
+      <div class="sticky">
+        <div class="wrap head">
+          <h2 class="disp">Find your fit. Then stop shopping.</h2>
+          <p>Honest racquet and string reviews from a player who still competes. Who it fits, who should skip it, and the one flaw.</p>
+        </div>
+        <div class="track" id="track">
+          <a class="vcard" href="https://youtu.be/xj4s3ucKj84" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/xj4s3ucKj84/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>Head Boom Pro 98: I Hated It... Now It's in My Bag</h3><div class="tag mono">Racquet review</div></a>
+          <a class="vcard" href="https://youtu.be/h8bIR9YbhWc" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/h8bIR9YbhWc/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>I Like the Wilson Defyer 100 More Than the 98, Except For One Thing</h3><div class="tag mono">Racquet review</div></a>
+          <a class="vcard" href="https://youtu.be/FQ8n7oocRcA" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/FQ8n7oocRcA/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>Best Tennis Strings for Club Players? I Tested 3 Hybrids</h3><div class="tag mono">Strings</div></a>
+          <a class="vcard" href="https://youtu.be/vFL523aGfnE" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/vFL523aGfnE/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>Head Extreme Pro 98 Review: The Weight Caught Me Off Guard</h3><div class="tag mono">Racquet review</div></a>
+          <a class="vcard" href="https://youtu.be/Q_OsDJT2rK8" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Q_OsDJT2rK8/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>I Lowered My Tension to 44 lbs</h3><div class="tag mono">Tension</div></a>
+        </div>
+        <div class="more"><a class="txtlink" href="blog/">Read the written reviews</a></div>
+      </div>
+    </section>
 
-  <script type="text/babel" src="tweaks-panel.jsx?v=5"></script>
-  <script type="text/babel" src="app.jsx?v=5"></script>
-  <script src="site-chrome.js?v=4"></script>
+    <!-- Pause before the peak -->
+    <section class="pause">
+      <p>So does the racquet <em>decide the match?</em></p>
+    </section>
 
+    <!-- 4 Peak: scoreboard -->
+    <section class="peak" id="breakdown">
+      <div class="sticky">
+        <div class="intro">
+          <div class="mono">Match breakdown</div>
+          <h2 class="disp">He switched to the Defyer 98. Then he beat me.</h2>
+          <p class="who">Gryffin is a former D1 player with a 12.09 trending UTR. I know his game well. Here is how it went, point of view from my side of the net.</p>
+        </div>
+        <div>
+          <div class="board" role="img" aria-label="Final score: Gryffin won 6-2, 6-3">
+            <table>
+              <thead><tr><th>Player</th><th>Set 1</th><th>Set 2</th></tr></thead>
+              <tbody>
+                <tr><td>Cade<span class="srv" id="srvC"></span></td><td id="c1">0</td><td id="c2">·</td></tr>
+                <tr><td>Gryffin<span class="srv" id="srvG"></span></td><td id="g1">0</td><td id="g2">·</td></tr>
+              </tbody>
+            </table>
+            <div class="court" aria-hidden="true">
+              <svg viewBox="0 0 400 110">
+                <rect x="1" y="1" width="398" height="108" rx="4" fill="#123d2b" stroke="rgba(244,242,236,.7)" stroke-width="2"/>
+                <line x1="200" y1="1" x2="200" y2="109" stroke="#F4F2EC" stroke-width="3"/>
+                <line x1="1" y1="14" x2="399" y2="14" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                <line x1="1" y1="96" x2="399" y2="96" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                <line x1="95" y1="14" x2="95" y2="96" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                <line x1="305" y1="14" x2="305" y2="96" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                <line x1="95" y1="55" x2="305" y2="55" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                <path id="trail" d="" fill="none" stroke="rgba(200,240,75,.45)" stroke-width="2" stroke-dasharray="3 5"/>
+                <ellipse id="shadow" cx="40" cy="70" rx="7" ry="2.5" fill="rgba(0,0,0,.45)"/>
+                <circle id="rball" cx="40" cy="60" r="6.5" fill="#C8F04B"/>
+              </svg>
+            </div>
+            <div class="steps" id="steps"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+          </div>
+          <p class="caption" id="caption" aria-live="polite"><small>Set 1</small>Indoors. I came out flat.</p>
+          <div class="end" id="end">
+            <a class="btn" href="https://youtu.be/MVuKYsBQXoA" target="_blank" rel="noopener">Watch the breakdown</a>
+            <a class="txtlink" href="blog/tennis-match-breakdown-stop-doing-what-works.html">Read the write up</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Proof -->
+    <section class="proof" id="about">
+      <div class="wrap grid">
+        <div class="reveal" id="reveal"><img src="assets/home/serve.webp" alt="Cade Nadeau serving at night in his SNHU kit" loading="lazy"/></div>
+        <div>
+          <h2 class="disp">High level to club level.</h2>
+          <p class="lede">Cade trains with high level players, coaches juniors and club players every week, and still competes. What works up there, he turns into something you can use this week. Chris, his dad and the UNB coach, joins in when the topic calls for it.</p>
+          <div class="stats">
+            <div><b>11.20</b><span>UTR</span></div>
+            <div><b>NCAA</b><span>Former team captain</span></div>
+            <div><b>14K+</b><span>YouTube subscribers</span></div>
+            <div><b>5M+</b><span>Views</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Options -->
+    <section class="options" id="matches">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="disp">Play smarter, not more.</h2>
+          <p>Cade playing, coaching and learning on court. What works at the high level, and how club players can use it.</p>
+        </div>
+        <div class="court-grid" id="courtGrid">
+          <a class="vcard" href="https://youtu.be/MVuKYsBQXoA" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/MVuKYsBQXoA/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>He Switched to the Defyer 98. Then He Beat Me 6-2, 6-3</h3><div class="tag mono">Match breakdown</div></a>
+          <a class="vcard" href="https://youtu.be/Wn646SLw858" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Wn646SLw858/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>I Assessed My 55 Year Old Dad's Tennis Game</h3><div class="tag mono">Coaching</div></a>
+          <a class="vcard" href="https://youtu.be/EkfYiAzv1wQ" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/EkfYiAzv1wQ/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>I Had 5 Days to Prepare for a Pro Tennis Match</h3><div class="tag mono">On court</div></a>
+          <a class="vcard" href="https://youtu.be/ELzO0vXt4QU" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/ELzO0vXt4QU/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>I Won the First Set 6-0 vs a D1 Player. Then I Collapsed</h3><div class="tag mono">Match play</div></a>
+          <a class="vcard" href="https://youtu.be/-s9oyz-S8Xg" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/-s9oyz-S8Xg/hqdefault.jpg" alt="" loading="lazy"/><span class="play"></span></div><h3>What 15 Years of Tennis Has Taught Me About Getting Better</h3><div class="tag mono">Mindset</div></a>
+        </div>
+
+        <div class="paths">
+          <a class="path" id="ace" href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener"><span class="mono">Ace Tennis Coach</span><h3>Your plan for today</h3><p>Our app builds your practice plan and your racquet setup. Try it free for 7 days.</p></a>
+          <a class="path" href="tools/swingweight-estimator.html"><span class="mono">Free tools</span><h3>Swingweight estimator</h3><p>Check your racquet setup before you add lead or buy another frame.</p></a>
+          <a class="path" href="mailto:chris@mptennis.ca"><span class="mono">In person</span><h3>Coaching</h3><p>Lessons and training in New Brunswick. Email us to ask about times.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 Close -->
+    <section class="close">
+      <div class="wrap grid">
+        <h2 class="disp">Find your fit.<br/><span>Go win.</span></h2>
+        <div class="act">
+          <p>New gear tests and match breakdowns every week, from a player who still competes.</p>
+          <a class="btn" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg>Subscribe on YouTube</a>
+          <p class="alt">Rather read? <a class="txtlink" href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener">Get the 7 free drills</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 MPTennis · New Brunswick, Canada</span>
+      <nav>
+        <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/mptennisnb/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/mptennisnb" target="_blank" rel="noopener">Facebook</a>
+        <a href="blog/">Blog</a>
+        <a href="shop/">Shop</a>
+        <a href="mailto:chris@mptennis.ca">chris@mptennis.ca</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var mobile = function(){ return window.innerWidth <= 760; };
+    var nav = document.getElementById("nav");
+    var menu = document.getElementById("menu"), menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function(){ var o = menu.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
+    menu.addEventListener("click", function(e){ if(e.target.tagName === "A"){ menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); } });
+
+    function prog(el, mode){
+      var r = el.getBoundingClientRect(), vh = window.innerHeight;
+      if(mode === "pin"){ var d = r.height - vh; return d > 0 ? Math.min(1, Math.max(0, -r.top / d)) : 0; }
+      return Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+    }
+    var smooth = {}; function lerp(k, t){ var v = smooth[k] == null ? t : smooth[k]; v += (t - v) * 0.14; if(Math.abs(t - v) < 0.0005) v = t; smooth[k] = v; return v; }
+
+    /* Hero layers */
+    var hero = document.querySelector(".hero"), layers = hero.querySelectorAll("[data-depth]");
+    var px = 0, py = 0, tx = 0, ty = 0;
+    if(!reduce) window.addEventListener("pointermove", function(e){ if(e.pointerType === "mouse"){ tx = e.clientX / window.innerWidth - .5; ty = e.clientY / window.innerHeight - .5; } });
+
+    /* Pan */
+    var pan = document.getElementById("gear"), track = document.getElementById("track");
+    function sizePan(){ if(mobile() || reduce){ pan.style.height = ""; return; } var extra = Math.max(0, track.scrollWidth - window.innerWidth); pan.style.height = (window.innerHeight + extra) + "px"; }
+    sizePan(); window.addEventListener("resize", sizePan);
+
+    /* Peak */
+    var peak = document.getElementById("breakdown");
+    var S = [
+      {c1:0,g1:5,c2:"·",g2:"·",set:"Set 1",t:"Indoors. I came out flat and went down 0 to 5.",live:"g1"},
+      {c1:2,g1:5,c2:"·",g2:"·",set:"Set 1",t:"So I went to the net every point. Won two games.",live:"c1"},
+      {c1:2,g1:6,c2:"·",g2:"·",set:"Set 1",t:"Then I dropped it. 2 and 6.",live:"g1"},
+      {c1:2,g1:6,c2:3,g2:2,set:"Set 2",t:"Up a break in the second. 3 and 2.",live:"c2"},
+      {c1:2,g1:6,c2:3,g2:6,set:"Set 2",t:"Broken back. He ran away with it.",live:"g2"},
+      {c1:2,g1:6,c2:3,g2:6,set:"Final",t:"The racquet was not the story. What I kept doing was.",live:""}
+    ];
+    var cells = {c1:document.getElementById("c1"),g1:document.getElementById("g1"),c2:document.getElementById("c2"),g2:document.getElementById("g2")};
+    var cap = document.getElementById("caption"), end = document.getElementById("end"), bars = document.querySelectorAll("#steps b");
+    var ball = document.getElementById("rball"), shadow = document.getElementById("shadow"), trail = document.getElementById("trail");
+    var lastStep = -1;
+    function setStep(i){
+      if(i === lastStep) return; lastStep = i; var s = S[i];
+      for(var k in cells){ cells[k].textContent = s[k]; cells[k].classList.toggle("live", k === s.live); }
+      cap.innerHTML = "<small>" + s.set + "</small>" + s.t;
+      end.classList.toggle("on", i === S.length - 1);
+    }
+    function rally(p){
+      var n = S.length, f = p * n, i = Math.min(n - 1, Math.floor(f)), local = f - i;
+      setStep(i);
+      for(var b = 0; b < bars.length; b++){ bars[b].style.transform = "scaleX(" + (b < i ? 1 : b === i ? local : 0) + ")"; }
+      var dir = i % 2 === 0 ? 1 : -1, x0 = dir > 0 ? 40 : 360, x1 = dir > 0 ? 330 : 70;
+      var lane = [62, 40, 78, 50, 70, 55][i];
+      var x = x0 + (x1 - x0) * local, gy = lane, h = Math.sin(Math.PI * local) * 34;
+      if(reduce){ x = x1; h = 0; }
+      ball.setAttribute("cx", x.toFixed(1)); ball.setAttribute("cy", (gy - 6 - h).toFixed(1));
+      shadow.setAttribute("cx", x.toFixed(1)); shadow.setAttribute("cy", gy.toFixed(1));
+      var d = "M" + x0 + " " + (gy - 6); for(var t = 0; t <= local; t += .05){ var xx = x0 + (x1 - x0) * t; d += " L" + xx.toFixed(1) + " " + (gy - 6 - Math.sin(Math.PI * t) * 34).toFixed(1); }
+      trail.setAttribute("d", reduce ? "" : d);
+    }
+
+    /* Reveal */
+    var revealBox = document.getElementById("reveal"), revealImg = revealBox.querySelector("img");
+
+    /* Pointer tilt on cards */
+    if(!reduce && window.matchMedia("(hover: hover)").matches){
+      document.querySelectorAll("#courtGrid .vcard").forEach(function(card){
+        card.addEventListener("pointermove", function(e){ var r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; card.style.transform = "rotateY(" + (x * 7) + "deg) rotateX(" + (-y * 7) + "deg) translateZ(0)"; });
+        card.addEventListener("pointerleave", function(){ card.style.transform = ""; });
+      });
+    }
+
+    function frame(){
+      nav.classList.toggle("solid", window.scrollY > window.innerHeight * .8);
+      if(!reduce){
+        px += (tx - px) * .06; py += (ty - py) * .06;
+        var hp = lerp("hero", Math.min(1, Math.max(0, window.scrollY / window.innerHeight)));
+        var vh = window.innerHeight;
+        if(!mobile()) layers.forEach(function(l){ var d = parseFloat(l.dataset.depth); var extra = l.classList.contains("bg") ? " scale(1.12)" : ""; l.style.transform = "translate3d(" + (px * d * -40) + "px," + (hp * vh * d) + "px,0)" + extra; });
+        if(!mobile()){ var pp = lerp("pan", prog(pan, "pin")); track.style.transform = "translate3d(" + (-pp * Math.max(0, track.scrollWidth - window.innerWidth)) + "px,0,0)"; }
+        var rp = lerp("rev", prog(revealBox));
+        var k = Math.min(1, Math.max(0, (rp - .12) / .4));
+        revealImg.style.clipPath = "inset(0 " + ((1 - k) * 100).toFixed(2) + "% 0 0)";
+        revealImg.style.transform = "scale(" + (1.12 - k * .12).toFixed(3) + ")";
+      }
+      rally(reduce ? prog(peak, "pin") : lerp("peak", prog(peak, "pin")));
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+  </script>
 </body>
 </html>
