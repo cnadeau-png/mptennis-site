@@ -17,14 +17,14 @@
   <meta property="og:site_name" content="MPTennis"/>
   <meta property="og:url" content="https://mptennis.ca/"/>
   <meta property="og:title" content="MPTennis · Gear that fits. Matches you win."/>
-  <meta property="og:description" content="Cade Nadeau — 11.20 UTR, NCAA captain, top-40 Canada — coaches club players and juniors who want to actually get better. Train via Ace app, YouTube, or in person."/>
+  <meta property="og:description" content="Honest racquet and string tests from Cade Nadeau, 11.20 UTR and former NCAA team captain. Then the match smarts to win with them."/>
   <meta property="og:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
   <meta property="og:locale" content="en_CA"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="MPTennis · Gear that fits. Matches you win."/>
-  <meta name="twitter:description" content="Train with Cade Nadeau — 11.20 UTR, NCAA captain. Three ways: Ace app, YouTube, or in person."/>
+  <meta name="twitter:description" content="Honest racquet and string tests from Cade Nadeau, 11.20 UTR and former NCAA team captain."/>
   <meta name="twitter:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
 
   <!-- Favicons -->
@@ -33,33 +33,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css?v=12"/>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
-    section[id] { scroll-margin-top: 110px; }
-    .ace-brand-panel { background: #F2F5F8; color: #081020; border-radius: 20px; padding: 48px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; font-family: Archivo, system-ui, sans-serif; }
-    .ace-brand-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; margin-bottom: 28px; }
-    .ace-ball { width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d6f27a, #8ccf3c 55%, #5ea52a); display: inline-block; }
-    .ace-brand-eyebrow { font-family: "Geist Mono", Menlo, monospace; color: #3F6F14; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 10px; }
-    .ace-brand-h { font-weight: 800; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 16px; color: #081020; text-transform: none; }
-    .ace-brand-sub { font-size: 17px; line-height: 1.55; color: #3a4556; margin: 0 0 22px; }
-    .ace-brand-chips { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .ace-brand-chips li { background: #fff; border: 1px solid #dde3ea; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 700; }
-    .ace-brand-btn { display: inline-block; background: #081020; color: #fff; text-decoration: none; font-weight: 700; padding: 15px 24px; border-radius: 12px; }
-    .ace-brand-btn:hover { background: #3F8A1C; }
-    .ace-brand-card { background: #fff; border: 1px solid #e3e8ee; border-radius: 16px; padding: 22px; box-shadow: 0 10px 30px rgba(8,16,32,.08); }
-    .ace-brand-card-head { display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; font-size: 24px; margin-bottom: 14px; }
-    .ace-mono { font-family: "Geist Mono", Menlo, monospace; font-size: 12px; font-weight: 400; color: #3F6F14; }
-    .ace-brand-task { border: 1px solid #e3e8ee; border-radius: 12px; padding: 14px 16px; margin-top: 10px; }
-    .ace-brand-task-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
-    .ace-where { text-transform: uppercase; font-weight: 700; color: #081020; }
-    .ace-focus { font-size: 13px; color: #5a6575; } .ace-focus b { color: #3F8A1C; }
-    .ace-brand-task-name { font-weight: 700; font-size: 16px; } .ace-brand-task-name span { font-weight: 500; color: #5a6575; }
-    .ace-brand-task p { margin: 4px 0 0; font-size: 14px; color: #3a4556; line-height: 1.45; }
-    @media (max-width: 860px) { .ace-brand-panel { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; } }
-  </style>
-
 
   <!-- Schema.org JSON-LD: Organization + WebSite + SportsLocation + SoftwareApp + Person -->
   <script type="application/ld+json">
@@ -161,22 +134,577 @@
     ]
   }
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --canvas:#EEF0EC; --glass:rgba(255,255,255,.72); --glass-line:rgba(255,255,255,.9);
+      --ink:#0A1628; --ink-soft:#4B5563; --line:rgba(10,22,40,.1);
+      --accent:#7EC845; --accent-ink:#3F8A1C; --navy:#0A1628;
+      --display:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif; --text:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
+      --pad:clamp(16px,5vw,72px); --ease:cubic-bezier(.2,.7,.2,1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:clip}
+    body{background:var(--canvas);color:var(--ink);font-family:var(--text);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    section[id]{scroll-margin-top:90px}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+    h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;line-height:1;font-weight:800}
+    .mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+
+    /* Signature: reeded glass court. Soft colour blobs (one is the ball) sit behind vertical glass ribs and move with scroll. */
+    .glass-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+    .blob{position:absolute;border-radius:50%;filter:blur(60px);will-change:transform}
+    .blob.ball{width:34vmax;height:34vmax;background:radial-gradient(circle,rgba(126,200,69,.85),rgba(126,200,69,0) 68%);left:55vw;top:-6vmax}
+    .blob.court{width:46vmax;height:46vmax;background:radial-gradient(circle,rgba(46,111,176,.45),rgba(46,111,176,0) 70%);left:-12vmax;top:30vh}
+    .blob.night{width:30vmax;height:30vmax;background:radial-gradient(circle,rgba(10,22,40,.22),rgba(10,22,40,0) 70%);left:70vw;top:60vh}
+    .ribs{position:absolute;inset:0;background:
+      repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 2px,rgba(255,255,255,0) 6px,rgba(10,22,40,.05) 11px,rgba(255,255,255,.35) 14px);
+      mix-blend-mode:normal}
+    .grain{position:absolute;inset:0;opacity:.35;background-image:radial-gradient(rgba(10,22,40,.07) 1px,transparent 1px);background-size:3px 3px}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;border-radius:12px;background:var(--navy);color:#fff;font-weight:700;font-size:17px;text-decoration:none;white-space:nowrap;box-shadow:0 10px 24px rgba(10,22,40,.22);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(10,22,40,.28)}
+    .btn .tri{width:0;height:0;border-left:8px solid var(--accent);border-top:5px solid transparent;border-bottom:5px solid transparent}
+    .btn.green{background:var(--accent);color:var(--navy);box-shadow:0 10px 24px rgba(63,138,28,.28)}
+    .btn.green .tri{border-left-color:var(--navy)}
+    .tlink{color:var(--accent-ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px;display:inline-flex;align-items:center;min-height:44px;border-bottom-width:0;background:linear-gradient(currentColor,currentColor) 0 calc(100% - 8px)/100% 1.5px no-repeat}
+    .ghost{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border-radius:10px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 4px 12px rgba(10,22,40,.06)}
+
+    /* Nav */
+    .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background-color .3s var(--ease),box-shadow .3s var(--ease)}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+    .nav.solid{background:rgba(238,240,236,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+    .nav .logo img{height:26px;width:auto}
+    .nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500;align-items:center}
+    .nav ul a{text-decoration:none}
+    .nav ul a:hover{color:var(--accent-ink)}
+    .nav .btn{min-height:42px;padding:0 18px;font-size:14px;border-radius:999px;box-shadow:none}
+    .menu-btn{display:none;background:none;border:0;width:44px;height:44px;font:600 15px var(--text);color:var(--ink)}
+    @media (max-width:960px){
+      .nav ul{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--canvas);padding:6px var(--pad) 18px;box-shadow:0 14px 30px rgba(10,22,40,.12)}
+      .nav ul.open{display:flex}
+      .nav ul a{display:flex;align-items:center;min-height:48px}
+      .menu-btn{display:block}
+      .nav .wrap > .btn{display:none}
+      .nav .logo img{height:18px}
+    }
+
+    /* Hero */
+    .hero{padding:120px 0 24px}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center;width:100%}
+    .stats-top{display:flex;gap:clamp(22px,4vw,44px);margin-bottom:22px;flex-wrap:wrap}
+    .stats-top b{display:block;font-family:var(--display);font-size:clamp(26px,2.4vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+    .stats-top b i{font-style:normal;color:var(--accent-ink)}
+    .stats-top span{font-size:14px;color:var(--ink-soft)}
+    .hero h1{font-size:clamp(42px,4.8vw,70px);max-width:12ch}
+    .hero h1 em{font-style:normal;color:var(--accent-ink)}
+    .hero .lede{margin:18px 0 28px;font-size:clamp(18px,1.4vw,20px);color:#2b3442;max-width:540px;line-height:1.45}
+    .hero .ctas{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+    .hero .credit{margin-top:22px}
+    .portrait{position:relative;height:min(64vh,580px);display:flex;justify-content:center;align-items:flex-end}
+    .portrait .arch{position:absolute;bottom:0;left:50%;width:88%;height:84%;transform:translateX(-50%);border-radius:999px 999px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.15));box-shadow:inset 0 0 0 1px rgba(255,255,255,.8)}
+    .portrait img{position:relative;height:100%;width:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 99%);mask-image:linear-gradient(180deg,#000 72%,transparent 99%);will-change:transform}
+    @media (max-width:860px){
+      .hero{padding-top:96px}
+      .hero .grid{grid-template-columns:1fr}
+      .portrait{height:46vh;max-height:400px;order:-1;margin-bottom:-8px}
+    }
+
+    /* Panels */
+    .panel{position:relative;background:var(--glass);border:1px solid var(--glass-line);border-radius:28px;box-shadow:0 30px 60px rgba(10,22,40,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:clamp(28px,5vw,72px)}
+    .block{padding:clamp(48px,9vh,96px) 0 0}
+    .split-head{max-width:720px;margin-bottom:clamp(24px,3vw,36px)}
+    .split-head h2{font-size:clamp(32px,3.4vw,48px)}
+    .split-head h2 em{font-style:normal;color:var(--accent-ink)}
+    .split-head p{margin-top:12px;font-size:18px;color:#2b3442;line-height:1.5}
+        [data-rise]{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+    [data-rise].in{opacity:1;transform:none}
+
+    /* Featured video */
+    .embed{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--navy);box-shadow:0 20px 40px rgba(10,22,40,.15)}
+    .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .under-embed{margin-top:18px}
+
+    /* Video grid */
+    .vgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;perspective:1000px}
+    .vcard{text-decoration:none;display:block;transition:transform .35s var(--ease)}
+    .thumb{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#cfd6d0;box-shadow:0 10px 24px rgba(10,22,40,.1)}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .thumb::after{content:"";position:absolute;left:12px;bottom:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7 5l8 5-8 5z' fill='%230A1628'/%3E%3C/svg%3E") center/14px no-repeat}
+    .vcard h3{font-size:16px;letter-spacing:-.01em;line-height:1.3;font-weight:650;margin-top:12px}
+    @media (max-width:1100px){.vgrid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:640px){.vgrid{grid-template-columns:1fr 1fr;gap:14px}.vcard h3{font-size:14px}}
+
+    /* Link rows (Nate's list style) */
+    .rows{border-top:1px solid var(--line)}
+    .row{display:grid;grid-template-columns:minmax(150px,.7fr) 1.2fr 1.6fr 30px;gap:20px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);text-decoration:none;transition:background-color .25s var(--ease)}
+    .row:hover{background:rgba(255,255,255,.7)}
+    .row b{font-family:var(--display);font-size:clamp(26px,2.6vw,38px);letter-spacing:-.04em;font-weight:700;line-height:1}
+    .row b i{font-style:normal;color:var(--accent-ink)}
+    .row strong{font-size:17px;font-weight:650}
+    .row span{color:var(--ink-soft);font-size:16px}
+    .row .arr{color:var(--accent-ink);font-size:18px;justify-self:end}
+    @media (max-width:760px){.row{grid-template-columns:1fr 24px;gap:4px 12px}.row b{grid-column:1}.row strong,.row span{grid-column:1}.row .arr{grid-row:1 / span 3;grid-column:2}}
+
+    /* Scoreboard peak (pinned) */
+    .pause{padding:clamp(70px,14vh,140px) var(--pad) clamp(40px,8vh,80px);text-align:center}
+    .pause p{font-size:clamp(26px,3vw,44px);font-weight:400;letter-spacing:-.02em;line-height:1.15;max-width:20ch;margin:0 auto}
+    .pause p em{font-style:normal;font-weight:800}
+    .peak{position:relative;height:460vh}
+    .peak .sticky{position:sticky;top:0;height:100svh;display:flex;align-items:center;padding:86px 0 20px}
+    .peak .night{background:var(--navy);color:#F4F2EC;border-radius:28px;padding:clamp(24px,4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;box-shadow:0 40px 80px rgba(10,22,40,.25)}
+    .peak .mono{color:var(--accent)}
+    .peak h2{font-size:clamp(28px,3vw,44px);margin:12px 0 12px}
+    .peak .who{color:rgba(244,242,236,.72);font-size:17px;max-width:440px}
+    .board{background:#030912;border:1px solid rgba(244,242,236,.14);border-radius:16px;padding:16px 18px 20px}
+    .board table{width:100%;border-collapse:collapse;font-family:var(--mono)}
+    .board th{font-size:11px;letter-spacing:.12em;color:rgba(244,242,236,.6);font-weight:400;text-align:center;padding:4px 0 8px}
+    .board th:first-child{text-align:left}
+    .board td{padding:8px 0;border-top:1px solid rgba(244,242,236,.1);font-size:clamp(22px,2.6vw,38px);text-align:center;font-weight:600;width:22%}
+    .board td:first-child{text-align:left;font-size:clamp(13px,1.2vw,16px);letter-spacing:.1em;width:auto}
+    .board td.live{color:var(--accent)}
+    .court{margin-top:14px}
+    .court svg{width:100%;height:auto;display:block}
+    .steps{display:flex;gap:6px;margin-top:12px}
+    .steps i{flex:1;height:3px;background:rgba(244,242,236,.18);border-radius:2px;overflow:hidden;position:relative}
+    .steps i b{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+    .caption{margin-top:16px;min-height:3.2em;font-size:clamp(18px,1.6vw,22px);font-weight:650;line-height:1.3}
+    .caption small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:400;margin-bottom:4px;text-transform:uppercase}
+    .end{margin-top:14px;opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease),transform .4s var(--ease);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .end.on{opacity:1;transform:none}
+    .end .tlink{color:#F4F2EC}
+    @media (max-width:860px){
+      .peak .night{grid-template-columns:1fr;gap:16px}
+      .peak .who{display:none}
+      .peak .sticky{padding:80px 0 12px}
+      .caption{min-height:4em}
+    }
+
+    /* Ace */
+    .ace{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center;background:#F2F5F8}
+    .ace .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.02em}
+    .ace .brand i{width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:inset -3px -2px 0 rgba(0,0,0,.15)}
+    .ace .eyebrow{margin:18px 0 10px;color:#3F6F14}
+    .ace h2{font-size:clamp(28px,2.8vw,40px)}
+    .ace ul{list-style:none;margin:22px 0 30px;display:grid;gap:10px}
+    .ace li{display:flex;gap:12px;align-items:center;font-weight:500}
+    .ace li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    .plan{background:#fff;border-radius:20px;padding:22px;box-shadow:0 24px 50px rgba(8,16,32,.12);border:1px solid rgba(8,16,32,.06)}
+    .plan .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-weight:700}
+    .task{border:1px solid rgba(8,16,32,.08);border-radius:14px;padding:14px 16px;margin-top:10px}
+    .task .meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3F6F14}
+    .task h4{font-size:17px;margin:6px 0 4px;letter-spacing:-.01em}
+    .task p{font-size:14px;color:var(--ink-soft);line-height:1.4}
+    @media (max-width:860px){.ace{grid-template-columns:1fr}}
+
+    /* Gallery: pans sideways with scroll, no pinning */
+    .gallery{padding:clamp(48px,9vh,96px) 0 0;overflow:hidden}
+    .gallery .label{display:inline-block;margin-left:var(--pad);margin-bottom:-60px;position:relative;z-index:2;max-width:440px}
+    .gallery .label h2{font-size:clamp(32px,3.4vw,48px)}
+    .gallery .label p{margin-top:12px;color:#2b3442}
+    .strip{display:flex;gap:28px;padding:100px var(--pad) 10px;will-change:transform;width:max-content}
+    .shot{flex:0 0 auto;width:clamp(260px,32vw,500px)}
+    .shot:nth-child(even){margin-top:70px}
+    .shot .img{border-radius:20px;overflow:hidden;aspect-ratio:3/2;box-shadow:0 20px 40px rgba(10,22,40,.15);background:#cfd6d0}
+    .shot img{width:100%;height:100%;object-fit:cover}
+    .shot .cap{display:inline-block;margin-top:12px;padding:7px 12px;border-radius:10px;background:rgba(255,255,255,.8);font-size:14px;font-weight:500;box-shadow:0 4px 12px rgba(10,22,40,.06)}
+    .gallery .more{padding:46px 0 0}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,80px);align-items:start}
+    .about h2{font-size:clamp(32px,3.4vw,48px)}
+    .about h2 em{font-style:normal;color:var(--accent-ink)}
+    .about p{font-size:18px;line-height:1.6;color:#1f2937;margin-top:16px}
+    .about .ghost{margin-top:32px}
+    .pics{position:relative;height:clamp(360px,36vw,520px)}
+    .pic{position:absolute;border-radius:18px;overflow:hidden;box-shadow:0 24px 50px rgba(10,22,40,.2);border:5px solid #fff;background:#cfd6d0}
+    .pic img{width:100%;height:100%;object-fit:cover}
+    .pic figcaption{position:absolute;left:12px;bottom:10px;color:#fff;font-size:13px;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+    .pic.a{left:0;top:0;width:62%;aspect-ratio:3/4}
+    .pic.a img{object-position:40% 30%}
+    .pic.b{right:0;bottom:0;width:60%;aspect-ratio:3/2}
+    @media (max-width:860px){.about{grid-template-columns:1fr}.pics{height:440px}}
+
+    /* Drills feature */
+    .drills{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,80px);align-items:center}
+    .sheet{position:relative;background:var(--navy);color:#fff;border-radius:20px;padding:30px 28px;transform:rotate(-4deg);box-shadow:0 30px 60px rgba(10,22,40,.3);max-width:380px;margin:0 auto}
+    .sheet img{height:16px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+    .sheet .n{font-size:120px;font-weight:800;letter-spacing:-.06em;line-height:.9;color:var(--accent);margin:24px 0 6px}
+    .sheet .t{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+    .sheet ol{margin-top:20px;padding-left:0;list-style:none;display:grid;gap:8px}
+    .sheet li{height:8px;border-radius:4px;background:rgba(255,255,255,.14)}
+    .sheet li:nth-child(odd){width:80%}
+    .drills h2{font-size:clamp(30px,3.2vw,46px);margin:12px 0 14px}
+    .drills h2 em{font-style:normal;color:var(--accent-ink)}
+    .drills p{color:#2b3442;font-size:19px;margin-bottom:28px}
+    @media (max-width:860px){.drills{grid-template-columns:1fr}.sheet{transform:rotate(-2deg)}}
+
+    /* Close */
+    .close{padding:clamp(90px,16vh,160px) 0 clamp(70px,12vh,120px);text-align:center}
+    .close h2{font-size:clamp(36px,4.8vw,68px);max-width:16ch;margin:0 auto 28px}
+    .close h2 em{font-style:normal;color:var(--accent-ink)}
+    .close .alt{margin-top:14px}
+
+    footer{background:rgba(255,255,255,.7);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px;font-size:15px}
+    footer img{height:18px;width:auto}
+    footer nav{display:flex;gap:6px 22px;flex-wrap:wrap}
+    footer a{text-decoration:none}
+    footer a:hover{color:var(--accent-ink)}
+    footer small{color:var(--ink-soft);font-size:14px}
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      [data-rise]{opacity:1;transform:none;transition:none}
+      .blob,.portrait img,.strip{transform:none!important}
+      .btn,.vcard,.row{transition:none}
+    }
+  </style>
 </head>
-<body data-base="">
+<body>
+  <div class="glass-bg" aria-hidden="true">
+    <div class="blob court" id="bCourt"></div>
+    <div class="blob ball" id="bBall"></div>
+    <div class="blob night" id="bNight"></div>
+    <div class="ribs"></div>
+    <div class="grain"></div>
+  </div>
 
-  <div data-site-nav></div>
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="MPTennis home"><img src="assets/home/logo-light.png" alt="MPTennis" width="900" height="76"/></a>
+      <ul id="menu">
+        <li><a href="#gear">Gear tests</a></li>
+        <li><a href="#matches">On court</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="tools/swingweight-estimator.html">Tools</a></li>
+        <li><a href="shop/">Shop</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a class="btn" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </header>
 
-  <div id="root"></div>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap grid">
+        <div>
+          <div class="stats-top">
+            <div><b>14K<i>+</i></b><span>YouTube subscribers</span></div>
+            <div><b>5M<i>+</i></b><span>Views</span></div>
+            <div><b>11.20</b><span>Cade's UTR</span></div>
+          </div>
+          <h1>Gear that fits. Matches you <em>win</em>.</h1>
+          <p class="lede">Honest racquet and string tests, real match breakdowns, and the club player version of what works at the high level.</p>
+          <div class="ctas">
+            <a class="btn green" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener"><span class="tri"></span>Subscribe on YouTube</a>
+            <a class="tlink" href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener">Get the 7 free drills</a>
+          </div>
+          <div class="credit mono">Cade Nadeau · 11.20 UTR · NCAA Captain</div>
+        </div>
+        <div class="portrait">
+          <div class="arch"></div>
+          <img id="portrait" src="assets/home/cade-portrait.webp" alt="Cade Nadeau on court with his racquet" width="793" height="1000" fetchpriority="high"/>
+        </div>
+      </div>
+    </section>
 
-  <div data-site-footer></div>
+    <!-- Latest video -->
+    <section class="block" id="featured">
+      <div class="wrap">
+        <div class="panel" data-rise>
+          <div class="split-head">
+            <h2>The test a racquet has to <em>pass</em>.</h2>
+            <p>Before Cade switches, a racquet has to hold up in real points. Here's the test the Head Boom Pro 98 went through, and how to run it on your own shots.</p>
+          </div>
+          <div class="embed"><iframe src="https://www.youtube.com/embed/_ifBM0PsE-w?rel=0&modestbranding=1" title="The Test a Racquet Has to Pass Before I Switch (Head Boom Pro 98)" loading="lazy" allowfullscreen></iframe></div>
+          <div class="under-embed"><a class="tlink" href="blog/how-to-test-a-tennis-racquet-head-boom-pro-98.html">Read the write up →</a></div>
+        </div>
+      </div>
+    </section>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <!-- Gear tests -->
+    <section class="block" id="gear">
+      <div class="wrap">
+        <div class="panel" data-rise>
+          <div class="split-head">
+            <h2>Find your <em>fit</em>. Then stop shopping.</h2>
+            <p>Honest racquet and string reviews from a player who still competes. Who it fits, who should skip it, and the one flaw.</p>
+          </div>
+          <div class="vgrid">
+            <a class="vcard" href="https://youtu.be/xj4s3ucKj84" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/xj4s3ucKj84/hqdefault.jpg" alt="" loading="lazy"/></div><h3>Head Boom Pro 98: I Hated It... Now It's in My Bag</h3></a>
+            <a class="vcard" href="https://youtu.be/h8bIR9YbhWc" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/h8bIR9YbhWc/hqdefault.jpg" alt="" loading="lazy"/></div><h3>I Like the Wilson Defyer 100 More Than the 98… Except For One Thing</h3></a>
+            <a class="vcard" href="https://youtu.be/FQ8n7oocRcA" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/FQ8n7oocRcA/hqdefault.jpg" alt="" loading="lazy"/></div><h3>Best Tennis Strings for Club Players? I Tested 3 Hybrids</h3></a>
+            <a class="vcard" href="https://youtu.be/vFL523aGfnE" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/vFL523aGfnE/hqdefault.jpg" alt="" loading="lazy"/></div><h3>Head Extreme Pro 98 Review: The Weight Caught Me Off Guard</h3></a>
+            <a class="vcard" href="https://youtu.be/Q_OsDJT2rK8" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Q_OsDJT2rK8/hqdefault.jpg" alt="" loading="lazy"/></div><h3>I Lowered My Tension to 44 lbs</h3></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script type="text/babel" src="tweaks-panel.jsx?v=5"></script>
-  <script type="text/babel" src="app.jsx?v=5"></script>
-  <script src="site-chrome.js?v=4"></script>
+    <section class="pause">
+      <p data-rise>So does the racquet <em>decide the match?</em></p>
+    </section>
 
+    <section class="peak" id="breakdown">
+      <div class="sticky">
+        <div class="wrap" style="width:100%">
+          <div class="night">
+            <div>
+              <div class="mono">Match breakdown</div>
+              <h2>He switched to the Defyer 98. Then he beat me.</h2>
+              <p class="who">Gryffin is a former D1 player with a 12.09 trending UTR. I know his game well. Here is how it went, from my side of the net.</p>
+            </div>
+            <div>
+              <div class="board" role="img" aria-label="Final score: Gryffin won 6-2, 6-3">
+                <table>
+                  <thead><tr><th>Player</th><th>Set 1</th><th>Set 2</th></tr></thead>
+                  <tbody>
+                    <tr><td>Cade</td><td id="c1">0</td><td id="c2">·</td></tr>
+                    <tr><td>Gryffin</td><td id="g1">0</td><td id="g2">·</td></tr>
+                  </tbody>
+                </table>
+                <div class="court" aria-hidden="true">
+                  <svg viewBox="0 0 400 110">
+                    <rect x="1" y="1" width="398" height="108" rx="4" fill="#123d2b" stroke="rgba(244,242,236,.7)" stroke-width="2"/>
+                    <line x1="200" y1="1" x2="200" y2="109" stroke="#F4F2EC" stroke-width="3"/>
+                    <line x1="1" y1="14" x2="399" y2="14" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                    <line x1="1" y1="96" x2="399" y2="96" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                    <line x1="95" y1="14" x2="95" y2="96" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                    <line x1="305" y1="14" x2="305" y2="96" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                    <line x1="95" y1="55" x2="305" y2="55" stroke="rgba(244,242,236,.55)" stroke-width="1.5"/>
+                    <path id="trail" d="" fill="none" stroke="rgba(126,200,69,.5)" stroke-width="2" stroke-dasharray="3 5"/>
+                    <ellipse id="shadow" cx="40" cy="70" rx="7" ry="2.5" fill="rgba(0,0,0,.45)"/>
+                    <circle id="rball" cx="40" cy="60" r="6.5" fill="#C8F04B"/>
+                  </svg>
+                </div>
+                <div class="steps" id="steps"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+              </div>
+              <p class="caption" id="caption" aria-live="polite"><small>Set 1</small>Indoors. I came out flat and went down 0 to 5.</p>
+              <div class="end" id="end">
+                <a class="btn green" href="https://youtu.be/MVuKYsBQXoA" target="_blank" rel="noopener"><span class="tri"></span>Watch the breakdown</a>
+                <a class="tlink" href="blog/tennis-match-breakdown-stop-doing-what-works.html">Read the write up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- On court: photo strip + videos -->
+    <section class="gallery" id="matches">
+      <div class="label panel" data-rise style="padding:28px 30px">
+        <div class="mono">On court with Cade</div>
+        <h2 style="margin-top:10px">Play smarter, not more.</h2>
+        <p>Cade playing, coaching and learning on court. What works at the high level, and how club players can use it.</p>
+      </div>
+      <div class="strip" id="strip">
+        <figure class="shot"><div class="img"><img src="assets/home/g-serve.webp" alt="Cade serving under the lights" loading="lazy"/></div><figcaption class="cap">Serving under the lights</figcaption></figure>
+        <figure class="shot"><div class="img"><img src="assets/home/g-coaching.webp" alt="Cade with players and coaches after a tournament" loading="lazy"/></div><figcaption class="cap">Coaching and competing</figcaption></figure>
+        <figure class="shot"><div class="img"><img src="assets/home/g-forehand.webp" alt="Cade hitting a forehand" loading="lazy"/></div><figcaption class="cap">Match day</figcaption></figure>
+        <figure class="shot"><div class="img"><img src="assets/home/g-move.webp" alt="Cade sprinting for a ball" loading="lazy"/></div><figcaption class="cap">Every ball, every point</figcaption></figure>
+        <figure class="shot"><div class="img"><img src="assets/home/g-backhand.webp" alt="Cade hitting a backhand at night" loading="lazy"/></div><figcaption class="cap">The backhand</figcaption></figure>
+        <figure class="shot"><div class="img"><img src="assets/home/g-early.webp" alt="Cade taking a ball early on his backhand" loading="lazy"/></div><figcaption class="cap">Taking it early</figcaption></figure>
+      </div>
+      <div class="wrap more">
+        <div class="panel" data-rise>
+          <div class="vgrid">
+            <a class="vcard" href="https://youtu.be/MVuKYsBQXoA" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/MVuKYsBQXoA/hqdefault.jpg" alt="" loading="lazy"/></div><h3>He Switched to the Defyer 98. Then He Beat Me 6-2, 6-3</h3></a>
+            <a class="vcard" href="https://youtu.be/Wn646SLw858" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Wn646SLw858/hqdefault.jpg" alt="" loading="lazy"/></div><h3>I Assessed My 55 Year Old Dad's Tennis Game: Here's What's Holding Him Back</h3></a>
+            <a class="vcard" href="https://youtu.be/EkfYiAzv1wQ" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/EkfYiAzv1wQ/hqdefault.jpg" alt="" loading="lazy"/></div><h3>I Had 5 Days to Prepare for a Pro Tennis Match</h3></a>
+            <a class="vcard" href="https://youtu.be/ELzO0vXt4QU" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/ELzO0vXt4QU/hqdefault.jpg" alt="" loading="lazy"/></div><h3>I Won the First Set 6-0 vs a D1 Player. Then I Collapsed</h3></a>
+            <a class="vcard" href="https://youtu.be/-s9oyz-S8Xg" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/-s9oyz-S8Xg/hqdefault.jpg" alt="" loading="lazy"/></div><h3>What 15 Years of Tennis Has Taught Me About Getting Better</h3></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ace -->
+    <section class="block" id="ace">
+      <div class="wrap">
+        <div class="panel ace" data-rise>
+          <div>
+            <div class="brand"><i></i>Ace</div>
+            <div class="eyebrow mono">Your daily tennis coach</div>
+            <h2>Stop guessing what to practice. Know exactly what to work on today.</h2>
+            <ul><li>3 focused daily tasks</li><li>Fits your schedule</li><li>No court required</li></ul>
+            <a class="btn" href="https://www.acetenniscoach.ca/" target="_blank" rel="noopener">Build My Free Plan →</a>
+          </div>
+          <div class="plan" aria-label="Example daily plan">
+            <div class="top"><span>Today's Plan</span><span class="mono">Example</span></div>
+            <div class="task"><div class="meta"><span>On court</span><span>15 min</span></div><h4>Serve plus one pattern</h4><p>Pick your best serve and first ball. Play it out 20 times at match pace.</p></div>
+            <div class="task"><div class="meta"><span>At home</span><span>10 min</span></div><h4>Shadow your closing pattern</h4><p>Shadow it at match speed, with your routine between points.</p></div>
+            <div class="task"><div class="meta"><span>Off court</span><span>30 min</span></div><h4>Strength</h4><p>Lower body and core, sized to the time you have.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Where to go next -->
+    <section class="block">
+      <div class="wrap">
+        <div class="panel" data-rise>
+          <div class="split-head">
+            <h2>Watch. Read. <em>Play</em>.</h2>
+            <p>Three ways to get better with MPTennis.</p>
+          </div>
+          <div class="rows">
+            <a class="row" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener"><b>14K<i>+</i></b><strong>MPTennis on YouTube</strong><span>New gear tests and match lessons every week.</span><em class="arr">↗</em></a>
+            <a class="row" href="blog/"><b>Read</b><strong>Reviews and tools</strong><span>Written reviews, the racquet test, and the free swingweight estimator.</span><em class="arr">↗</em></a>
+            <a class="row" href="mailto:chris@mptennis.ca"><b>Play</b><strong>Coaching in person</strong><span>Limited spots in New Brunswick for competitive adults and juniors.</span><em class="arr">↗</em></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="block" id="about">
+      <div class="wrap">
+        <div class="panel about" data-rise>
+          <div>
+            <div class="mono">About MPTennis</div>
+            <h2 style="margin-top:12px">High level to <em>club level</em>.</h2>
+            <p>Honestly? Most of us don't need a new racquet. We need the right one, and a smarter way to play.</p>
+            <p>Cade Nadeau played NCAA tennis, still competes, and coaches high performance juniors every day. His dad Chris coaches club players and the UNB teams. Together we take what works at the high level and bring it to club players who love to compete.</p>
+            <a class="ghost" href="https://youtube.com/@mptennis" target="_blank" rel="noopener">Watch the channel →</a>
+          </div>
+          <div class="pics">
+            <figure class="pic a"><img src="assets/home/bio-snhu.webp" alt="Cade Nadeau on court in his SNHU kit" loading="lazy"/><figcaption>Cade, NCAA tennis</figcaption></figure>
+            <figure class="pic b"><img src="assets/home/bio-unb.webp" alt="Chris and Cade Nadeau at a UNB Reds event" loading="lazy"/><figcaption>Chris and Cade</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 drills -->
+    <section class="block">
+      <div class="wrap">
+        <div class="panel drills" data-rise>
+          <div class="sheet" aria-hidden="true">
+            <img src="assets/home/logo-light.png" alt=""/>
+            <div class="n">7</div>
+            <div class="t">Drills we use to win more matches</div>
+            <ol><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+          </div>
+          <div>
+            <div class="mono">Free for club players</div>
+            <h2>Get the 7 drills we use to win more <em>matches</em>.</h2>
+            <p>Free. Plus our weekly deep dive on gear and match play.</p>
+            <a class="btn green" href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener">Get the free drills →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Close -->
+    <section class="close">
+      <div class="wrap">
+        <h2 data-rise>New gear tests and match lessons <em>every week</em>.</h2>
+        <a class="btn green" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener"><span class="tri"></span>Subscribe on YouTube</a>
+        <div class="alt"><a class="tlink" href="https://go.mptennis.ca/7drills" target="_blank" rel="noopener">Or get the 7 free drills</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img src="assets/home/logo-light.png" alt="MPTennis" width="900" height="76"/>
+      <nav>
+        <a href="https://youtube.com/@mptennis" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/mptennisnb/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/mptennisnb" target="_blank" rel="noopener">Facebook</a>
+        <a href="blog/">Blog</a>
+        <a href="shop/">Shop</a>
+        <a href="mailto:chris@mptennis.ca">chris@mptennis.ca</a>
+      </nav>
+      <small>© 2026 MPTennis</small>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var nav = document.getElementById("nav"), menu = document.getElementById("menu"), menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", function(){ var o = menu.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
+    menu.addEventListener("click", function(e){ if(e.target.tagName === "A"){ menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); } });
+
+    /* Panels rise in */
+    var risers = document.querySelectorAll("[data-rise]");
+    if(reduce || !("IntersectionObserver" in window)){ risers.forEach(function(el){ el.classList.add("in"); }); }
+    else {
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, {rootMargin:"0px 0px -8% 0px"});
+      risers.forEach(function(el){ io.observe(el); });
+      setTimeout(function(){ risers.forEach(function(el){ var r = el.getBoundingClientRect(); if(r.top < innerHeight) el.classList.add("in"); }); }, 50);
+    }
+
+    /* Pointer tilt on video cards */
+    if(!reduce && matchMedia("(hover:hover)").matches){
+      document.querySelectorAll(".vcard").forEach(function(c){
+        c.addEventListener("pointermove", function(e){ var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = "rotateY(" + x * 8 + "deg) rotateX(" + -y * 8 + "deg) translateY(-3px)"; });
+        c.addEventListener("pointerleave", function(){ c.style.transform = ""; });
+      });
+    }
+
+    var peak = document.getElementById("breakdown");
+    var S = [
+      {c1:0,g1:5,c2:"·",g2:"·",set:"Set 1",t:"Indoors. I came out flat and went down 0 to 5.",live:"g1"},
+      {c1:2,g1:5,c2:"·",g2:"·",set:"Set 1",t:"So I went to the net every point. Won two games.",live:"c1"},
+      {c1:2,g1:6,c2:"·",g2:"·",set:"Set 1",t:"Then I dropped it. 2 and 6.",live:"g1"},
+      {c1:2,g1:6,c2:3,g2:2,set:"Set 2",t:"Up a break in the second. 3 and 2.",live:"c2"},
+      {c1:2,g1:6,c2:3,g2:6,set:"Set 2",t:"Broken back. He ran away with it.",live:"g2"},
+      {c1:2,g1:6,c2:3,g2:6,set:"Final",t:"The racquet was not the story. What I kept doing was.",live:""}
+    ];
+    var cells = {c1:document.getElementById("c1"),g1:document.getElementById("g1"),c2:document.getElementById("c2"),g2:document.getElementById("g2")};
+    var cap = document.getElementById("caption"), endEl = document.getElementById("end"), bars = document.querySelectorAll("#steps b");
+    var rball = document.getElementById("rball"), shadow = document.getElementById("shadow"), trail = document.getElementById("trail");
+    var lastStep = -1, pk = 0;
+    function setStep(i){ if(i === lastStep) return; lastStep = i; var st = S[i];
+      for(var k in cells){ cells[k].textContent = st[k]; cells[k].classList.toggle("live", k === st.live); }
+      cap.innerHTML = "<small>" + st.set + "</small>" + st.t; endEl.classList.toggle("on", i === S.length - 1); }
+    function rally(p){
+      var n = S.length, f = p * n, i = Math.min(n - 1, Math.floor(f)), local = Math.min(1, f - i);
+      setStep(i);
+      for(var b = 0; b < bars.length; b++) bars[b].style.transform = "scaleX(" + (b < i ? 1 : b === i ? local : 0) + ")";
+      var dir = i % 2 === 0 ? 1 : -1, x0 = dir > 0 ? 40 : 360, x1 = dir > 0 ? 330 : 70, gy = [62,40,78,50,70,55][i];
+      var x = x0 + (x1 - x0) * local, h = Math.sin(Math.PI * local) * 34;
+      if(reduce){ x = x1; h = 0; }
+      rball.setAttribute("cx", x.toFixed(1)); rball.setAttribute("cy", (gy - 6 - h).toFixed(1));
+      shadow.setAttribute("cx", x.toFixed(1)); shadow.setAttribute("cy", gy);
+      var d = "M" + x0 + " " + (gy - 6); for(var t = 0; t <= local; t += .05) d += " L" + (x0 + (x1 - x0) * t).toFixed(1) + " " + (gy - 6 - Math.sin(Math.PI * t) * 34).toFixed(1);
+      trail.setAttribute("d", reduce ? "" : d);
+    }
+    function peakProg(){ var r = peak.getBoundingClientRect(), d = r.height - innerHeight; return d > 0 ? Math.min(1, Math.max(0, -r.top / d)) : 0; }
+
+    var bBall = document.getElementById("bBall"), bCourt = document.getElementById("bCourt"), bNight = document.getElementById("bNight");
+    var portrait = document.getElementById("portrait"), strip = document.getElementById("strip"), gal = document.getElementById("matches");
+    var mx = 0, my = 0, sx = 0, sy = 0, sp = 0, gp = 0;
+    window.addEventListener("pointermove", function(e){ mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
+    function frame(){
+      var y = scrollY, H = document.documentElement.scrollHeight - innerHeight, p = H > 0 ? y / H : 0;
+      nav.classList.toggle("solid", y > 30);
+      if(!reduce){
+        sp += (p - sp) * .08; sx += (mx - sx) * .05; sy += (my - sy) * .05;
+        /* the ball: travels across the court in a bouncing path as you scroll */
+        var bx = Math.sin(sp * Math.PI * 3) * 38, by = sp * 70 - Math.abs(Math.sin(sp * Math.PI * 6)) * 12;
+        bBall.style.transform = "translate3d(" + (bx + sx * 6) + "vw," + (by + sy * 4) + "vh,0)";
+        bCourt.style.transform = "translate3d(" + (sp * 30) + "vw," + (-sp * 20) + "vh,0)";
+        bNight.style.transform = "translate3d(" + (-sp * 40) + "vw," + (-sp * 30) + "vh,0)";
+        if(y < innerHeight * 1.2) portrait.style.transform = "translate3d(0," + (y * .12) + "px,0)";
+        var r = gal.getBoundingClientRect(), t = (innerHeight - r.top) / (innerHeight + r.height); t = Math.min(1, Math.max(0, t));
+        gp += (t - gp) * .1;
+        var max = Math.max(0, strip.scrollWidth - innerWidth);
+        strip.style.transform = "translate3d(" + (-gp * max) + "px,0,0)";
+      }
+      var pt = peakProg(); pk = reduce ? pt : pk + (pt - pk) * .14; rally(pk);
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+  </script>
 </body>
 </html>
