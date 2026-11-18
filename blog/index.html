@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://mptennis.ca/blog/"/>
   <meta property="og:title" content="MPTennis Blog · Tactics, racquet fit, training methods"/>
   <meta property="og:description" content="Pro-level coaching for club players and juniors. Read what Cade is teaching."/>
-  <meta property="og:image" content="https://mptennis.ca/assets/og-cover.jpg"/>
+  <meta property="og:image" content="https://mptennis.ca/assets/og-cover-2026.jpg"/>
   <meta property="og:locale" content="en_CA"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
@@ -89,7 +89,7 @@
         });
         grid.innerHTML = posts.map(function (p) {
           var thumb = p.cover
-            ? '<img src="' + p.cover + '" alt="' + escapeHtml(p.title || '') + '" loading="lazy">'
+            ? '<img src="' + p.cover + '" alt="' + escapeHtml(p.title || '') + '" loading="lazy" onload="if(this.naturalWidth<=120&&this.src.indexOf(\'maxresdefault\')>-1){this.src=this.src.replace(\'maxresdefault\',\'hqdefault\')}" onerror="if(this.src.indexOf(\'maxresdefault\')>-1){this.src=this.src.replace(\'maxresdefault\',\'hqdefault\')}">'
             : '<div class="post-thumb-fallback">' + (p.initial || initialOf(p.title)) + '</div>';
           var meta = [];
           if (p.category) meta.push('<span>' + escapeHtml(p.category) + '</span>');
