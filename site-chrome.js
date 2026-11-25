@@ -21,6 +21,7 @@
           <li><a href="${base}blog/">Blog</a></li>
           <li><a href="${base}tools/swingweight-estimator.html">Tools</a></li>
           <li><a href="${base}shop/">Shop</a></li>
+          <li><a href="${base}inner-circle/">Inner Circle</a></li>
           <li><a href="${base}index.html#about">About</a></li>
         </ul>
         <a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="lnav-sub">Subscribe</a>
