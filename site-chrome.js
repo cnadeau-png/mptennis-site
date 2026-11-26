@@ -16,14 +16,14 @@
       <div class="lnav-inner">
         <a href="${base}index.html" aria-label="MPTennis home" class="lnav-logo">${logo(26)}</a>
         <ul class="lnav-links" id="lnav-links">
-          <li><a href="${base}index.html#gear">Gear tests</a></li>
-          <li><a href="${base}index.html#matches">On court</a></li>
+          <li><a href="${base}index.html#gear">Gear Tests</a></li>
+          <li><a href="${base}index.html#matches">On Court</a></li>
           <li><a href="${base}blog/">Blog</a></li>
           <li><a href="${base}tools/swingweight-estimator.html">Tools</a></li>
           <li><a href="${base}shop/">Shop</a></li>
           <li><a href="${base}inner-circle/">Inner Circle</a></li>
           <li><a href="${base}index.html#about">About</a></li>
-          <li><a href="https://www.acetenniscoach.ca/?next=circle&amp;mode=login#auth-section">Member login</a></li>
+          <li><a href="https://www.acetenniscoach.ca/?next=circle&amp;mode=login#auth-section">Member Login</a></li>
         </ul>
         <a href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener" class="lnav-sub">Subscribe</a>
         <button class="lnav-menu" id="nav-hamburger" aria-expanded="false" aria-controls="lnav-links">Menu</button>
