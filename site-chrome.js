@@ -30,7 +30,16 @@
       </div>
     </header>`;
 
+  const rallyFrame = `<iframe src="https://embeds.beehiiv.com/b2c974b1-a908-4d4a-91e8-1121c1051c2a?slim=true" data-test-id="beehiiv-embed" title="Subscribe to RALLY Notes" height="52" frameborder="0" scrolling="no" loading="lazy" style="margin:0;border-radius:0;background-color:transparent;width:100%;max-width:440px;display:block;"></iframe>`;
+
+
   const footHTML = `
+    <div class="lfoot-rally">
+      <div class="lfoot-rally-inner">
+        <p><b>RALLY Notes</b> Free tennis notes in your inbox.</p>
+        ${rallyFrame}
+      </div>
+    </div>
     <footer class="lfoot">
       <div class="lfoot-inner">
         <a href="${base}index.html" aria-label="MPTennis home">${logo(18)}</a>

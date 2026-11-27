@@ -72,6 +72,14 @@ body .lnav { position: sticky; top: 0; z-index: 60; transition: background-color
   .lnav-logo img { height: 18px !important; }
 }
 
+/* ── RALLY Notes footer strip ── */
+.lfoot-rally { margin-top: 80px; background: rgba(255,255,255,.55); border-top: 1px solid var(--line); }
+.lfoot-rally + .lfoot { margin-top: 0; }
+.lfoot-rally-inner { max-width: 1280px; margin: 0 auto; padding: 20px clamp(16px,5vw,72px); display: flex; align-items: center; justify-content: space-between; gap: 12px 28px; flex-wrap: wrap; }
+.lfoot-rally p { margin: 0; font-size: 16px; color: var(--ink) !important; }
+.lfoot-rally p b { margin-right: 8px; }
+.lfoot-rally iframe { flex: 1 1 300px; }
+
 /* ── Footer ── */
 .lfoot { background: rgba(255,255,255,.7); backdrop-filter: blur(10px); border-top: 1px solid var(--line); margin-top: 80px; }
 .lfoot-inner { max-width: 1280px; margin: 0 auto; padding: 22px clamp(16px,5vw,72px); display: flex; align-items: center; justify-content: space-between; gap: 16px 28px; flex-wrap: wrap; font-size: 15px; }
