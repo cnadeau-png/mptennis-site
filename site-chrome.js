@@ -32,14 +32,6 @@
 
   const rallyFrame = `<iframe src="https://embeds.beehiiv.com/b2c974b1-a908-4d4a-91e8-1121c1051c2a?slim=true" data-test-id="beehiiv-embed" title="Subscribe to RALLY Notes" height="52" frameborder="0" scrolling="no" loading="lazy" style="margin:0;border-radius:0;background-color:transparent;width:100%;max-width:440px;display:block;"></iframe>`;
 
-  // RALLY Notes card at the end of every blog post.
-  const rallyCardHTML = `
-    <section class="rally-card" aria-labelledby="rally-h">
-      <div class="eyebrow">RALLY Notes</div>
-      <h3 id="rally-h">Liked this? Get the next one in your inbox.</h3>
-      <p>Free tennis notes from Cade: a drill, a fix and a lesson you can use in your next match.</p>
-      ${rallyFrame}
-    </section>`;
 
   const footHTML = `
     <div class="lfoot-rally">
@@ -67,13 +59,6 @@
   document.body.insertAdjacentHTML("afterbegin", bgHTML);
   document.querySelectorAll("[data-site-nav]").forEach((el) => { el.outerHTML = navHTML; });
   document.querySelectorAll("[data-site-footer]").forEach((el) => { el.outerHTML = footHTML; });
-
-  // Blog posts only (an article inside /blog/, not the blog list).
-  const post = document.querySelector(".page article");
-  if (post && /\/blog\/[^/]+\.html?$/.test(location.pathname) && !/_template/.test(location.pathname)) {
-    const after = document.querySelector(".post-footer") || post;
-    after.insertAdjacentHTML("afterend", rallyCardHTML);
-  }
 
   const nav = document.getElementById("site-nav");
   const btn = document.getElementById("nav-hamburger");
