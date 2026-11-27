@@ -4,3 +4,4 @@ wrangler.jsonc
 *.zip
 *.md
 brizy-custom.css
+worker
