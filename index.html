@@ -437,12 +437,12 @@
     <section class="block" id="featured">
       <div class="wrap">
         <div class="panel" data-rise>
-          <div class="split-head">
+          <div class="split-head" id="latest-head">
             <h2>The test a racquet has to <em>pass</em>.</h2>
             <p>Before Cade switches, a racquet has to hold up in real points. Here's the test the Head Boom Pro 98 went through, and how to run it on your own shots.</p>
           </div>
-          <div class="embed"><iframe src="https://www.youtube.com/embed/_ifBM0PsE-w?rel=0&modestbranding=1" title="The Test a Racquet Has to Pass Before I Switch (Head Boom Pro 98)" loading="lazy" allowfullscreen></iframe></div>
-          <div class="under-embed"><a class="tlink" href="blog/how-to-test-a-tennis-racquet-head-boom-pro-98.html">Read the write up →</a></div>
+          <div class="embed"><iframe id="latest-frame" src="https://www.youtube.com/embed/_ifBM0PsE-w?rel=0&modestbranding=1" title="The Test a Racquet Has to Pass Before I Switch (Head Boom Pro 98)" loading="lazy" allowfullscreen></iframe></div>
+          <div class="under-embed" id="latest-under"><a class="tlink" href="blog/how-to-test-a-tennis-racquet-head-boom-pro-98.html">Read the write up →</a></div>
         </div>
       </div>
     </section>
@@ -653,6 +653,26 @@
     </div>
   </footer>
 
+  <script>
+  /* Latest video: swap in the newest long video from YouTube (Shorts skipped).
+     If the API fails, the built in video above stays. */
+  (function(){
+    var BUILT_IN = "_ifBM0PsE-w";
+    fetch("/api/latest-video").then(function(r){ return r.ok ? r.json() : null; }).then(function(v){
+      if (!v || !v.id || v.id === BUILT_IN) return;
+      var f = document.getElementById("latest-frame"), head = document.getElementById("latest-head"), under = document.getElementById("latest-under");
+      if (!f || !head) return;
+      f.src = "https://www.youtube.com/embed/" + v.id + "?rel=0&modestbranding=1";
+      f.title = v.title;
+      var h = head.querySelector("h2"), p = head.querySelector("p");
+      h.innerHTML = "New on the <em>channel</em>.";
+      p.textContent = v.title;
+      under.innerHTML = v.post
+        ? '<a class="tlink" href="' + v.post + '">Read the write up \u2192</a>'
+        : '<a class="tlink" href="https://youtube.com/@mptennis?sub_confirmation=1" target="_blank" rel="noopener">Subscribe for the next one \u2192</a>';
+    }).catch(function(){});
+  })();
+  </script>
   <script>
   (function(){
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
